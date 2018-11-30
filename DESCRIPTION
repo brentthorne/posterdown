@@ -1,13 +1,13 @@
 Package: posterdown
 Title: Generates PDF/ Latex posters using R Markdown and Beamer.
 Version: 0.1.0
-Authors@R: c(person(c("Thorne","B."), email = "brent.thorne18@gmail.com", role = c("aut","cre"))
+Author: Brent Thorne
 Description: Posterdown expands on RMarkdown to generate PDF conference posters.
-Currently it on outputs via Knitr Pandoc and Latex to a PDF output.
+Maintainer: Brent Thorne <brent.thorne18@gmail.com>
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: yaml
+Imports: utils, rmarkdown, knitr, yaml, tinytex, xfun
 Depends:
     R (>= 3.3.0),
     devtools,
@@ -15,4 +15,4 @@ Depends:
     ggplot2,
     rmarkdown,
     knitr
-RoxygenNotes: 6.0.1
+RoxygenNote: 6.1.0.9000

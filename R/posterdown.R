@@ -1,11 +1,13 @@
-#' posterdown: A package for creating Rmarkdown based PDF Latex Posters
+#' posterdown package
 #'
 #' This package creates posters for conferences
+#'
+#' @author Brent Thorne
 #'
 #' @section poster_pdf:
 #' Creates an R Markdown template fo a PDF poster document
 #' @docType package
-#' @name posterndown
+#' @name posterdown
 #' @import rmarkdown
 #' @import devtools
 #' @import dplyr
