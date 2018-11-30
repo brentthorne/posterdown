@@ -1,0 +1,276 @@
+%==============================================================================
+% Beamer style for the poster template posted at
+% http://www.nathanieljohnston.com/2009/08/latex-poster-template/
+%
+% Created by the Computational Physics and Biophysics Group at Jacobs University
+% https://teamwork.jacobs-university.de:8443/confluence/display/CoPandBiG/LaTeX+Poster
+% Modified by Nathaniel Johnston (nathaniel@nathanieljohnston.com) in August 2009
+% =============================================================================
+
+\ProvidesPackage{beamerthemeconfposter}
+\RequirePackage{tikz}		% for drawing the nice rounded boxes
+\usetikzlibrary{arrows,backgrounds}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\usepackage{exscale}
+\RequirePackage{textcomp}
+\RequirePackage{amsmath,amssymb}
+\usefonttheme{professionalfonts}
+\newcommand{\makeruleinbox}{{\usebeamercolor[bg]{block alerted title}\centering\hspace*{-0.7cm}\rule{\inboxrule}{0.5cm}}}
+\usepackage{ragged2e}
+
+% Spacing before and inside list environments to add white space before lists and between items inside lists
+\makeatletter
+\def\@listi{\leftmargin\leftmarginii
+\topsep 1ex % Spacing before lists
+\parsep 0\p@ \@plus\p@
+\itemsep 6pt} % Spacing between items
+\makeatother
+
+\usecaptiontemplate{\small\structure{\insertcaptionname~\insertcaptionnumber: }\insertcaption} % A fix for figure numbering
+
+%-----------------------------------------------------------
+% Define a whole bunch of custom colours and fonts
+%-----------------------------------------------------------
+
+\definecolor{lgreen} {RGB}{180,210,100}
+\definecolor{dblue}  {RGB}{20,66,129}
+\definecolor{ddblue} {RGB}{11,36,69}
+\definecolor{lred}   {RGB}{220,0,0}
+\definecolor{nred}   {RGB}{224,0,0}
+\definecolor{norange}{RGB}{230,120,20}
+\definecolor{nyellow}{RGB}{255,221,0}
+\definecolor{ngreen} {RGB}{98,158,31}
+\definecolor{dgreen} {RGB}{78,138,21}
+\definecolor{nblue}  {RGB}{28,130,185}
+\definecolor{jblue}  {RGB}{20,50,100}
+
+
+%----------------------------------------------------------------------------
+% More colours added due to conflict with Colordvi package
+% Addition done by Nishan Mudalige (math.mudalige@uoguelph.ca) in April 2011
+%----------------------------------------------------------------------------
+
+\definecolor{GreenYellow}       {RGB}{217, 229, 6} 	    % GreenYellow  Approximate PANTONE 388
+\definecolor{Yellow}            {RGB}{254, 223, 0} 	    % Yellow  Approximate PANTONE YELLOW
+\definecolor{Goldenrod}         {RGB}{249, 214, 22} 	% Goldenrod  Approximate PANTONE 109
+\definecolor{Dandelion}         {RGB}{253, 200, 47} 	% Dandelion  Approximate PANTONE 123
+\definecolor{Apricot}           {RGB}{255, 170, 123} 	% Apricot  Approximate PANTONE 1565
+\definecolor{Peach}             {RGB}{255, 127, 69} 	% Peach  Approximate PANTONE 164
+\definecolor{Melon}             {RGB}{255, 129, 141} 	% Melon  Approximate PANTONE 177
+\definecolor{YellowOrange}      {RGB}{240, 171, 0} 	    % YellowOrange  Approximate PANTONE 130
+\definecolor{Orange}            {RGB}{255, 88, 0} 	    % Orange  Approximate PANTONE ORANGE-021
+\definecolor{BurntOrange}       {RGB}{199, 98, 43} 	    % BurntOrange  Approximate PANTONE 388
+\definecolor{Bittersweet}       {RGB}{189, 79, 25} 	    % Bittersweet  Approximate PANTONE 167
+\definecolor{RedOrange}         {RGB}{222, 56, 49} 	    % RedOrange  Approximate PANTONE 179
+\definecolor{Mahogany}          {RGB}{152, 50, 34} 	    % Mahogany  Approximate PANTONE 484
+\definecolor{Maroon}            {RGB}{152, 30, 50} 	    % Maroon  Approximate PANTONE 201
+\definecolor{BrickRed}          {RGB}{170, 39, 47} 	    % BrickRed  Approximate PANTONE 1805
+\definecolor{Red}               {RGB}{255, 0, 0}        % Red  Approx PANTONE LUMINOUS VIVID RED
+\definecolor{BrilliantRed}      {RGB}{237, 41, 57} 	    % Red  VERY-Approx PANTONE RED
+\definecolor{OrangeRed}         {RGB}{231, 58, 0} 	    % OrangeRed  No PANTONE match (TRIED PANTONE VIVID ORANGE RED)
+\definecolor{RubineRed}         {RGB}{202, 0, 93}       % RubineRed  Approximate PANTONE RUBINE-RED
+\definecolor{WildStrawberry}    {RGB}{203, 0, 68} 	    % WildStrawberry  Approximate PANTONE 206
+\definecolor{Salmon}            {RGB}{250, 147, 171} 	% Salmon  Approximate PANTONE 183
+\definecolor{CarnationPink}     {RGB}{226, 110, 178} 	% CarnationPink  Approximate PANTONE 218
+\definecolor{Magenta}           {RGB}{255, 0, 144} 	    % Magenta  Approximate PANTONE PROCESS-MAGENTA
+\definecolor{VioletRed}         {RGB}{215, 31, 133} 	% VioletRed  Approximate PANTONE 219
+\definecolor{Rhodamine}         {RGB}{224, 17, 157} 	% Rhodamine  Approximate PANTONE RHODAMINE-RED
+\definecolor{Mulberry}          {RGB}{163, 26, 126} 	% Mulberry  Approximate PANTONE 241
+\definecolor{RedViolet}         {RGB}{161, 0, 107} 	    % RedViolet  Approximate PANTONE 234
+\definecolor{Fuchsia}           {RGB}{155, 24, 137} 	% Fuchsia  Approximate PANTONE 248
+\definecolor{Lavender}          {RGB}{240, 146, 205} 	% Lavender  Approximate PANTONE 223
+\definecolor{Thistle}           {RGB}{222, 129, 211} 	% Thistle  Approximate PANTONE 245
+\definecolor{Orchid}            {RGB}{201, 102, 205} 	% Orchid  Approximate PANTONE 252
+\definecolor{DarkOrchid}        {RGB}{153, 50, 204} 	% DarkOrchid  No PANTONE match
+\definecolor{Purple}            {RGB}{182, 52, 187} 	% Purple  Approximate PANTONE PURPLE
+\definecolor{Plum}              {RGB}{79, 50, 76} 	    % Plum  VERY-Approx PANTONE 518
+\definecolor{Violet}            {RGB}{75, 8, 161} 	    % Violet  Approximate PANTONE VIOLET
+\definecolor{RoyalPurple}       {RGB}{82, 35, 152} 	    % RoyalPurple  Approximate PANTONE 267
+\definecolor{BlueViolet}        {RGB}{33, 7, 106} 	    % BlueViolet  Approximate PANTONE 2755
+\definecolor{Periwinkle}        {RGB}{136, 132, 213} 	% Periwinkle  Approximate PANTONE 2715
+\definecolor{CadetBlue}	  	    {RGB}{95, 158, 160} 	% CadetBlue  Approximate PANTONE (534+535)/2, Could not find get on my own so used PANTONE-CADET BLUE
+\definecolor{CornflowerBlue}  	{RGB}{99, 177, 229} 	% CornflowerBlue  Approximate PANTONE 292
+\definecolor{MidnightBlue}	  	{RGB}{0, 65, 101} 	    % MidnightBlue  Approximate PANTONE 302
+\definecolor{NavyBlue}          {RGB}{0, 70, 173}       % NavyBlue  Approximate PANTONE 293
+\definecolor{RoyalBlue}         {RGB}{0, 35, 102}       % RoyalBlue  No PANTONE match
+\definecolor{Blue}              {RGB}{0, 24, 168}       % Blue  Approximate PANTONE BLUE-072
+\definecolor{Cerulean}          {RGB}{0, 122, 201}      % Cerulean  Approximate PANTONE 3005
+\definecolor{Cyan}              {RGB}{0, 159, 218}      % Cyan  Approximate PANTONE PROCESS-CYAN
+\definecolor{ProcessBlue}       {RGB}{0, 136, 206}      % ProcessBlue  Approximate PANTONE PROCESS-BLUE
+\definecolor{SkyBlue}           {RGB}{91, 198, 232}     % SkyBlue  Approximate PANTONE 2985
+
+\definecolor{Turquoise}         {RGB}{0, 255, 239} 	    % Turquoise  Approximate PANTONE (312+313)/2, Could not find get on my own so used PANTONE-TURQUOISE
+
+\definecolor{TealBlue}          {RGB}{0, 124, 146} 	    % TealBlue  Approximate PANTONE 3145
+\definecolor{Aquamarine}        {RGB}{0, 148, 179} 	    % Aquamarine  Approximate PANTONE 3135
+\definecolor{BlueGreen}         {RGB}{0, 154, 166} 	    % BlueGreen  Approximate PANTONE 320
+\definecolor{Emerald}           {RGB}{80, 200, 120} 	% Emerald  No PANTONE match
+\definecolor{JungleGreen}       {RGB}{0, 115, 99} 	    % JungleGreen  Approximate PANTONE 328
+\definecolor{SeaGreen}          {RGB}{0, 176, 146} 	    % SeaGreen  Approximate PANTONE 3268
+\definecolor{Green}             {RGB}{0, 173, 131} 	    % Green  VERY-Approx PANTONE GREEN
+\definecolor{ForestGreen}       {RGB}{0, 105, 60} 	    % ForestGreen  Approximate PANTONE 349
+\definecolor{PineGreen}         {RGB}{0, 98, 101} 	    % PineGreen  Approximate PANTONE 323
+\definecolor{LimeGreen}         {RGB}{50, 205, 50} 	    % LimeGreen  No PANTONE match
+\definecolor{YellowGreen}       {RGB}{146, 212, 0} 	    % YellowGreen  Approximate PANTONE 375
+\definecolor{SpringGreen}       {RGB}{201, 221, 3} 	    % SpringGreen  Approximate PANTONE 381
+\definecolor{OliveGreen}        {RGB}{135, 136, 0} 	    % OliveGreen  Approximate PANTONE 582
+\definecolor{RawSienna}         {RGB}{149, 82, 20} 	    % RawSienna  Approximate PANTONE 154
+\definecolor{Sepia}             {RGB}{98, 60, 27} 	    % Sepia  Approximate PANTONE 161
+\definecolor{Brown}             {RGB}{134, 67, 30}      % Brown  Approximate PANTONE 1615
+\definecolor{Tan}               {RGB}{210, 180, 140}	% Tan  No PANTONE match
+\definecolor{Gray}              {RGB}{139, 141, 142} 	% Gray  Approximate PANTONE COOL-GRAY-8
+
+\definecolor{Black}		  	    {RGB}{30, 30, 30}       % Black  Approximate PANTONE PROCESS-BLACK
+\definecolor{White}		  	    {RGB}{255, 255, 255}    % White  No PANTONE match
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% set the basic colors
+\setbeamercolor{palette primary}   {fg=black,bg=white}
+\setbeamercolor{palette secondary} {fg=black,bg=white}
+\setbeamercolor{palette tertiary}  {bg=jblue,fg=white}
+\setbeamercolor{palette quaternary}{fg=black,bg=white}
+\setbeamercolor{structure}{fg=jblue}
+\setbeamercolor{titlelike}         {bg=jblue,fg=white}
+\setbeamercolor{frametitle}        {bg=jblue!10,fg=jblue}
+\setbeamercolor{cboxb}{fg=black,bg=jblue}
+\setbeamercolor{cboxr}{fg=black,bg=red}
+
+% set colors for itemize/enumerate
+\setbeamercolor{item}{fg=ngreen}
+\setbeamercolor{item projected}{fg=white,bg=ngreen}
+
+% set colors for blocks
+\setbeamercolor{block title}{fg=ngreen,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+
+% set colors for alerted blocks (blocks with frame)
+\setbeamercolor{block alerted title}{fg=white,bg=jblue}
+\setbeamercolor{block alerted body}{fg=black,bg=jblue!10}
+
+% set the fonts
+\setbeamerfont{section in head/foot}{series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamerfont{block alerted title}{series=\bfseries}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{frametitle}{size=\Large}
+\setbeamerfont{block body}{series=\rmfamily}
+
+% set some beamer theme options
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{blocks}[width=0.0]
+\beamertemplatenavigationsymbolsempty
+
+% set bibliography style
+\setbeamertemplate{bibliography item}[text]
+\setbeamercolor{bibliography item}{fg=black,bg=white}
+\setbeamercolor{bibliography entry author}{fg=black,bg=white}
+\setbeamercolor{bibliography item}{fg=black,bg=white}
+
+% define some length variables that are used by the template
+\newlength{\inboxwd}
+\newlength{\iinboxwd}
+\newlength{\inboxrule}
+\makeatletter
+\makeatother
+
+%==============================================================================
+% build the poster title
+%==============================================================================
+\setbeamertemplate{headline}{
+ \leavevmode
+  \begin{columns}
+   \begin{column}{\linewidth}
+    \vskip1cm
+    \centering
+    \usebeamercolor{title in headline}{\color{jblue}\Huge{\textbf{\inserttitle}}\\[0.5ex]}
+    \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[1ex]}
+    \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}
+    \vskip1cm
+   \end{column}
+   \vspace{1cm}
+  \end{columns}
+ \vspace{0.5in}
+ \hspace{0.5in}\begin{beamercolorbox}[wd=47in,colsep=0.15cm]{cboxb}\end{beamercolorbox}
+ \vspace{0.1in}
+}
+
+% Block definition
+\setbeamertemplate{block begin}
+{
+  \par\vskip\medskipamount
+  \begin{beamercolorbox}[colsep*=0ex,dp={2ex},center]{block title}
+    \vskip-0.25cm
+    \usebeamerfont{block title}\large\insertblocktitle
+    \begin{flushleft}
+    \vskip-1cm
+    \begin{tikzpicture}[remember picture,overlay]
+      \shade [inner color=gray,outer color=white]
+      (0,0) rectangle (\textwidth,0.3cm);
+    \end{tikzpicture}
+    \end{flushleft}
+  \end{beamercolorbox}
+  {\parskip0pt\par}
+  \ifbeamercolorempty[bg]{block title}
+  {}
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}
+  \usebeamerfont{block body}
+  \vskip-0.5cm
+  \begin{beamercolorbox}[colsep*=0ex,vmode]{block body}
+  \justifying
+}
+
+\setbeamertemplate{block end}
+{
+  \end{beamercolorbox}
+  \vskip\smallskipamount
+}
+
+% Alert block definition (with frame)
+\setbeamertemplate{block alerted begin}
+{
+  \par\vskip\medskipamount
+  \begin{beamercolorbox}[sep=0ex,rounded=true,center,dp={2ex}]{block alerted title}
+    \vskip0.01cm
+    \usebeamerfont{block title}\large\insertblocktitle
+  \end{beamercolorbox}
+  {\parskip0pt\par}
+  \usebeamerfont{block body}
+  \vskip-0.8cm
+  \begin{beamercolorbox}[sep=0.5cm, rounded=true,center]{block alerted title}
+  \setlength{\inboxwd}{\linewidth}
+  \addtolength{\inboxwd}{-1cm}
+  \begin{beamercolorbox}[rounded=true,wd={\inboxwd},center]{block alerted body}
+  \setlength{\iinboxwd}{\inboxwd}
+  \setlength{\inboxrule}{\inboxwd}
+  \addtolength{\iinboxwd}{-0.5cm}
+  \addtolength{\inboxrule}{0.5cm}
+  \begin{center}
+  \begin{minipage}{\iinboxwd}
+  \justifying
+}
+
+\setbeamertemplate{block alerted end}
+{
+  \end{minipage}
+  \end{center}
+  \end{beamercolorbox}
+  \end{beamercolorbox}
+  \vskip\smallskipamount
+}

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543600005256.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3377968616",
+    "id" : "128808D6",
+    "lastKnownWriteTime" : 1543596974,
+    "last_content_update" : 1543596974,
+    "path" : "~/GitHub/posterdown/R/posterdown_render.R",
+    "project_path" : "R/posterdown_render.R",
+    "properties" : {
+        "cursorPosition" : "11,51",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,15 @@
+---
+#
+# Required information -------------------
+#
+title: 'My Wonderfull title'
+author: 'John Doe Jr.'
+date: 'November 30 2018'
+
+# Optional -------------------------------
+
+# Rendering Options
+knitr: "rmarkdown::pdf_document"
+output:
+  posterdown::poster_pdf: default
+---
