@@ -1,0 +1,13 @@
+{
+    "path" : "~/Documents/GitHub/posterdown",
+    "sortOrder" : [
+        {
+            "ascending" : false,
+            "columnIndex" : 1
+        },
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
