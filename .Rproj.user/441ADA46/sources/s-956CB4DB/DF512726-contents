@@ -4,7 +4,6 @@
 #
 title: 'My Wonderfull title'
 author: 'John Doe Jr.'
-institute: "Brocku U"
 date: 'November 30 2018'
 output: posterdown::posterdown_generic
 ---
