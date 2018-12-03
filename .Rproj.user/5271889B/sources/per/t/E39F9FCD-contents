@@ -1,0 +1,56 @@
+---
+title: 'My Wonderfull title'
+author: "Brent Thorne"
+date: 'December 2018'
+output: posterdown::posterdown_memoir
+header-includes:
+- \usepackage{float}
+- \floatplacement{figure}{H}
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, results = 'asis', warning = FALSE, message = FALSE, fig.height = 3, fig.width = 3, dev='cairo_pdf')
+```
+
+### Introduction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo. Suspendisse potenti nullam ac tortor vitae. Enim nunc faucibus a pellentesque sit amet porttitor eget. Lacinia quis vel eros donec ac odio tempor. Vel quam elementum pulvinar etiam non quam lacus suspendisse. Nec tincidunt praesent semper feugiat nibh sed pulvinar. Neque ornare aenean euismod elementum. Vel fringilla est ullamcorper eget nulla. Sollicitudin aliquam ultrices sagittis orci a. Maecenas accumsan lacus vel facilisis volutpat est velit. Sed sed risus pretium quam vulputate dignissim. Convallis posuere morbi leo urna molestie. Cursus vitae congue mauris rhoncus. Vitae ultricies leo integer malesuada nunc. Est lorem ipsum dolor sit amet consectetur adipiscing. Enim sit amet venenatis urna cursus eget nunc.
+
+```{r, out.width='80%', fig.align='center'}
+
+knitr::include_graphics('Figures/figure1_map.pdf')
+
+```
+
+### Objectives
+
+1. Here is my first obective.
+2. Here is my second objective.
+3. Finally, my third objective.
+
+
+### Methods
+
+Elementum facilisis leo vel fringilla est ullamcorper eget nulla. Vitae congue eu consequat ac felis donec et. Morbi tincidunt ornare massa eget. Iaculis nunc sed augue lacus viverra vitae congue eu. Donec massa sapien faucibus et molestie. Neque egestas congue quisque egestas diam. Lectus quam id leo in vitae turpis massa. Sodales ut etiam sit amet. Posuere lorem ipsum dolor sit amet consectetur. Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Amet commodo nulla facilisi nullam vehicula ipsum. Magna ac placerat vestibulum lectus mauris ultrices eros. Sodales ut eu sem integer vitae justo eget magna. Malesuada bibendum arcu vitae elementum.
+
+```
+plot(rnorm(10))
+
+```
+
+### Results
+
+Sagittis purus sit amet volutpat consequat mauris. Lobortis mattis aliquam faucibus purus. Libero enim sed faucibus turpis in eu. Massa placerat duis ultricies lacus sed turpis tincidunt id. Arcu dictum varius duis at consectetur lorem done.
+
+```{r, out.width='80%', fig.align='center'}
+
+knitr::include_graphics('Figures/figure2.pdf')
+
+```
+
+
+Pellentesque habitant morbi tristique senectus et netus. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Nibh nisl condimentum id venenatis. Lorem ipsum dolor sit amet consectetur adipiscing elit duis. Eget aliquet nibh praesent tristique magna sit amet purus. Orci phasellus egestas tellus rutrum. Mauris cursus mattis molestie a. Amet cursus sit amet dictum sit. Tellus id interdum velit laoreet. Tortor at risus viverra adipiscing. Ullamcorper malesuada proin libero nunc. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Eget dolor morbi non arcu risus quis. Pulvinar pellentesque habitant morbi tristique senectus.
+
+
+
+
