@@ -7,12 +7,12 @@
     "folds" : "",
     "hash" : "0",
     "id" : "3911D465",
-    "lastKnownWriteTime" : 1543624307,
-    "last_content_update" : 1543624307,
+    "lastKnownWriteTime" : 1543701220,
+    "last_content_update" : 1543701220895,
     "path" : "~/Documents/GitHub/posterdown/inst/rmarkdown/templates/posterdown_generic/skeleton/skeleton.Rmd",
     "project_path" : "inst/rmarkdown/templates/posterdown_generic/skeleton/skeleton.Rmd",
     "properties" : {
-        "cursorPosition" : "11,14",
+        "cursorPosition" : "17,37",
         "scrollLine" : "0"
     },
     "relative_order" : 2,
