@@ -1,0 +1,17 @@
+.GlobalEnv
+package:posterdown
+package:knitr
+package:rmarkdown
+package:ggplot2
+package:dplyr
+package:usethis
+package:devtools
+tools:rstudio
+package:stats
+package:graphics
+package:grDevices
+package:utils
+package:datasets
+package:methods
+Autoloads
+package:base

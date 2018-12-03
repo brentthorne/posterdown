@@ -1,8 +1,8 @@
 {
-    "path" : "~/GitHub/posterdown/inst/rmarkdown/templates/posterdown_generic/resources",
+    "path" : "~/GitHub/posterdown/inst/rmarkdown/templates/posterdown_memoir/skeleton",
     "sortOrder" : [
         {
-            "ascending" : true,
+            "ascending" : false,
             "columnIndex" : 1
         },
         {

@@ -16,7 +16,7 @@ affiliation:
     - key: 2
       name: Institute for grant money
 date: 'November 30 2018'
-output: posterdown::posterdown_generic
+output: posterdown::posterdown_memoir
 ---
 
 # Introduction

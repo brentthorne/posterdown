@@ -1,0 +1,37 @@
+%brent's poster layout :)
+
+\documentclass[60pt,extrafontsizes]{memoir}
+
+%utf-8 seems to be important
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+
+%define poster size
+\usepackage[paperwidth=45in,paperheight=38in, text={7in,10in},centering, margin=1in]{geometry}
+
+%define column spacing
+\setlength\columnsep{1.5in}
+
+%begin the document
+\begin{document}
+
+
+% group which adds title author and other infor
+% Used instead of \maketitle for better spacing options
+\begingroup
+  \centering
+  \LARGE $title$\\[0.3in]
+  \footnotesize $author$\par
+\endgroup
+
+\vspace{2in}
+% end title section -------------------
+
+% Brgin body of poster
+\begin{multicols*}{3}
+\footnotesize{
+$body$
+}
+\end{multicols*}
+%end the poster
+\end{document}
