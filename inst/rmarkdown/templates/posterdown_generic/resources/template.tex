@@ -63,22 +63,11 @@
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{$title$}
-\author{%
-$for(author)$
-  $author.name$$for(author.affiliation)$\inst{$author.affiliation$}$sep$\,$endfor$%
-$sep$\and%
-$endfor$
-}
-\institute{%
-$for(affiliation)$
-\inst{$affiliation.key$}
-  $for(affiliation.name)$
-    $affiliation.name$$sep$\\
-  $endfor$
-  $sep$\\[1ex]%
-$endfor$
-}
+\title{$title$} % Poster title
+
+\author{$author$} % Author(s)
+
+\institute{$institute$} % Institution(s)
 
 %----------------------------------------------------------------------------------------
 
@@ -229,6 +218,13 @@ Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sol
 \label{eq:refname}
 \end{equation}
 
+Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin. Nam quis odio enim, in molestie libero. Vivamus cursus mi at nulla elementum sollicitudin.
+
+\begin{equation}
+\kappa =\frac{\xi}{E_{\mathrm{max}}} %\mathbb{ZNR}
+\end{equation}
+
+\end{block}
 
 %----------------------------------------------------------------------------------------
 
