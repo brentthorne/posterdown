@@ -4,7 +4,22 @@
 
 %utf-8 seems to be important
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
 \usepackage{multicol}
+\usepackage{graphicx}
+
+% this is for keeping figures within the coloumns ----
+\usepackage{nonfloat}
+
+\newcommand\myfigure[1]{%
+\medskip\noindent\begin{minipage}{\columnwidth}
+\centering%
+#1%
+%figure,caption, and label go here
+\end{minipage}\medskip}
+%-----------------------------------------------------
+
 
 %define poster size
 \usepackage[paperwidth=45in,paperheight=38in, text={7in,10in},centering, margin=1in]{geometry}
