@@ -65,21 +65,9 @@
 
 \title{$title$} % Poster title
 
-\author{%
-$for(author)$
-  $author.name$$for(author.affiliation)$\inst{$author.affiliation$}$sep$\,$endfor$%
-$sep$\and%
-$endfor$
-}
-\institute{%
-$for(affiliation)$
-\inst{$affiliation.key$}
-  $for(affiliation.name)$
-    $affiliation.name$$sep$\\
-  $endfor$
-  $sep$\\[1ex]%
-$endfor$
-}
+\author{$author$} % Author(s)
+
+\institute{$institute$} % Institution(s)
 
 %----------------------------------------------------------------------------------------
 

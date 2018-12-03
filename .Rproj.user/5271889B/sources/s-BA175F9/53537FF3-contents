@@ -22,7 +22,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[$title$, final]{beamer}
+\documentclass[$title$, $author$, $institute$, final]{beamer}
 
 \usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
 
@@ -65,9 +65,21 @@
 
 \title{$title$} % Poster title
 
-\author{Brent} % Author(s)
-
-\institute{Department and University Name} % Institution(s)
+\author{%
+$for(author)$
+  $author.name$$for(author.affiliation)$\inst{$author.affiliation$}$sep$\,$endfor$%
+$sep$\and%
+$endfor$
+}
+\institute{%
+$for(affiliation)$
+\inst{$affiliation.key$}
+  $for(affiliation.name)$
+    $affiliation.name$$sep$\\
+  $endfor$
+  $sep$\\[1ex]%
+$endfor$
+}
 
 %----------------------------------------------------------------------------------------
 
