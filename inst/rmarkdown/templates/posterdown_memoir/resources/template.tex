@@ -1,6 +1,6 @@
 %brent's poster layout :)
 
-\documentclass[60pt,extrafontsizes]{memoir}
+\documentclass[30pt,extrafontsizes]{memoir}
 
 %utf-8 seems to be important
 \usepackage[utf8]{inputenc}
@@ -14,7 +14,7 @@
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{red}}
 \setsubsubsecheadstyle{\small\color{red}\textbf}% Set \section style
-\setsecheadstyle{\small\bfseries\color{red}}
+\setsecheadstyle{\small\color{red}}
 \setsecnumformat{}
 \def\sectionmark#1{\markboth{#1}{#1}}
 
@@ -23,14 +23,17 @@
 %define poster size
 \usepackage[paperwidth=45in,paperheight=38in, text={7in,10in},centering, margin=1in]{geometry}
 
+\thispagestyle{empty}
+
 \usepackage[style=authoryear-comp,backend=biber]{biblatex}
+\renewcommand*{\bibfont}{\tiny}
 
 \bibliography{\jobname}
 
 \counterwithout{section}{chapter}
 \makechapterstyle{mydefault}{
 \addtocounter{secnumdepth}{2}
-\setsecheadstyle{\small\color{red}\textbf}
+\setsecheadstyle{\Large\color{red}\textbf}
 \setsubsecheadstyle{\itshape}
 \setsubsubsecheadstyle{\itshape}
 }
@@ -48,13 +51,12 @@
 }
 
 
-
 %define column spacing
 \setlength\columnsep{1.2in}
 
 %spacing after section head title
-\setaftersecskip{1sp}
-\setbeforesecskip{0.5in}
+\setaftersecskip{0.3in}
+\setbeforesecskip{1in}
 
 \setlength{\parskip}{0pt}
 
@@ -66,15 +68,15 @@
 % Used instead of \maketitle for better spacing options
 \begingroup
   \centering
-  \textbf{$title$}\\[0.3in]
-  \footnotesize $author$\par
+  \huge\textbf{$title$}\\[0.3in]
+  \large $author$\par
 \endgroup
 \vspace{1.2in}
 % end title section -------------------
 
 % Brgin body of poster
 \begin{multicols*}{3}
-\scriptsize{\noindent
+\small{\noindent
 $body$
 \printbibliography
 }
