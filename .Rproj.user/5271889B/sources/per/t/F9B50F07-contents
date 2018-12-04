@@ -1,0 +1,115 @@
+%brent's poster layout :)
+
+\documentclass[article,30pt,extrafontsizes]{memoir}
+
+%utf-8 seems to be important
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{blindtext,xcolor}
+\usepackage{framed}
+\usepackage{color}
+
+%For figure and table placement
+\usepackage{float}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
+
+%spacing between figure/ table and caption
+\setlength{\abovecaptionskip}{0.4in}
+\setlength{\belowcaptionskip}{0.1in}
+\captionnamefont{\small\sffamily\bfseries}
+\captiontitlefont{\small\sffamily}
+
+%define column options
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{red}}
+\setsubsubsecheadstyle{\small\color{red}\textbf}% Set \section style
+\setsecheadstyle{\small\color{red}}
+\setsecnumformat{}
+\def\sectionmark#1{\markboth{#1}{#1}}
+
+%-----------------------------------------------------
+
+%define poster size
+\usepackage[paperwidth=45in,paperheight=38in, text={7in,10in},centering]{geometry}
+
+\geometry{
+left=1in,
+right=0mm,
+top=0mm,
+bottom=1in,
+headheight=0mm,
+}
+
+\thispagestyle{empty}
+
+\usepackage[style=authoryear-comp,backend=biber]{biblatex}
+\renewcommand*{\bibfont}{\tiny}
+
+\bibliography{$bibliography$}
+
+\counterwithout{section}{chapter}
+\makechapterstyle{mydefault}{
+\addtocounter{secnumdepth}{2}
+\setsecheadstyle{\Large\color{red}\textbf}
+\setsubsecheadstyle{\itshape}
+\setsubsubsecheadstyle{\itshape}
+}
+
+\setlength\parindent{10mm}
+
+\chapterstyle{mydefault}
+
+\defbibheading{bibliography}[\bibname]{%
+\section*{#1}%
+\markboth{#1}{#1}}
+
+
+\AtBeginDocument{%
+  \renewcommand{\bibname}{References}
+}
+
+
+%define column spacing
+\setlength\columnsep{1.2in}
+
+%spacing after section head title
+\setaftersecskip{0.3in}
+\setbeforesecskip{0.5in}
+\setlength\textfloatsep{0.1in}
+\setlength\floatsep{0.1in}
+\setlength\intextsep{0.1in}
+\setlength{\parskip}{0pt}
+
+%for shading the top
+\definecolor{shadecolor}{gray}{0.9}
+
+
+%begin the document
+\begin{document}
+
+
+% group which adds title author and other infor
+% Used instead of \maketitle for better spacing options
+\begin{shaded}
+\begingroup
+  \centering
+  \huge\textbf{$title$}\\[0.3in]
+  \large $author$\par
+\endgroup
+\vspace{1.2in}
+% end title section -------------------
+  \end{shaded}
+% Brgin body of poster
+\begin{multicols*}{3}
+\small{\noindent
+$body$
+\printbibliography
+}
+\end{multicols*}
+
+%end the poster
+\end{document}
