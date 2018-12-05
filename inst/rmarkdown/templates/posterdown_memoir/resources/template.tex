@@ -20,8 +20,8 @@
 %spacing between figure/ table and caption
 \setlength{\abovecaptionskip}{0.4in}
 \setlength{\belowcaptionskip}{0.1in}
-\captionnamefont{\small\sffamily\bfseries}
-\captiontitlefont{\small\sffamily}
+\captionnamefont{\footnotesize\sffamily\bfseries}
+\captiontitlefont{\footnotesize\sffamily}
 
 %define column options
 \setlength{\columnseprule}{1pt}
@@ -37,16 +37,16 @@
 \usepackage[paperwidth=45in,paperheight=38in, text={7in,10in},centering]{geometry}
 
 \geometry{
-left=1in,
-right=0mm,
+left=5mm,
+right=5mm,
 top=0mm,
-bottom=1in,
+bottom=5mm,
 headheight=0mm,
 }
 
 \thispagestyle{empty}
 
-\usepackage[style=authoryear-comp,backend=biber]{biblatex}
+\usepackage[style=numeric,backend=biber]{biblatex}
 \renewcommand*{\bibfont}{\tiny}
 
 \bibliography{$bibliography$}
@@ -60,6 +60,7 @@ headheight=0mm,
 }
 
 \setlength\parindent{10mm}
+\setlength\hangindent{10mm}
 
 \chapterstyle{mydefault}
 
@@ -98,11 +99,12 @@ headheight=0mm,
 \begingroup
   \centering
   \huge\textbf{$title$}\\[0.3in]
-  \large $author$\par
+  \Large $author$\par
 \endgroup
 \vspace{1.2in}
 % end title section -------------------
   \end{shaded}
+
 % Brgin body of poster
 \begin{multicols*}{3}
 \small{\noindent
