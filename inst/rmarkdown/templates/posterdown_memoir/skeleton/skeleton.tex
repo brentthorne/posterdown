@@ -1,6 +1,6 @@
 %brent's poster layout :)
 
-\documentclass[article,30pt,extrafontsizes,showtrims]{memoir}
+\documentclass[article,30pt,extrafontsizes]{memoir}
 
 %utf-8 seems to be important
 \usepackage[utf8]{inputenc}
@@ -8,9 +8,13 @@
 \usepackage{palatino}
 \usepackage{multicol}
 \usepackage{graphicx}
-\usepackage{blindtext,xcolor}
-\usepackage{framed}
+\usepackage{blindtext}
+\usepackage[svgnames]{xcolor}
+\usepackage[framemethod=tikz]{mdframed}
 \usepackage{color}
+\usepackage{geometry}
+\usepackage{adjmulticol}
+
 
 %For figure and table placement
 \usepackage{float}
@@ -33,24 +37,19 @@
 
 %-----------------------------------------------------
 
-%define poster size
-\usepackage[paperwidth=45in,paperheight=38in, text={7in,10in},centering]{geometry}
-
-\geometry{
-left=5mm,
-right=5mm,
-top=0mm,
-bottom=5mm,
-headheight=0mm,
-}
-
 \thispagestyle{empty}
+\definecolor{light-gray}{gray}{0.9}
 
-\usepackage[style=numeric,backend=biber]{biblatex}
+
+
+\usepackage[style=alphabetic,backend=biber]{biblatex}
 \renewcommand*{\bibfont}{\tiny}
 
 \bibliography{MyLibrary}
-
+\author{Brent Thorne}
+\title{Identifying relationships among catchment land cover characteristics,
+active layer properties and lake hydroecology in Old Crow Flats, Yukon,
+Canada}
 \counterwithout{section}{chapter}
 \makechapterstyle{mydefault}{
 \addtocounter{secnumdepth}{2}
@@ -58,9 +57,6 @@ headheight=0mm,
 \setsubsecheadstyle{\itshape}
 \setsubsubsecheadstyle{\itshape}
 }
-
-\setlength\parindent{10mm}
-\setlength\hangindent{10mm}
 
 \chapterstyle{mydefault}
 
@@ -75,7 +71,11 @@ headheight=0mm,
 
 
 %define column spacing
-\setlength\columnsep{1.2in}
+\setlength\columnsep{1in}
+
+\setlength\parindent{0em}
+\setlength\parskip{1em}
+\setlength\hangparas{0}
 
 %spacing after section head title
 \setaftersecskip{0.3in}
@@ -83,33 +83,49 @@ headheight=0mm,
 \setlength\textfloatsep{0.1in}
 \setlength\floatsep{0.1in}
 \setlength\intextsep{0.1in}
-\setlength{\parskip}{0pt}
 
-%for shading the top
-\definecolor{shadecolor}{gray}{0.9}
+\setstocksize{38in}{45in}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settypeblocksize{38in}{45in}{*}
+\setlrmargins{*}{*}{1}
+\setulmarginsandblock{2.5cm}{*}{*}
+\setmarginnotes{0em}{0cm}{0cm}
+\setlength{\footskip}{0cm}
+\setlength{\footnotesep}{0cm}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{0pt}
+\setlength{\uppermargin}{0pt}
+\checkandfixthelayout
 
+\definecolor{myframecolour}{HTML}{00004d}
+
+% see https://stackoverflow.com/a/47122900
 
 %begin the document
 \begin{document}
 
+\begin{mdframed}[backgroundcolor=myframecolour,linecolor=Red,topline=false,leftline=false,rightline=false,linewidth=2mm]
 
 % group which adds title author and other infor
 % Used instead of \maketitle for better spacing options
-\begin{shaded}
 \begingroup
   \centering
+  \color{White}
   \huge\textbf{Identifying relationships among catchment land cover characteristics,
 active layer properties and lake hydroecology in Old Crow Flats, Yukon,
 Canada}\\[0.3in]
-  \Large W. Brent Thorne\footnote{1}; Kevin W. Turner\footnote{2}\par
-\endgroup
+  \Large Brent Thorne \par
 \vspace{1.2in}
 % end title section -------------------
-  \end{shaded}
+  \endgroup
+\end{mdframed}
 
 % Brgin body of poster
-\begin{multicols*}{3}
-\small{\noindent
+\color{black}
+\begin{adjmulticols*}{3}{10mm}{10mm}
+\small{
 \section{Introduction}\label{introduction}
 
 Lorem ipsum dolor sit amet, \autocite{holden_identifying_2012}
@@ -122,7 +138,7 @@ faucibus a pellentesque sit amet porttitor eget.
 \section{Study Site}\label{study-site}
 
 Here is a map made to show the study site using \texttt{ggplot2},
-\texttt{ggspatial}, and \texttt{rgdal}. Lorem ipsum dolor sit amet,
+\texttt{ggspatial}, and \texttt{sf}. Lorem ipsum dolor sit amet,
 \autocite{middleton_geological_nodate} consectetur adipiscing elit, sed
 do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus
 vestibulum lorem sed risus ultricies tristique nulla. Mauris vitae
@@ -132,7 +148,7 @@ amet porttitor eget.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.8\linewidth]{skeleton_files/figure-latex/unnamed-chunk-2-1} 
+{\centering \includegraphics[width=0.5\linewidth]{skeleton_files/figure-latex/unnamed-chunk-2-1} 
 
 }
 
@@ -140,6 +156,8 @@ amet porttitor eget.
 \end{figure}
 
 \section{Objectives}\label{objectives}
+
+\large
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -152,17 +170,9 @@ amet porttitor eget.
   Finally, my third objectives.
 \end{enumerate}
 
-\section{Methods}\label{methods}
+\small
 
-Lacinia quis vel eros donec ac odio tempor. Vel quam elementum pulvinar
-etiam non quam lacus suspendisse. Nec tincidunt praesent semper feugiat
-nibh sed pulvinar. Neque ornare aenean euismod elementum. Vel fringilla
-est ullamcorper eget nulla. Sollicitudin aliquam ultrices sagittis orci
-a. Maecenas accumsan lacus vel facilisis volutpat est velit. Sed sed
-risus pretium quam vulputate dignissim. Convallis posuere morbi leo urna
-molestie. Cursus vitae congue mauris rhoncus. Vitae ultricies leo
-integer malesuada nunc. Est lorem ipsum dolor sit amet consectetur
-adipiscing. Enim sit amet venenatis urna cursus eget nunc.
+\section{Methods}\label{methods}
 
 Elementum facilisis leo vel fringilla est ullamcorper eget nulla. Vitae
 congue eu consequat ac felis donec et. Morbi tincidunt ornare massa
@@ -177,32 +187,41 @@ Malesuada bibendum arcu vitae elementum.
 
 \section{Results}\label{results}
 
-Sagittis purus sit amet volutpat consequat mauris. Lobortis mattis
-aliquam faucibus purus. Libero enim sed faucibus turpis in eu. Massa
-placerat duis ultricies lacus sed turpis tincidunt id. Arcu dictum
-varius duis at consectetur lorem done.
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-3}Hopefully this works without much of a headache!}
+\centering
+\begin{tabular}[t]{r|r|r|r|l}
+\hline
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
+\hline
+5.1 & 3.5 & 1.4 & 0.2 & setosa\\
+\hline
+4.9 & 3.0 & 1.4 & 0.2 & setosa\\
+\hline
+4.7 & 3.2 & 1.3 & 0.2 & setosa\\
+\hline
+4.6 & 3.1 & 1.5 & 0.2 & setosa\\
+\hline
+\end{tabular}
+\end{table}
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\linewidth]{skeleton_files/figure-latex/unnamed-chunk-3-1} 
+{\centering \includegraphics[width=0.6\linewidth]{skeleton_files/figure-latex/unnamed-chunk-4-1} 
 
 }
 
-\caption{This is a typical ggplot2 example using the iris dataset provided in R.}\label{fig:unnamed-chunk-3}
+\caption{A typical plot using ggplot.}\label{fig:unnamed-chunk-4}
 \end{figure}
 
-Sagittis purus sit amet volutpat consequat mauris. Lobortis mattis
-aliquam faucibus purus. Libero enim sed faucibus turpis in eu. Massa
-placerat duis ultricies lacus sed turpis tincidunt id. Arcu dictum
-varius duis at consectetur lorem done.
-
 \begin{figure}
 
-{\centering \includegraphics[width=0.8\linewidth]{Figures/figure2} 
+{\centering \includegraphics[width=0.5\linewidth]{skeleton_files/figure-latex/unnamed-chunk-5-1} 
 
 }
 
-\caption{This is a messy graphic right now but I will clean it up in the future.}\label{fig:unnamed-chunk-4}
+\caption{A boxplot example.}\label{fig:unnamed-chunk-5}
 \end{figure}
 
 Pellentesque habitant morbi tristique senectus et netus. Magnis dis
@@ -218,11 +237,31 @@ habitant morbi tristique senectus.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.65\linewidth]{skeleton_files/figure-latex/unnamed-chunk-5-1} 
+{\centering \includegraphics[width=0.5\linewidth]{skeleton_files/figure-latex/unnamed-chunk-6-1} 
 
 }
 
-\caption{Another figure showing how base R plots might look on this poster!}\label{fig:unnamed-chunk-5}
+\caption{A jitter plot example.}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+Pellentesque habitant morbi tristique senectus et netus. Magnis dis
+parturient montes nascetur ridiculus mus mauris vitae ultricies. Nibh
+nisl condimentum id venenatis. Lorem ipsum dolor sit amet consectetur
+adipiscing elit duis. Eget aliquet nibh praesent tristique magna sit
+amet purus. Orci phasellus egestas tellus rutrum. Mauris cursus mattis
+molestie a. Amet cursus sit amet dictum sit. Tellus id interdum velit
+laoreet. Tortor at risus viverra adipiscing. Ullamcorper malesuada proin
+libero nunc. Elit ullamcorper dignissim cras tincidunt lobortis feugiat
+vivamus. Eget dolor morbi non arcu risus quis. Pulvinar pellentesque
+habitant morbi tristique senectus.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.65\linewidth]{skeleton_files/figure-latex/unnamed-chunk-7-1} 
+
+}
+
+\caption{Another figure showing how base R plots might look on this poster!}\label{fig:unnamed-chunk-7}
 \end{figure}
 
 More text now here Pellentesque habitant morbi tristique senectus et
@@ -250,7 +289,6 @@ vivamus. Eget dolor morbi non arcu risus quis. Pulvinar pellentesque
 habitant morbi tristique senectus.
 \printbibliography
 }
-\end{multicols*}
-
+\end{adjmulticols*}
 %end the poster
 \end{document}
