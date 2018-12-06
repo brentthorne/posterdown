@@ -5,7 +5,6 @@
 %utf-8 seems to be important
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{palatino}
 \usepackage{multicol}
 \usepackage{graphicx}
 \usepackage{blindtext}
@@ -137,6 +136,9 @@ $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
 
+\usepackage{palatino}
+\renewcommand*\familydefault{\sfdefault}
+
 %begin the document
 \begin{document}
 
@@ -151,7 +153,7 @@ $endif$
   \centering
   \color{White}
 \vspace{0.5in}
-  \Huge\textbf{$title$}\\[0.3in]
+  \Huge{\textbf{$title$}} \\[0.3in]
   \color{cyan} \Large{\textbf{$author$}} \par
   \vspace{0.2in}
 
@@ -161,7 +163,7 @@ $endif$
 
 % Brgin body of poster
 \begin{adjmulticols*}{3}{10mm}{10mm}
-\normalsize{
+\small{
 \color{black}
 $body$
 \printbibliography
