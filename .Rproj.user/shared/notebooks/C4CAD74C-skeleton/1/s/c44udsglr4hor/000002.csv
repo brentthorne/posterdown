@@ -1,7 +1,0 @@
-"0","library(ggthemes)"
-"0","library(ggplot2)"
-"0","ggplot(data = iris, aes(x = Species, y = Sepal.Length, colour = Species)) +"
-"0","  geom_jitter(show.legend = FALSE) +"
-"0","  theme_tufte() +"
-"0","  labs(x = ""Sepal Length"", y = ""Sepeal Width"") +"
-"0","  NULL"

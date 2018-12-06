@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1544064961786.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3236405057",
+    "id" : "A4A64D72",
+    "lastKnownWriteTime" : 1544065891,
+    "last_content_update" : 1544065891885,
+    "path" : "~/Documents/GitHub/posterdown/inst/rmarkdown/templates/posterdown_memoir/resources/template.tex",
+    "project_path" : "inst/rmarkdown/templates/posterdown_memoir/resources/template.tex",
+    "properties" : {
+        "cursorPosition" : "92,19",
+        "scrollLine" : "81"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "tex"
+}

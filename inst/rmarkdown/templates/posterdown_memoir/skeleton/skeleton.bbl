@@ -18,7 +18,7 @@
 
 
 \refsection{0}
-  \datalist[entry]{anyt/global//global/global}
+  \datalist[entry]{nty/global//global/global}
     \entry{holden_identifying_2012}{article}{}
       \name{author}{6}{}{%
         {{hash=054032bb3fb5ec35d4ff0d2f7907161b}{%
@@ -58,7 +58,6 @@
       \strng{authorbibnamehash}{d13c81dc52f0fb14c906f594672a0bb8}
       \strng{authornamehash}{d13c81dc52f0fb14c906f594672a0bb8}
       \strng{authorfullhash}{2178aa5ad8cb51e7c331ccb13e4d1199}
-      \field{labelalpha}{Hol+12}
       \field{sortinit}{H}
       \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
       \field{labelnamesource}{author}
@@ -116,7 +115,6 @@
       \strng{authorbibnamehash}{7362944951da71a7a29ebc308c934fd2}
       \strng{authornamehash}{7362944951da71a7a29ebc308c934fd2}
       \strng{authorfullhash}{7362944951da71a7a29ebc308c934fd2}
-      \field{labelalpha}{MSS}
       \field{sortinit}{M}
       \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
       \field{labelnamesource}{author}
