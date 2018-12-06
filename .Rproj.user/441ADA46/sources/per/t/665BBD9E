@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1544064943311.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4107327377",
+    "id" : "665BBD9E",
+    "lastKnownWriteTime" : 1544067104,
+    "last_content_update" : 1544068595756,
+    "path" : "~/Documents/GitHub/posterdown/inst/rmarkdown/templates/posterdown_memoir/skeleton/skeleton.Rmd",
+    "project_path" : "inst/rmarkdown/templates/posterdown_memoir/skeleton/skeleton.Rmd",
+    "properties" : {
+        "cursorPosition" : "8,31",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

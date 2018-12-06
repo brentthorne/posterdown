@@ -1,0 +1,133 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{holden_identifying_2012}{article}{}
+      \name{author}{6}{}{%
+        {{hash=054032bb3fb5ec35d4ff0d2f7907161b}{%
+           family={Holden},
+           familyi={H\bibinitperiod},
+           given={Eun-Jung},
+           giveni={E\bibinithyphendelim J\bibinitperiod}}}%
+        {{hash=6e00473859f4e2262c71825b738f211c}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Jason\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=aa2c07f1d20d8366b1b68732aa343ebe}{%
+           family={Kovesi},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a443851c503ea3ecea1ffffbf7ab8a05}{%
+           family={Wedge},
+           familyi={W\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=27b7081f7f3ed3af4dbb21398dfd36f9}{%
+           family={Dentith},
+           familyi={D\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b2d4a037c42eb15dc907cb88024e01bd}{%
+           family={Bagas},
+           familyi={B\bibinitperiod},
+           given={Leon},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{d13c81dc52f0fb14c906f594672a0bb8}
+      \strng{fullhash}{2178aa5ad8cb51e7c331ccb13e4d1199}
+      \strng{bibnamehash}{d13c81dc52f0fb14c906f594672a0bb8}
+      \strng{authorbibnamehash}{d13c81dc52f0fb14c906f594672a0bb8}
+      \strng{authornamehash}{d13c81dc52f0fb14c906f594672a0bb8}
+      \strng{authorfullhash}{2178aa5ad8cb51e7c331ccb13e4d1199}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Aeromagnetic data is important for the exploration of gold and other hydrothermal deposits because geologically favourable environments are associated with changes in rock magnetism. For example, Archean orogenic gold mineralisation is known to be present in areas of structural complexity near major shear-zones that form conduits for mineralising ﬂuids. Potential ﬂuid pathways such as shear zones and faults are often associated with magnetite destructive alteration resulting in linear negative anomalies in magnetic data. Here, we present a new image analysis method that identiﬁes geological structural complexity using lineaments automatically mapped within magnetic data. This quantitative analysis is efﬁcient and self consistent in dealing with large volumes of data, and is suitable as a ﬁrst-pass ground selection tool for orogenic gold exploration in greenﬁeld terrains.}
+      \field{issn}{01691368}
+      \field{journaltitle}{Ore Geology Reviews}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{shorttitle}{Identifying structural complexity in aeromagnetic data}
+      \field{title}{Identifying structural complexity in aeromagnetic data: An image analysis approach to greenfields gold exploration}
+      \field{urlday}{3}
+      \field{urlmonth}{10}
+      \field{urlyear}{2018}
+      \field{volume}{46}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{47\bibrangedash 59}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.oregeorev.2011.11.002
+      \endverb
+      \verb{file}
+      \verb Holden et al. - 2012 - Identifying structural complexity in aeromagnetic .pdf:C\:\\Users\\Brent Thorne\\Zotero\\storage\\VUVAL6C8\\Holden et al. - 2012 - Identifying structural complexity in aeromagnetic .pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://linkinghub.elsevier.com/retrieve/pii/S0169136811001454
+      \endverb
+      \verb{url}
+      \verb http://linkinghub.elsevier.com/retrieve/pii/S0169136811001454
+      \endverb
+    \endentry
+    \entry{middleton_geological_nodate}{article}{}
+      \name{author}{3}{}{%
+        {{hash=67a1414965ed5f0d11ed321fea6d5971}{%
+           family={Middleton},
+           familyi={M\bibinitperiod},
+           given={Maarit},
+           giveni={M\bibinitperiod}}}%
+        {{hash=07c7e20a481052bf3f791a35f0d6d409}{%
+           family={Schnur},
+           familyi={S\bibinitperiod},
+           given={Tilo},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9a4fd95b212016ff1e3d50747e8fb731}{%
+           family={Sorjonen-Ward},
+           familyi={S\bibinithyphendelim W\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{7362944951da71a7a29ebc308c934fd2}
+      \strng{fullhash}{7362944951da71a7a29ebc308c934fd2}
+      \strng{bibnamehash}{7362944951da71a7a29ebc308c934fd2}
+      \strng{authorbibnamehash}{7362944951da71a7a29ebc308c934fd2}
+      \strng{authornamehash}{7362944951da71a7a29ebc308c934fd2}
+      \strng{authorfullhash}{7362944951da71a7a29ebc308c934fd2}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{{GEOLOGICAL} {LINEAMENT} {INTERPRETATION} {USING} {THE} {OBJECT}-{BASED} {IMAGE} {ANALYSIS} {APPROACH}: {RESULTS} {OF} {SEMI}-{AUTOMATED} {ANALYSES} {VERSUS} {VISUAL} {INTERPRETATION}}
+      \field{pages}{20}
+      \range{pages}{1}
+      \verb{file}
+      \verb Middleton et al. - GEOLOGICAL LINEAMENT INTERPRETATION USING THE OBJE.pdf:C\:\\Users\\Brent Thorne\\Zotero\\storage\\CDZR88LQ\\Middleton et al. - GEOLOGICAL LINEAMENT INTERPRETATION USING THE OBJE.pdf:application/pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,15 @@
+[0] Config.pm:304> INFO - This is Biber 2.12
+[0] Config.pm:307> INFO - Logfile is 'skeleton.blg'
+[20] biber:315> INFO - === Wed Dec  5, 2018, 22:11:14
+[36] Biber.pm:371> INFO - Reading 'skeleton.bcf'
+[90] Biber.pm:889> INFO - Found 2 citekeys in bib section 0
+[100] Biber.pm:4093> INFO - Processing section 0
+[111] Biber.pm:4254> INFO - Looking for bibtex format file 'MyLibrary.bib' for section 0
+[150] bibtex.pm:1523> INFO - LaTeX decoding ...
+[631] bibtex.pm:1340> INFO - Found BibTeX data source 'MyLibrary.bib'
+[670] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[670] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[670] Biber.pm:3921> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[670] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[675] bbl.pm:636> INFO - Writing 'skeleton.bbl' with encoding 'UTF-8'
+[676] bbl.pm:739> INFO - Output to skeleton.bbl
