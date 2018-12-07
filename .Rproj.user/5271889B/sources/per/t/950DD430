@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2993177172",
+    "hash" : "3064033996",
     "id" : "950DD430",
-    "lastKnownWriteTime" : 1544125071,
-    "last_content_update" : 1544125071262,
+    "lastKnownWriteTime" : 1544161977,
+    "last_content_update" : 1544161977218,
     "path" : "~/GitHub/posterdown/inst/rmarkdown/templates/posterdown_memoir/resources/template.tex",
     "project_path" : "inst/rmarkdown/templates/posterdown_memoir/resources/template.tex",
     "properties" : {
-        "cursorPosition" : "165,6",
-        "scrollLine" : "153"
+        "cursorPosition" : "164,23",
+        "scrollLine" : "149"
     },
     "relative_order" : 1,
     "source_on_save" : false,
