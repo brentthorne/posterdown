@@ -12,7 +12,7 @@ devtools::install_github("brentthorne/posterdown")
 
 ## Overview
 
-The **posterdown** package provides a familiar workflow enviroment for those used to working in [RMarkdown](https://rmarkdown.rstudio.com/). See the `skeleton.Rmd` that is produced when generating a new posterdown document for how to go from typical RMarkdown formatting to this: **[posterdown PDF Poster](https://github.com/brentthorne/posterdown/blob/master/inst/rmarkdown/templates/posterdown_memoir/skeleton/skeleton.pdf)**
+The **posterdown** package provides a familiar workflow enviroment for those used to working in [RMarkdown](https://rmarkdown.rstudio.com/). See the `skeleton.Rmd` that is produced when generating a new posterdown document for how to go from typical RMarkdown formatting to this: **[posterdown PDF Poster](https://github.com/brentthorne/posterdown/raw/master/exampleposter.pdf)**
 
 This package is currently focused on a single template called **posterdown_memoir** which is a 38in (H) by 45in (W) poster template which allows for custom section headers and content.
 
