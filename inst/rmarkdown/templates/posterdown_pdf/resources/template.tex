@@ -23,6 +23,7 @@
 \usepackage{float}
 \usepackage{colortbl}
 \usepackage{pdflscape}
+\usepackage{pagecolor}
 \usepackage{tabu}
 \usepackage{threeparttable}
 \usepackage{threeparttablex}
@@ -32,21 +33,17 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
-    citecolor=red,
+    linkcolor=$link_col$,
+    citecolor=$cite_col$,
     filecolor=magenta,
-    urlcolor=cyan,
+    urlcolor=$url_col$,
 }
 
-% Maybe Define a department param in the YAML??????
+%Maybe Define a department param in the YAML
 \def\department#1{\gdef \@department{#1}}
-
 $if(department)$
 \department{$department$}
 $endif$
-
-
-
 
 %For figure and table placement
 \usepackage{float}
@@ -61,9 +58,9 @@ $endif$
 
 %define column options
 \setlength{\columnseprule}{1pt}
-\def\columnseprulecolor{\color{red}}
-\setsubsubsecheadstyle{\small\color{red}\textbf}% Set \section style
-\setsecheadstyle{\small\color{red}}
+\def\columnseprulecolor{\color{$columnline_col$}}
+\setsubsubsecheadstyle{\small\color{$header_textcol$}\textbf}% Set \section style
+\setsecheadstyle{\small\color{$header_textcol$}}
 \setsecnumformat{}
 \def\sectionmark#1{\markboth{#1}{#1}}
 
@@ -110,8 +107,6 @@ $endif$
 \setlength\floatsep{0.3in}
 \setlength\intextsep{0.3in}
 
-
-
 \setstocksize{$poster_height$}{$poster_width$}
 \settrimmedsize{\stockheight}{\stockwidth}{*}
 \settypeblocksize{$poster_height$}{$poster_width$}{*}
@@ -131,7 +126,7 @@ $endif$
 
 \mdfdefinestyle{brentsmdfstyle}{%
   backgroundcolor=myframecolour,
-  linecolor=Red,
+  linecolor= $columnline_col$,
   topline=false,
   leftline=false,
   rightline=false,
@@ -147,9 +142,9 @@ $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
 
-\usepackage{palatino}
+\usepackage{$font_family$}
 \renewcommand*\familydefault{\sfdefault}
-
+\newpagecolor{$poster_bgcol$}
 %begin the document
 \begin{document}
 
@@ -162,7 +157,7 @@ $endif$
 % Used instead of \maketitle for better spacing options
 \begingroup
   \centering
-  \color{White}
+  \color{$title_textcol$}
 \vspace{0.5in}
   \Huge{$title$} \\[0.3in]
   \color{cyan} \Large{$author$} \\[0.2in]

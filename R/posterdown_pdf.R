@@ -14,9 +14,9 @@
 #' }
 #'
 #' @export
-posterdown_memoir <- function(..., keep_tex = TRUE) {
+posterdown_pdf <- function(..., keep_tex = TRUE) {
   inherit_pdf_document(...,
                        keep_tex = keep_tex,
-                       template = find_resource("posterdown_memoir", "template.tex"),
+                       template = find_resource("posterdown_pdf", "template.tex"),
                        citation_package = "biblatex")
 }
