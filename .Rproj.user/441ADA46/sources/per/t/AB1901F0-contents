@@ -1,0 +1,4 @@
+name: Posterdown PDF
+description: >
+ Template for creating R Markdown based PDF via Latex
+create_dir: true
