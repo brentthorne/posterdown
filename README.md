@@ -32,7 +32,7 @@ To use **posterdown** from RStudio:
     
 3. Use the **New R Markdown** dialog to create a conference poster from the templates
 
-    ![New R Markdown](https://raw.githubusercontent.com/brentthorne/posterdown/master/posterdownpicture.png?token=AOmnYy0gIGiYeN5XNIRhf_h9JKN8BhwMks5cEdqAwA%3D%3D)
+    ![New R Markdown](posterdown_picture.png)
 
 ## Using posterdown outside of RStudio
 
