@@ -5,7 +5,7 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1393976223",
+    "hash" : "0",
     "id" : "DC9C14ED",
     "lastKnownWriteTime" : 1546872957,
     "last_content_update" : 1546872957437,
@@ -13,7 +13,7 @@
     "project_path" : "inst/rmarkdown/templates/posterdown_pdf/resources/template.tex",
     "properties" : {
         "cursorPosition" : "41,0",
-        "scrollLine" : "33"
+        "scrollLine" : "0"
     },
     "relative_order" : 2,
     "source_on_save" : false,

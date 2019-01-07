@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1546877826055.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "36A4DACA",
+    "lastKnownWriteTime" : 1546700391,
+    "last_content_update" : 1546700391,
+    "path" : "~/Documents/GitHub/posterdown/R/posterdown_pdf.R",
+    "project_path" : "R/posterdown_pdf.R",
+    "properties" : {
+        "cursorPosition" : "0,23",
+        "scrollLine" : "14"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
