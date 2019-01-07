@@ -1,5 +1,9 @@
 # posterdown
 
+As a graduate sudent, I found that it is almost a right of passage to take early research and analysis and generate a conference poster allowing for critical feedback as well as meeting the people in your feild. I have also noticed that many of my fellow graduate students use R and are also getting their feet wet with RMarkdown :blush:; however, we always had to go back to using MS Powerpoint or Keynote for generating conference posters :unamused:. Posterdown was created as a proof of concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
+
+Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my masters so I will have limitted time to work on updating this package in the next few months but nevertheless I will do what I can! :smile: 
+
 ## Installation
 
 You can install and use **posterdown** from github using the `devtools` package as seen below.
@@ -38,7 +42,7 @@ Posterdown uses Latex to generate the PDF poster but more specifically it uses t
 
 ### YAML OPTIONS
 
-YAML header options have been created to privide more freedom with design (ie colours and sizing) to fit a wide variety of requirments. Here is the default YAML found in the `skeleton.Rmd` file:
+YAML header options have been created to privide more freedom with design (ie colours, number of columns, and sizing) to fit a wide variety of requirments. Here are the default YAML options found in the `skeleton.Rmd` file:
 
 |     Option    | Description |
 |---------------|-------------|
@@ -61,6 +65,9 @@ YAML header options have been created to privide more freedom with design (ie co
 | `bibliography` | Name of the `.bib`. file which you are using to source material
 | `output` | For generating `posterdown_pdf`, in the future other poster designs or templates may be made for this package and thus this option in the YAML will be more flexible. For now this is the only option. |
 
+### Markdown Customization
+
+As you add content to your RMarkdown file you will notice the output pdf will fill in columns from left to right as well as top to bottom. If you have more content to fit than what is available on the default poster try altering the number of columns as well as the font size to make it work.
 
 ## Using posterdown outside of RStudio
 
