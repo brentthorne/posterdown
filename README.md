@@ -55,14 +55,14 @@ YAML header options have been created to privide more freedom with design (ie co
 | `poster_bgcol`| Background colour of the posters main body section. |
 | `title_textcol` | Colour of the main title text. |
 | `header_textcol` | Colour of the Section Header Text |
-| `cite_col` | Colour of the citation link elements when using `natbib`. |
+| `cite_col` | Colour of the citation link elements when using `biblatex`. |
 | `url_col` | Colour of URL links specifically |
 | `link_col` | Colour of in document links (example would be referencing a Figure or a Table) |
 | `columnline_col` | Colour of the line which divides each column in the poster |
 | `poster_height` | Height of the final poster output. Units can be: "in", "mm", "cm" |
 | `poster_width` | Width of the final poster output. Units can be: "in", "mm", "cm" |
 | `column_numbers` | Number of columns you wish for the poster to have in the main section of the poster. |
-| `bibliography` | Name of the `.bib`. file which you are using to source material
+| `bibliography` | Name of the `.bib`. file which you are using to source material. As of right now only `biblatex` is working but I intend to add support of `natbib` which is my preference.
 | `output` | For generating `posterdown_pdf`, in the future other poster designs or templates may be made for this package and thus this option in the YAML will be more flexible. For now this is the only option. |
 
 ### Markdown Customization
