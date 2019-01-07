@@ -1,0 +1,158 @@
+---
+#----ESSENTIALS----#
+title: 'Using `posterdown` to generate reproducible conference posters via RMarkdown > Knitr > Markdown > Pandoc > Latex > PDF workflow'
+author: "Author One^1^ Author Two^2^"
+affiliation: "^1^Department of Poster Layouts, University of Markdown; ^2^Deparment of Another Institution, Institution University"
+
+#----FONT STYLE----#
+font_size: "30pt" #sets '\normalsize' (sizes of the title and sections headings will adjust based on it)
+font_family: "courier" # choose from typical latex fonts (example: "palatino")
+
+#----COLOURS----#
+title_bgcol: "000000"  #Hex colour for background of poster title section (default is blue)
+poster_bgcol: "white" #colour of the poster main background
+title_textcol: "red" #colour of title text
+header_textcol: "red" #colour of the poster header titles
+cite_col: "green" #colour of ciation elements
+url_col: "cyan" #colour of url links
+link_col: "cyan" #colour of other links within the poster
+columnline_col: "blue" #colour 
+
+#----POSTER SIZE & COLUMN NUMBERS----#
+poster_height: "38in" # height in inches of poster
+poster_width: "45in" # width in inches of poster
+column_numbers: 3 # Number of columns that the poster has
+
+#----OTHER----#
+bibliography: MyLibrary # name of the .bib file used for referencing
+output: posterdown::posterdown_pdf
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, results = 'asis',fig.height = 3.5, fig.width = 4.5, out.width = "100%", warning = FALSE, fig.align = 'center', message = FALSE, dev='cairo_pdf')
+```
+
+<!--
+Bellow you will find typical RMarkdown syntax which should fill in the columns for the poster from top to bottom left to right. The more information you have the more will be filled. Please let me know if you have feedback at brentthorne18@gmail.com or at github.com/brentthorne/posterdown
+
+ENJOY! XD
+-->
+
+# Introduction
+
+Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow for those who wish to take their `RMarkdown` skills to the conference world. Many creature comforts from `RMarkdown` are available in this package such as `Markdown` section notation, figure captioning, and even citations like this one [@holden_identifying_2012] The rest of this example poster will show how you can insert typical conference poster features into your own document. 
+
+# Study Site
+
+Here is a map made to show the study site using `ggplot2`, `ggspatial`, and `sf`. Lorem ipsum dolor sit amet, [@middleton_geological_nodate] consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo. Suspendisse potenti nullam ac tortor vitae. Enim nunc faucibus a pellentesque sit amet porttitor eget.  \vspace{15mm}
+
+```{r, fig.width=4.5, out.width="80%", fig.cap='This is a map of Canada, the ggspatial package is great for GIS folks in R!', cache=TRUE}
+library(ggplot2)
+library(ggspatial)
+library(ggthemes)
+library(sf)
+
+canada <- read_sf("data/Canada.geojson")
+
+
+ggplot() +
+  ggspatial::layer_spatial(canada, fill = "grey") +
+  ggspatial::annotation_north_arrow(location = "br", which_north = "true", style = north_arrow_nautical()) +
+  coord_sf() +
+  theme_solarized() +
+  NULL
+
+```
+
+
+# Objectives
+
+\large
+
+1. Easy to use reproducible poster design. 
+2. Integration with `RMarkdown`.
+3. Easy transition from `posterdown` to `thesisdown` or `rticles`
+
+\small
+
+# Methods
+
+This package uses the same workflow approach as the `RMarkdown` you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > Latex > PDF
+
+# Results
+
+Usually you want to have a nice table displaying some important results that you have calcualated. In posterdown this is as easy as using the `kable` table formatting you are probably use to as per typical `RMarkdown` formatting. I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf).
+
+```{r}
+library(kableExtra)
+library(ggplot2)
+
+data("iris")
+
+kable(iris[1:4,],align = "c", caption = "Tables are a breeze with Kable and Kable extra package!", booktabs = TRUE) %>% 
+  kable_styling(latex_options = "striped",full_width = TRUE, font_size = 25)
+
+```
+
+\vspace{1in}
+
+```{r, out.width='75%', fig.width=4, fig.height=3, fig.cap='A typical plot using ggplot using the classic iris dataset.'}
+
+library(ggplot2)
+library(ggthemes)
+
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
+  geom_point() +
+  theme_fivethirtyeight() +
+  labs(x = "Sepal Length", y = "Sepeal Width") +
+  NULL
+
+```
+
+\vspace{1in}
+
+```{r, out.width='85%', fig.width=4.5, fig.height=4, fig.cap='Another typical plot using ggplot, this time with a different theme and r code chunk options for fig.width and fig.height.'}
+
+library(ggplot2)
+library(ggthemes)
+
+ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
+  geom_point() +
+  theme_hc() +
+  labs(x = "Sepal Length", y = "Sepeal Width") +
+  NULL
+
+```
+
+\vspace{1in}
+
+```{r, out.width='80%', fig.width=4.5, fig.align='center', echo=TRUE, fig.height=5, fig.cap='Another figure showing how base R plots might look on this poster!'}
+
+# Here is some code for people
+# to look at and be in awe of!!!!
+library(ggplot2)
+library(ggthemes)
+
+ggplot(data=iris,
+       aes(x = Sepal.Width,
+           y = Sepal.Length,
+           colour = Species)) +
+  geom_point() +
+  theme_stata() +
+  NULL
+
+```
+
+
+# Next Steps
+
+There is still **A LOT** of work to do on this package which include (but are note limited to): 
+
+- Better softcoding for front end user options in YAML
+- Images in the title section for logo placement which is a common attribut to posters as far as I have come to know.
+- Figure out compatiability with `natbib` which wasn't working during the initial set up.
+- MUCH BETTER PACKAGE DOCUMENTATION. For example, there is nothing in the README...
+- Include References section only if initiated by the user like in RMarkdown.
+
+<!--- Here you can set the size of the citation text -->
+\small
