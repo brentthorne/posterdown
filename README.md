@@ -1,6 +1,6 @@
 # posterdown
 
-As a graduate sudent, I found that it is almost a right of passage to take early research and analysis and generate a conference poster allowing for critical feedback as well as meeting the people in your feild. I have also noticed that many of my fellow graduate students use R and are also getting their feet wet with RMarkdown :blush:; however, we always had to go back to using MS Powerpoint or Keynote for generating conference posters :unamused:. Posterdown was created as a proof of concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
+As a graduate student, I found that it is almost a rite of passage to take early research and analysis and generate a conference poster allowing for critical feedback as well as meeting the people in your field. I have also noticed that many of my fellow graduate students use R and are also getting their feet wet with RMarkdown :blush:; however, we always had to go back to using MS Powerpoint or Keynote for generating conference posters :unamused:. Posterdown was created as a proof of concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
 
 From this:
 
