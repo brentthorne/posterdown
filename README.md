@@ -84,3 +84,12 @@ As you add content to your RMarkdown file you will notice the output pdf will fi
     ```r
     rmarkdown::draft("MyPoster.Rmd", template = "posterdown_pdf", package = "posterdown")
     ```
+## TODO
+
+- [x] ~~Support for changing the size of the poster~~
+- [ ] Support for Natbib
+- [ ] Support for logo placement in the title bar section of poster
+- [ ] Gradient colour options
+- [ ] True YAML multi author/ affiliation support
+- [ ] Toggle citation section on/off as per user's choice
+- [ ] Make colour options standardized (probably hex colours if possible)
