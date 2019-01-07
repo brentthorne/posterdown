@@ -2,6 +2,15 @@
 
 As a graduate sudent, I found that it is almost a right of passage to take early research and analysis and generate a conference poster allowing for critical feedback as well as meeting the people in your feild. I have also noticed that many of my fellow graduate students use R and are also getting their feet wet with RMarkdown :blush:; however, we always had to go back to using MS Powerpoint or Keynote for generating conference posters :unamused:. Posterdown was created as a proof of concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
 
+From this:
+
+<img src="code_pic.png" width="50%" height="50%">
+
+To this:
+
+<img src="example_poster.png" width="50%" height="50%">
+
+
 Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my masters so I will have limitted time to work on updating this package in the next few months but nevertheless I will do what I can! :smile: 
 
 ## Installation
@@ -93,3 +102,4 @@ As you add content to your RMarkdown file you will notice the output pdf will fi
 - [ ] True YAML multi author/ affiliation support
 - [ ] Toggle citation section on/off as per user's choice
 - [ ] Make colour options standardized (probably hex colours if possible)
+- [ ] Fill/style Section headings if user whishes
