@@ -14,5 +14,6 @@ Depends:
     dplyr,
     ggplot2,
     rmarkdown,
+    Cairo,
     knitr
 RoxygenNote: 6.1.0.9000

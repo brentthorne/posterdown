@@ -4,16 +4,16 @@
     "created" : 1546879226629.000,
     "dirty" : false,
     "encoding" : "UTF-8",
-    "folds" : "0|3|28|0|\n30|21|32|0|\n",
+    "folds" : "",
     "hash" : "4025009362",
     "id" : "25D73910",
-    "lastKnownWriteTime" : 1546872959,
-    "last_content_update" : 1546880272461,
+    "lastKnownWriteTime" : 1546912566,
+    "last_content_update" : 1546912566249,
     "path" : "~/Documents/GitHub/posterdown/inst/rmarkdown/templates/posterdown_pdf/skeleton/skeleton.Rmd",
     "project_path" : "inst/rmarkdown/templates/posterdown_pdf/skeleton/skeleton.Rmd",
     "properties" : {
-        "cursorPosition" : "4,131",
-        "scrollLine" : "0"
+        "cursorPosition" : "32,0",
+        "scrollLine" : "26"
     },
     "relative_order" : 1,
     "source_on_save" : false,
