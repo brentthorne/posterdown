@@ -46,21 +46,9 @@ Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow f
 
 Here is a map made to show the study site using `ggplot2`, `ggspatial`, and `sf`. Lorem ipsum dolor sit amet, [@middleton_geological_nodate] consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo. Suspendisse potenti nullam ac tortor vitae. Enim nunc faucibus a pellentesque sit amet porttitor eget.  \vspace{15mm}
 
-```{r, fig.width=4.5, out.width="80%", fig.cap='This is a map of Canada, the ggspatial package is great for GIS folks in R!', cache=TRUE}
-library(ggplot2)
-library(ggspatial)
-library(ggthemes)
-library(sf)
+```{r, fig.width=4.5, out.width="100%", fig.cap='Here is an example of a firgure using the iris dataset and ggplot2', cache=TRUE}
 
-canada <- read_sf("data/Canada.geojson")
-
-
-ggplot() +
-  ggspatial::layer_spatial(canada, fill = "grey") +
-  ggspatial::annotation_north_arrow(location = "br", which_north = "true", style = north_arrow_nautical()) +
-  coord_sf() +
-  theme_solarized() +
-  NULL
+plot(iris$Sepal.Length,iris$Sepal.Width, pch = 19)
 
 ```
 

@@ -7,13 +7,15 @@ Maintainer: Brent Thorne <brent.thorne18@gmail.com>
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: utils, rmarkdown, knitr, yaml, tinytex, xfun
+URL: https://github.com/brentthorne/posterdown
+BugReports: https://github.com/brentthorne/posterdown/issues
+Imports: utils, rmarkdown, knitr, yaml, tinytex, xfun, ggplot2, rticles, kableExtra, Cairo
+SystemRequirements: GNU make
 Depends:
     R (>= 3.3.0),
     devtools,
     dplyr,
     ggplot2,
     rmarkdown,
-    Cairo,
-    knitr
+    rticles
 RoxygenNote: 6.1.0.9000

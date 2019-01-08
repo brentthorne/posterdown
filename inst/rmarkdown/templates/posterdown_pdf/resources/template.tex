@@ -1,36 +1,44 @@
-%brent's poster layout :)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% %%	Posterdown PDF class for LaTeX files	 08-JAN-2019
+%% %%	For any information please send an e-mail to:
+%% %%		brentthonre18@gmail.com (Brent Thorne)
+%% %%
+%% %%	Initial class provided by:
+%% %%		Brent Thorne
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[article,$font_size$,extrafontsizes]{memoir}
 
 %utf-8 seems to be important
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{multicol}
-\usepackage{graphicx}
-\usepackage{blindtext}
-\usepackage[svgnames,table]{xcolor}
-\usepackage[framemethod=tikz]{mdframed}
-\usepackage{color}
-\usepackage{geometry}
-\usepackage{adjmulticol}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{multicol}
+\RequirePackage{graphicx}
+\RequirePackage{blindtext}
+\RequirePackage[svgnames,table]{xcolor}
+\RequirePackage{tikz}
+\RequirePackage[framemethod=tikz]{mdframed}
+\RequirePackage{color}
+\RequirePackage{geometry}
+\RequirePackage{adjmulticol}
 
 %For kable extra package :)
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{colortbl}
-\usepackage{pdflscape}
-\usepackage{pagecolor}
-\usepackage{tabu}
-\usepackage{threeparttable}
-\usepackage{threeparttablex}
-\usepackage[normalem]{ulem}
-\usepackage{makecell}
+\RequirePackage{booktabs}
+\RequirePackage{longtable}
+\RequirePackage{array}
+\RequirePackage{multirow}
+\RequirePackage{wrapfig}
+\RequirePackage{float}
+\RequirePackage{colortbl}
+\RequirePackage{pdflscape}
+\RequirePackage{pagecolor}
+\RequirePackage{tabu}
+\RequirePackage{threeparttable}
+\RequirePackage{threeparttablex}
+\RequirePackage[normalem]{ulem}
+\RequirePackage{makecell}
 
-\usepackage{hyperref}
+\RequirePackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=$link_col$,
@@ -41,7 +49,7 @@
 
 
 %For figure and table placement
-\usepackage{float}
+\RequirePackage{float}
 \floatplacement{figure}{H}
 \floatplacement{table}{H}
 
@@ -65,7 +73,7 @@
 \definecolor{light-gray}{gray}{0.9}
 
 %biblatex options
-\usepackage[sorting=none,backend=biber]{biblatex}
+\RequirePackage[sorting=none,backend=biber]{biblatex}
 \renewcommand*{\bibfont}{\tiny}
 \bibliography{$bibliography$}
 \defbibheading{bibliography}[\bibname]{%
@@ -129,7 +137,7 @@
   settings={\definecolor{linkcolor}{RGB}{255,255,255}}}
 
 %Footnote to white
-\usepackage{footmisc}
+\RequirePackage{footmisc}
 \def\footnotelayout{\centering\color{white}}
 
 % see https://stackoverflow.com/a/47122900
@@ -138,7 +146,7 @@ $highlighting-macros$
 $endif$
 
 % choose font family
-\usepackage{$font_family$}
+\RequirePackage{$font_family$}
 \renewcommand*\familydefault{\sfdefault}
 \newpagecolor{$poster_bgcol$}
 %begin the document
