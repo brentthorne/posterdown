@@ -9,19 +9,29 @@ font_size: "30pt" #sets '\normalsize' (sizes of the title and sections headings 
 font_family: "courier" # choose from typical latex fonts (example: "palatino")
 
 #----COLOURS----#
-title_bgcol: "000000"  #Hex colour for background of poster title section (default is blue)
-poster_bgcol: "white" #colour of the poster main background
-title_textcol: "red" #colour of title text
-header_textcol: "red" #colour of the poster header titles
-cite_col: "green" #colour of ciation elements
-url_col: "cyan" #colour of url links
-link_col: "cyan" #colour of other links within the poster
-columnline_col: "blue" #colour 
 
-#----POSTER SIZE & COLUMN NUMBERS----#
+#Background/ Line Colours
+title_bgcol: "0b4545"  #Hex colour for background of poster title section (default is blue)
+poster_bgcol: "ffffff" #colour of the poster main background
+cite_col: "CC0000" #colour of ciation elements
+url_col: "008080" #colour of url links
+link_col: "008080" #colour of other links within the poster
+columnline_col: "0b4545" #colour 
+header_bgcol: "008080"
+
+#Text Colours
+title_textcol: "ffffff" #colour of title text
+author_textcol: "008080" # Colour of author text
+affiliation_textcol: "FFFFFF" # Colour of affiliation text
+body_textcol: "000000" # Colour of main text in the body of poster
+header_textcol: "CC0000" # Colour of the poster header titles
+footnote_textcol: "FFFFFF" # Colour of footnote text if used
+
+#----POSTER SIZE & COLUMN FORMATTING----#
 poster_height: "38in" # height in inches of poster
 poster_width: "45in" # width in inches of poster
 column_numbers: 3 # Number of columns that the poster has
+column_margins: "10mm" # Margin spacing for columns
 
 #----OTHER----#
 bibliography: MyLibrary # name of the .bib file used for referencing
