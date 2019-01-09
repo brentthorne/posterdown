@@ -25,11 +25,31 @@ devtools::install_github("brentthorne/posterdown")
 
 ```
 
+### Instructions if you have never used RMarkdown
+
+1. Install `devtools` package
+
+    ```r
+    install.packages("devtools")
+    ```
+
+2. Install `posterdown` from github repo
+
+    ```r
+    devtools::install_github("brentthorne/posterdown")
+    ```
+
+3. Install `tinytex`Latex libraries:
+
+    ```r
+    tinytex::install_tinytex()
+    ```
+
+    _**NOTE** This will take some time to load the LaTex Packages but is the best options in my opinion for keeping your Latex library as small as possible. After the first download of these libraries you will not need to do this again. To confirm that Tinytex is properly installed use: `tinytexy:::is_tinytex()` and you should get a value of `TRUE` in the console._
+
 ## Overview
 
-The **posterdown** package provides a familiar workflow for those used to working in [RMarkdown](https://rmarkdown.rstudio.com/). See the `skeleton.Rmd` that is produced posterdown document for how to go from typical RMarkdown formatting to this: **[posterdown PDF Poster](https://github.com/brentthorne/posterdown/raw/master/skeleton.pdf)**
-
-This package is currently focused on a single template called **posterdown_pdf** which is by default a 38in (H) x 45in (W) poster template which allows for custom section headers and content.
+The **posterdown** package provides a familiar workflow for those used to working in [RMarkdown](https://rmarkdown.rstudio.com/). This package is currently focused on a single template called **posterdown_pdf** which is by default a 38in (H) x 45in (W) poster template but does allow for custom sizing, section headers, and colour options.
 
 ## Using posterdown from RStudio
 
@@ -47,13 +67,15 @@ To use **posterdown** from RStudio:
 
     ![New R Markdown](posterdown_picture.png)
 
+    _**NOTE** If you do not see the **posterdown** template in this dialogue box try to restart the R session or close and re-open RStudio._
+
 ## Customization
 
-Posterdown uses Latex to generate the PDF poster but more specifically it uses the [Memoir Latex](http://texdoc.net/texmf-dist/doc/latex/memoir/memman.pdf) class. Memoir was chosen for its flexability in page sizing as well as thorough documentation. I am fairly new to the world of Latex and found this class to have a reasonable amount of customization available. If there are any users who think there may be better options for down the road I am more than willing to listen! 
+Posterdown uses Latex to generate the PDF poster but more specifically it uses the [Memoir Latex](http://texdoc.net/texmf-dist/doc/latex/memoir/memman.pdf) class. Memoir was chosen for its flexability in page sizing as well as thorough documentation. I am fairly new to the world of Latex and found this class to have a reasonable amount of customization available, at least for my skill level. If there are any users who think there may be better options for down the road I am more than willing to listen! 
 
 ### YAML OPTIONS
 
-YAML header options have been created to privide more freedom with design (ie colours, number of columns, and sizing) to fit a wide variety of requirments. Here are the default YAML options found in the `skeleton.Rmd` file:
+YAML header options have been created to privide more freedom with design (ie colours, number of columns, and sizing) to fit a wide variety of requirments. Here are the default YAML options found in the `.Rmd` file:
 
 |     Option    | Description |
 |---------------|-------------|
