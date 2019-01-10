@@ -1,13 +1,12 @@
 ---
 #----ESSENTIALS----#
-title: 'Using `posterdown` to generate reproducible conference posters via RMarkdown > Knitr > Markdown > Pandoc > Latex > PDF workflow'
+title: '\fontfamily{phv}\selectfont Using posterdown to generate reproducible conference posters via RMarkdown > Knitr > Markdown > Pandoc > Latex > PDF workflow'
 author: "Author One^1^ Author Two^2^"
 affiliation: "^1^Department of Poster Layouts, University of Markdown; ^2^Deparment of Another Institution, Institution University"
 
 #----FONT STYLE----#
 font_size: "30pt" #sets '\normalsize' (sizes of the title and sections headings will adjust based on it)
 font_family: "palatino" # choose from typical latex fonts (example: "palatino")
-
 
 #----COLOURS----#
 
