@@ -1,13 +1,12 @@
 ---
 #----ESSENTIALS----#
-title: 'Using `posterdown` to generate reproducible conference posters via RMarkdown > Knitr > Markdown > Pandoc > Latex > PDF workflow'
+title: '\fontfamily{phv}\selectfont Using posterdown to generate reproducible conference posters via RMarkdown > Knitr > Markdown > Pandoc > Latex > PDF workflow'
 author: "Author One^1^ Author Two^2^"
 affiliation: "^1^Department of Poster Layouts, University of Markdown; ^2^Deparment of Another Institution, Institution University"
 
 #----FONT STYLE----#
 font_size: "30pt" #sets '\normalsize' (sizes of the title and sections headings will adjust based on it)
 font_family: "palatino" # choose from typical latex fonts (example: "palatino")
-
 
 #----COLOURS----#
 
@@ -55,14 +54,22 @@ Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow f
 
 # Study Site
 
-Here is a map made to show the study site using `ggplot2`, `ggspatial`, and `sf`. Lorem ipsum dolor sit amet, [@middleton_geological_nodate] consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo. Suspendisse potenti nullam ac tortor vitae. Enim nunc faucibus a pellentesque sit amet porttitor eget.  \vspace{15mm}
+Here is a map made to show the study site using `ggplot2`, `ggspatial`, and `sf`. Lorem ipsum dolor sit amet, [@middleton_geological_nodate] consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo. Suspendisse potenti nullam ac tortor vitae. Enim nunc faucibus a pellentesque sit amet porttitor eget.
 
-## OTHER
+```{r, fig.width=4.5, out.width="80%", fig.cap='This is a map of Canada, the ggspatial package is great for GIS folks in R!', cache=TRUE}
+library(ggplot2)
+library(ggspatial)
+library(ggthemes)
+library(sf)
 
-```{r, fig.width=4.5, out.width="100%", fig.cap='Here is an example of a firgure using the iris dataset and ggplot2', cache=TRUE}
+canada <- read_sf("data/Canada.geojson")
 
-plot(iris$Sepal.Length,iris$Sepal.Width, pch = 19)
-
+ggplot() +
+  ggspatial::layer_spatial(canada, fill = "grey") +
+  ggspatial::annotation_north_arrow(location = "br", which_north = "true", style = north_arrow_nautical()) +
+  coord_sf() +
+  theme_solarized() +
+  NULL
 ```
 
 
