@@ -12,6 +12,7 @@
 %utf-8 seems to be important
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
 \RequirePackage{multicol}
 \RequirePackage{graphicx}
 \RequirePackage{blindtext}
@@ -21,6 +22,7 @@
 \RequirePackage{color}
 \RequirePackage{geometry}
 \RequirePackage{adjmulticol}
+
 
 %For kable extra package :)
 \RequirePackage{booktabs}
@@ -37,13 +39,13 @@
 \RequirePackage{threeparttablex}
 \RequirePackage[normalem]{ulem}
 \RequirePackage{makecell}
+\RequirePackage{wrapfig}
 
 %%%%%%%%% COLOURS %%%%%%%%
 
 %Fill/ Line Colours
 \definecolor{titlebgcol}{HTML}{$title_bgcol$}
 \definecolor{columnlinecol}{HTML}{$columnline_col$}
-\definecolor{posterbgcol}{HTML}{$poster_bgcol$}
 \definecolor{posterbgcol}{HTML}{$poster_bgcol$}
 \definecolor{headerbgcol}{HTML}{$header_bgcol$}
 
@@ -164,7 +166,7 @@ $endif$
 
 % choose font family
 \RequirePackage{$font_family$}
-\renewcommand*\familydefault{\sfdefault}
+
 \newpagecolor{posterbgcol}
 
 %begin the document
@@ -182,9 +184,9 @@ $endif$
   \centering
   \color{titletextcol}
 \vspace{0.5in}
-  \Huge{$title$} \\[0.3in]
+  \Huge{$title$}  \\[0.3in]
   \color{authortextcol} \Large{$author$} \\[0.2in]
-  \color{affiliationtextcol} \large{$affiliation$} \par
+  \color{affiliationtextcol} \large{$affiliation$}
   \vspace{0.2in}
 
 % end title section -------------------
@@ -196,7 +198,6 @@ $endif$
 \normalsize{
 \color{bodytextcol}
 $body$
-\printbibliography
 }
 \end{adjmulticols*}
 %end the poster

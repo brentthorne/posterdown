@@ -23,7 +23,6 @@
 \RequirePackage{geometry}
 \RequirePackage{adjmulticol}
 
-
 %For kable extra package :)
 \RequirePackage{booktabs}
 \RequirePackage{longtable}
@@ -39,7 +38,6 @@
 \RequirePackage{threeparttablex}
 \RequirePackage[normalem]{ulem}
 \RequirePackage{makecell}
-\RequirePackage{wrapfig}
 
 %%%%%%%%% COLOURS %%%%%%%%
 
@@ -59,6 +57,8 @@
 \definecolor{citecol}{HTML}{$cite_col$}
 \definecolor{urlcol}{HTML}{$url_col$}
 \definecolor{linkcol}{HTML}{$link_col$}
+
+\newcommand*{\myfont}{\fontfamily{qag}\selectfont}
 
 \RequirePackage{hyperref}
 \hypersetup{
@@ -184,9 +184,9 @@ $endif$
   \centering
   \color{titletextcol}
 \vspace{0.5in}
-  \Huge{$title$}  \\[0.3in]
+  {\myfont \Huge{$title$}}  \\[0.3in]
   \color{authortextcol} \Large{$author$} \\[0.2in]
-  \color{affiliationtextcol} \large{$affiliation$}
+  \color{affiliationtextcol} \large{$affiliation$} \par
   \vspace{0.2in}
 
 % end title section -------------------
