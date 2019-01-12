@@ -1746,8 +1746,29 @@ $(document).ready(function () {
 <li>Keep doing this iteratively, until you are happy with your one logical unit feature change.</li>
 </ol>
 </div>
-<div id="section" class="section level2">
-<h2></h2>
+<div id="suggesting-this-feature-change-to-the-keeper-of-the-original-repo-aka-opening-a-pull-request" class="section level2">
+<h2>Suggesting this feature change to the keeper of the original repo (aka Opening a Pull Request)</h2>
+<p>Once you push a new branch up to your repository, GitHub will prompt you to create a pull request.</p>
+<p>The maintainers of the original project can use this pull request to pull your changes across to their repository and, if they approve of the changes, merge them into the main repository.</p>
+<p>Be aware that, to help keep things manageable, some open source projects may have guidelines around how pull requests are submitted. You might need to use a certain name for your feature branch, or perhaps the project requests that you create an issue (another GitHub feature) before submitting the pull request (and then including the issue number in the pull request). Just check with the maintainers of the particular project(s) to which you’d like to contribute to see if any such details exist.</p>
+</div>
+<div id="cleaning-up-after-a-merged-pull-request" class="section level2">
+<h2>Cleaning up After a Merged Pull Request</h2>
+<p>If the maintainers accept your changes and merge them into the main repository, then there is a little bit of post-merge clean-up for you to do. First, you should update your local clone</p>
+<ol style="list-style-type: decimal">
+<li><p>Go to the RStudio Terminal, and at the $ prompt, type <strong>git pull upstream master</strong>. This pulls the changes from the original repository’s (indicated by upstream) master branch (indicated by master in that command) to your local cloned repository. One of the commits in the commit history will be the commit that merged your feature branch, so after you git pull your local repository’s master branch will have your feature branch’s changes committed. This means you can delete the feature branch (because the changes are already in the master branch):</p></li>
+<li><p>Delete the feature branch by going to the RStudio Terminal, and at the $ prompt, type <strong>git branch -d <branch name> </strong></p></li>
+<li><p>Then you can update the master branch in your forked repository: Go to the RStudio Terminal, and at the $ prompt, type <strong>git push origin master</strong></p></li>
+<li><p>Then push the deletion of the feature branch to your GitHub repository Go to the RStudio Terminal, and at the $ prompt, type <strong>git push –delete origin <branch name></strong></p></li>
+</ol>
+<p>And that’s it! You’ve just successfully created a feature branch, made some changes, committed those changes to your repository, pushed them to GitHub, opened a pull request, had your changes merged by the maintainers, and then cleaned up. Pretty neat, eh?</p>
+</div>
+<div id="keeping-your-fork-in-sync" class="section level2">
+<h2>Keeping Your Fork in Sync</h2>
+<p>By the way, your forked repository doesn’t automatically stay in sync with the original repository; you need to take care of this yourself. After all, in a healthy open source project, multiple contributors are forking the repository, cloning it, creating feature branches, committing changes, and submitting pull requests.</p>
+<p>To keep your fork in sync with the original repository, Go to the RStudio Terminal, and at the $ prompt, type <strong>git pull upstream master</strong></p>
+<p>then <strong>git push origin master</strong></p>
+<p>This pulls the changes from the original repository (the one pointed to by the upstream Git remote) and pushes them to your forked repository (the one pointed to by the origin remote). (Hopefully that makes a little bit of sense to you by now.)</p>
 </div>
 
 

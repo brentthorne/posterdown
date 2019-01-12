@@ -103,3 +103,36 @@ The maintainers of the original project can use this pull request to pull your c
 Be aware that, to help keep things manageable, some open source projects may have guidelines around how pull requests are submitted. You might need to use a certain name for your feature branch, or perhaps the project requests that you create an issue (another GitHub feature) before submitting the pull request (and then including the issue number in the pull request). Just check with the maintainers of the particular project(s) to which you’d like to contribute to see if any such details exist.
 
 
+## Cleaning up After a Merged Pull Request
+
+If the maintainers accept your changes and merge them into the main repository, then there is a little bit of post-merge clean-up for you to do. 
+First, you should update your local clone 
+
+1. Go to the RStudio Terminal, and at the $ prompt, type
+**git pull upstream master**.
+This pulls the changes from the original repository’s (indicated by upstream) master branch (indicated by master in that command) to your local cloned repository. One of the commits in the commit history will be the commit that merged your feature branch, so after you git pull your local repository’s master branch will have your feature branch’s changes committed. This means you can delete the feature branch (because the changes are already in the master branch):
+
+2. Delete the feature branch by going to the RStudio Terminal, and at the $ prompt, type
+**git branch -d <branch name> **
+
+3. Then you can update the master branch in your forked repository:
+Go to the RStudio Terminal, and at the $ prompt, type
+**git push origin master**
+
+4. Then push the deletion of the feature branch to your GitHub repository 
+Go to the RStudio Terminal, and at the $ prompt, type 
+**git push --delete origin <branch name>**
+
+And that’s it! You’ve just successfully created a feature branch, made some changes, committed those changes to your repository, pushed them to GitHub, opened a pull request, had your changes merged by the maintainers, and then cleaned up. Pretty neat, eh?
+
+## Keeping Your Fork in Sync
+By the way, your forked repository doesn’t automatically stay in sync with the original repository; you need to take care of this yourself. After all, in a healthy open source project, multiple contributors are forking the repository, cloning it, creating feature branches, committing changes, and submitting pull requests.
+
+To keep your fork in sync with the original repository, 
+Go to the RStudio Terminal, and at the $ prompt, type
+**git pull upstream master**
+
+then
+**git push origin master**
+
+This pulls the changes from the original repository (the one pointed to by the upstream Git remote) and pushes them to your forked repository (the one pointed to by the origin remote). (Hopefully that makes a little bit of sense to you by now.)
