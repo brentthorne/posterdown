@@ -2,7 +2,7 @@
 
 <img src="posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
 
-As a graduate student, I found that it is almost a rite of passage to take early research and analysis and generate a conference poster allowing for critical feedback as well as meeting the people in your field. I have also noticed that many of my fellow graduate students use R and are also getting their feet wet with RMarkdown :blush:; however, we always had to go back to using MS Powerpoint or Keynote for generating conference posters :unamused:. Posterdown was created as a proof of concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
+As a graduate student, I found that it is almost a rite of passage to take early research and analysis and generate a conference poster allowing for critical feedback, as well as meeting the people in your field. I have also noticed that many of my fellow graduate students use R and are also getting their feet wet with RMarkdown :blush:; however, we always had to go back to using MS Powerpoint or Keynote or Adobe Illustrator for generating conference posters :unamused:. Posterdown was created as a proof-of-concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
 
 From this:
 
@@ -13,7 +13,7 @@ To this:
 <img src="example_poster.png" width="50%" height="50%">
 
 
-Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my masters so I will have limitted time to work on updating this package in the next few months but nevertheless I will do what I can! :smile: 
+Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my Master's degree so I will have limited time to work on updating this package in the next few months but nevertheless I will do what I can! :smile: 
 
 ## Installation
 
@@ -45,7 +45,9 @@ devtools::install_github("brentthorne/posterdown")
     tinytex::install_tinytex()
     ```
 
-    _**NOTE** This will take some time to load the LaTex Packages but is the best options in my opinion for keeping your Latex library as small as possible. After the first download of these libraries you will not need to do this again. To confirm that Tinytex is properly installed use: `tinytexy:::is_tinytex()` and you should get a value of `TRUE` in the console._
+    _**NOTE** This will take some time to load the LaTex Packages but is the best option (in my opinion) for keeping your Latex library as small as possible. After the first download of these libraries you will not need to do this again. To confirm that Tinytex is properly installed use: `tinytex:::is_tinytex()` and you should get a value of `TRUE` in the console._
+    
+    _**NOTE** If you have conflicting versions of Latex (i.e. tinytex and MacTex), you could have problems rendering your poster. You may need to uninstall all versions, then start over by installing posterdown and tinytex from scratch._ 
 
 ## Overview
 
@@ -71,26 +73,26 @@ To use **posterdown** from RStudio:
 
 ## Customization
 
-Posterdown uses Latex to generate the PDF poster but more specifically it uses the [Memoir Latex](http://texdoc.net/texmf-dist/doc/latex/memoir/memman.pdf) class. Memoir was chosen for its flexability in page sizing as well as thorough documentation. I am fairly new to the world of Latex and found this class to have a reasonable amount of customization available, at least for my skill level. If there are any users who think there may be better options for down the road I am more than willing to listen! 
+Posterdown uses Latex to generate the PDF poster but more specifically it uses the [Memoir Latex](http://texdoc.net/texmf-dist/doc/latex/memoir/memman.pdf) class. Memoir was chosen for its flexibility in page sizing as well as thorough documentation. I am fairly new to the world of Latex, and found this class to have a reasonable amount of customization available, at least for my skill level. If there are any users who think there may be better options for down the road I am more than willing to listen! 
 
-### YAML OPTIONS
+### YAML Options
 
-YAML header options have been created to privide more freedom with design (ie colours, number of columns, and sizing) to fit a wide variety of requirments. Here are the default YAML options found in the `.Rmd` file:
+YAML header options have been created to provide more freedom in design (i.e. colours, number of columns, and sizing) to fit a wide variety of requirements. Here are the default YAML options found in the `.Rmd` file:
 
 |     Option    | Description |
 |---------------|-------------|
-| `title` | Poster title, acts as you would expect from RMarkdown. |
-| `author` | List of authors which (as of now) only has true support for a single author, however I have provided a hacky way to have many authors until I can find the time to figure out how to impliment something like the [rticles](https://github.com/rstudio/rticles/blob/master/inst/rmarkdown/templates/mdpi_article/skeleton/skeleton.Rmd) packages does|
+| `title` | Poster title, acts as you would expect from RMarkdown. You can add line breaks in your title with \\break. |
+| `author` | List of authors which (as of now) only has true support for a single author, however I have provided a hacky way to have many authors until I can find the time to figure out how to implement something like the [rticles](https://github.com/rstudio/rticles/blob/master/inst/rmarkdown/templates/mdpi_article/skeleton/skeleton.Rmd) packages does|
 | `affiliation` | Author affiliations, which just as the `author` section is currently a hacky version of what I would ultimately like to produce. |
-| `font_size` | Represents the value for `\normaltextsize` in latex. All other font sizes are adjusted around this, for example, the title in the skeleton document is given the Latex command `\Huge`, meaning that the title text will be "huge" relative to the `font_size` chosen. [Here](https://www.overleaf.com/learn/latex/Font_sizes,_families,_and_styles) is a usefull resource for better understanding the Latex text sizing options.|
-| `font_family` | Selects the font family to be used on the poster, in the future I will try to mipiment multiple font families for various components of the poster (such as different fonts for the title versus the main body text).  For now only standard Latex fonts are availble, see [here](https://www.overleaf.com/learn/latex/Font_typefaces) for a list of possible options.|
+| `font_size` | Represents the value for `\normaltextsize` in latex. All other font sizes are adjusted from this baseline. For example, the title in the skeleton document is given the Latex command `\Huge`, meaning that the title text will be "huge" relative to the `font_size` chosen. See [Here](https://www.overleaf.com/learn/latex/Font_sizes,_families,_and_styles) for a useful resource for a better understanding of the Latex text sizing options.|
+| `font_family` | Selects the font family to be used on the poster. In the future I will try to implement multiple font families for various components of the poster (such as different fonts for the title versus the main body text).  For now, only standard Latex fonts are available, see [here](https://www.overleaf.com/learn/latex/Font_typefaces) for a list of possible options.|
 | `title_bgcol` | The background colour for the title section of the poster (currently using hex values to define this colour) |
-| `poster_bgcol`| Background colour of the posters main body section. |
+| `poster_bgcol`| Background colour of the poster's main body section. |
 | `title_textcol` | Colour of the main title text. |
-| `header_textcol` | Colour of the Section Header Text |
+| `header_textcol` | Colour of the Section Header Text. |
 | `cite_col` | Colour of the citation link elements when using `biblatex`. |
 | `url_col` | Colour of URL links specifically |
-| `link_col` | Colour of in document links (example would be referencing a Figure or a Table) |
+| `link_col` | Colour of in-document links (example would be referencing a Figure or a Table) |
 | `columnline_col` | Colour of the line which divides each column in the poster |
 | `poster_height` | Height of the final poster output. Units can be: "in", "mm", "cm" |
 | `poster_width` | Width of the final poster output. Units can be: "in", "mm", "cm" |
@@ -100,7 +102,7 @@ YAML header options have been created to privide more freedom with design (ie co
 
 ### Markdown Customization
 
-As you add content to your RMarkdown file you will notice the output pdf will fill in columns from left to right as well as top to bottom. If you have more content to fit than what is available on the default poster try altering the number of columns as well as the font size to make it work.
+As you add content to your RMarkdown file, you will notice that the output pdf will fill in columns from left to right, and from top to bottom within columns. If you have more content for your poster than space is available on the default poster, it will spill onto a second page. If this occurs, you can try adding more columns and decreasing the font size (both in the YAML header) to make it work. Or, of course, edit the content to make it shorter. :smile:
 
 ## Using posterdown outside of RStudio
 
@@ -117,13 +119,16 @@ As you add content to your RMarkdown file you will notice the output pdf will fi
     ```r
     rmarkdown::draft("MyPoster.Rmd", template = "posterdown_pdf", package = "posterdown")
     ```
-## TODO
+    
+## To Do List (When Not Writing my Master's Thesis)
 
 - [x] ~~Support for changing the size of the poster~~
 - [ ] Support for Natbib
+- [ ] Support for nbib from PubMed
 - [ ] Support for logo placement in the title bar section of poster
 - [ ] Gradient colour options
-- [ ] True YAML multi author/ affiliation support
+- [ ] True YAML multi-author/ multi-affiliation support
 - [ ] Toggle citation section on/off as per user's choice
 - [ ] Make colour options standardized (probably hex colours if possible)
-- [ ] Fill/style Section headings if user whishes
+- [ ] Allow users to choose colour options from a palette??
+- [ ] Fill/style Section headings if user wishes

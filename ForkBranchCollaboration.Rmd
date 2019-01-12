@@ -1,0 +1,105 @@
+---
+title: "fork_branch"
+author: "Peter Higgins"
+date: "1/12/2019"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Creating a fork/branch/pull-request workflow
+
+There are several steps to collaborating on someone else's github project in R.
+Note that a lot of this is adapted from excellent (but not Rstudio specific) instructions at 
+https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/ 
+
+### Forking
+The first step is to fork - or create a copy in a new location (your github account). Do this by:  
+
+1. log into your github account
+2. go to the github repo of the project you want to fork
+  i) for example, "https://github.com/brentthorne/posterdown"
+3. at the top right, click on the "Fork" button
+4. This will create a copy of the repo, with the same name, in your github account.
+  i) this will be named something like "https://github.com/higgi13425/posterdown" 
+
+### Cloning
+The second step is to clone, or copy, this repo to your local computer as a project. Do this by:  
+
+1. Opening RStudio
+2. Select New Project/Version Control/Git
+3. Go back to your newly forked github repo, "https://github.com/higgi13425/posterdown"
+4. Click on the Clone or download button on the right
+5. click on the clipboard to copy the link
+6. Go back to Rstudio
+7. Paste the link into the Repository URL box
+8. give the project folder a reasonable name, like posterdown
+9. Confirm that you this will be in a reasonable directory, like "~/Documents/Rcode"
+10. Click the "New Session" box at lower left
+11. Click on Create Project  
+
+Now you have a Forked Github repo, and you have cloned this to a linked Rstudio Project on your local computer. Great!
+
+This will allow you to work on the project locally, and push updates/changes to your Github repo. But the project is not linked back to the original repo. If you want to contribute to the original project, through pull requests, you need to link this as an upstream repo.
+
+## Linking to the upstream repo
+Now you will create this link:  
+
+1. Open the Terminal in Rstudio
+  i) View/Move Focus to Terminal
+2. at the cursor prompt ($), type **git remote add upstream** (but don't hit return yet)
+3. This prepares to add a remote upstream link to your project, but now you need the link - to the original github repo.
+4. Go back to your browser, and go back to the original github repo
+  i) for example, "https://github.com/brentthorne/posterdown"
+5. use the Clone or download button to copy the link
+6. Go back to Rstudio, to the Terminal window
+7. after **git remote add upstream**, leave one space, then paste in the link to the original repo
+8. this wil now look like **git remote add upstream https://github.com/brentthorne/posterdown** (now press return)
+9. Now your local project on your computer is linked to your github repo (https://github.com/higgi13425/posterdown), and also linked upstream to the original github repo (https://github.com/brentthorne/posterdown)
+10. This will allow you to push changes to your repo, and also to suggest changes to the original project repo (a pull request)
+11. The original project/repo owner can review your pull request, and decide which changes to incorporate into their repo.  
+
+## Creating a branch
+
+So far, you’ve forked a project repository, cloned it down to your local system, and added a Git remote to your clone that points to the original project repository on GitHub. Now you’re ready to start making changes to your local Git repository. You can’t just start making changes willy nilly, though; to effectively collaborate with others on the same repo, you should use a branch.
+A branch is a distinct version that takes a different direction from the master (production) version. The branch allows you to experiment, and try out different ideas or pathways, without damaging the production version (master branch). Any coding errors you make in your branch will not harm users of the master branch. Once you are happy with the changes in your branch, you can send a pull request to the keeper of the original repo, and they can decide which changes to merge into the master branch.
+
+When using the “fork and branch” workflow to collaborate with others, the purpose of a branch is to help facilitate multiple users making changes to a repository at the same time.
+
+So, assuming that your eventual goal is to issue a pull request to have your changes merged back into the original project, you’ll need to use a branch. Often you’ll see this referred to as a feature branch, because you’ll typically be implementing a new feature in the project.
+
+As a general rule of thumb, you should limit a branch to one logical change. The basic idea is that you should only make the necessary changes to implement one specific feature or enhancement.
+
+To create a new branch and check it out (meaning tell Git you will be making changes to the branch)
+
+1. Go to the Rstudio Terminal window
+2. At the $ prompt, type in **git checkout -b <new branch name>**
+  i) for example git checkout - b fix_typos_in_README
+  
+Now a new feature branch has been created.
+
+## Working on your branch
+
+You can do your usual local R coding, editing, etc.
+Then 
+
+1. stage your changes in the Git tab
+2. commit these changes
+3. push these changes to your Github remote repo in the Git tab.
+  i) _Note that you can also push changes in the Terminal window with the command **git push origin new-feature**_
+4. Keep doing this iteratively, until you are happy with your one logical unit feature change.
+
+
+## Suggesting this feature change to the keeper of the original repo (aka Opening a Pull Request)
+
+Once you push a new branch up to your repository, GitHub will prompt you to create a pull request.
+
+The maintainers of the original project can use this pull request to pull your changes across to their repository and, if they approve of the changes, merge them into the main repository.
+
+Be aware that, to help keep things manageable, some open source projects may have guidelines around how pull requests are submitted. You might need to use a certain name for your feature branch, or perhaps the project requests that you create an issue (another GitHub feature) before submitting the pull request (and then including the issue number in the pull request). Just check with the maintainers of the particular project(s) to which you’d like to contribute to see if any such details exist.
+
+
