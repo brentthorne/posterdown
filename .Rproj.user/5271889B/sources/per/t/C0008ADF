@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "527242796",
+    "hash" : "438225612",
     "id" : "C0008ADF",
-    "lastKnownWriteTime" : 1547079598,
-    "last_content_update" : 1547079598273,
+    "lastKnownWriteTime" : 1547138942,
+    "last_content_update" : 1547138942,
     "path" : "~/GitHub/posterdown/inst/rmarkdown/templates/posterdown_pdf/skeleton/skeleton.Rmd",
     "project_path" : "inst/rmarkdown/templates/posterdown_pdf/skeleton/skeleton.Rmd",
     "properties" : {
-        "cursorPosition" : "78,9",
-        "scrollLine" : "61"
+        "cursorPosition" : "78,0",
+        "scrollLine" : "0"
     },
     "relative_order" : 1,
     "source_on_save" : false,
