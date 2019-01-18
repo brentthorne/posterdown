@@ -36,9 +36,6 @@ column_margins: "10mm" # Margin spacing for columns
 #----OTHER----#
 bibliography: MyLibrary # name of the .bib file used for referencing
 output: posterdown::posterdown_pdf
-header-includes:
-- \usepackage[breakable]{tcolorbox}
-
 ---
 
 ```{r, include=FALSE}
