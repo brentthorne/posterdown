@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2227939390",
+    "hash" : "0",
     "id" : "2F24B1BB",
-    "lastKnownWriteTime" : 1547917934,
-    "last_content_update" : 1547917934,
+    "lastKnownWriteTime" : 1547924047,
+    "last_content_update" : 1547924047,
     "path" : "~/Documents/GitHub/posterdown/DESCRIPTION",
     "project_path" : "DESCRIPTION",
     "properties" : {
-        "cursorPosition" : "19,7",
-        "scrollLine" : "11"
+        "cursorPosition" : "17,20",
+        "scrollLine" : "0"
     },
     "relative_order" : 2,
     "source_on_save" : false,
