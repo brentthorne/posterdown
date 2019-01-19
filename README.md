@@ -129,6 +129,6 @@ As you add content to your RMarkdown file, you will notice that the output pdf w
 - [ ] Gradient colour options
 - [ ] True YAML multi-author/ multi-affiliation support
 - [ ] Toggle citation section on/off as per user's choice
-- [ ] Make colour options standardized (probably hex colours if possible)
+- [x] ~~Make colour options standardized (probably hex colours if possible)~~
 - [ ] Allow users to choose colour options from a palette??
 - [ ] Fill/style Section headings if user wishes
