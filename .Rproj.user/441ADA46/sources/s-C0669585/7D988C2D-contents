@@ -3,8 +3,8 @@ library(itdepends)
 library(dplyr)
 
 # needed to install
-install.packages("pkgcache")
-install.packages("cranlogs")
+#install.packages("pkgcache")
+#install.packages("cranlogs")
 
 dep_usage_pkg("posterdown") %>% 
   count(pkg, sort = TRUE)
