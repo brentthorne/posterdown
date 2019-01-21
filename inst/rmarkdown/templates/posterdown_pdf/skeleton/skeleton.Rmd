@@ -35,6 +35,7 @@ column_margins: "10mm" # Margin spacing for columns
 
 #----OTHER----#
 bibliography: MyLibrary # name of the .bib file used for referencing
+bibliography_font_size: "tiny"
 output: posterdown::posterdown_pdf
 ---
 
@@ -163,6 +164,6 @@ There is still **A LOT** of work to do on this package which include (but are no
 - Include References section only if initiated by the user like in RMarkdown.
 
 <!--- Here you can set the size of the citation text as well as remove the "References" section if you choose not to have one for some reason :) -->
-\small\printbibliography
+\printbibliography
 
 
