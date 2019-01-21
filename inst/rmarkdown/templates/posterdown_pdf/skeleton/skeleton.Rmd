@@ -35,7 +35,7 @@ column_margins: "10mm" # Margin spacing for columns
 
 #----OTHER----#
 bibliography: MyLibrary # name of the .bib file used for referencing
-bibliography_font_size: "tiny"
+bibliography_font_size: "tiny" # size of the bibliography in latex options (tiny, scriptsize, footnotesize, small, normalsize, etc.)
 output: posterdown::posterdown_pdf
 ---
 
