@@ -7,7 +7,7 @@
 %% %%		Brent Thorne
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[article,$font_size$,extrafontsizes]{memoir}
+\documentclass[article,30pt,extrafontsizes]{memoir}
 
 %utf-8 seems to be important
 \RequirePackage[utf8]{inputenc}
@@ -184,9 +184,9 @@ $endif$
   \centering
   \color{titletextcol}
 \vspace{0.5in}
-  \Huge{$title$}  \\[0.3in]
-  \color{authortextcol} \Large{$author$} \\[0.2in]
-  \color{affiliationtextcol} \large{$affiliation$}
+  \$title_font_size${$title$}  \\[0.3in]
+  \color{authortextcol} \$author_size${$author$} \\[0.2in]
+  \color{affiliationtextcol} \$affiliation_size${$affiliation$}
   \vspace{0.2in}
 
 % end title section -------------------
@@ -195,7 +195,7 @@ $endif$
 
 % Brgin body of poster
 \begin{adjmulticols*}{$column_numbers$}{10mm}{10mm}
-\normalsize{
+\$body_font_size${
 \color{bodytextcol}
 $body$
 }
