@@ -42,7 +42,7 @@ column_margins: "10mm" # Margin spacing for columns
 
 #----OTHER----#
 bibliography: MyLibrary # name of the .bib file used for referencing
-bibliography_spacing: 0.8 # sets the multiplier for line spacing of bibliography spacing (between 0 and 1)
+bibliography_spacing: 0.8 # sets the multiplier for line spacing of bibliography spacing (between 0 and 1) 
 output: posterdown::posterdown_pdf
 ---
 
