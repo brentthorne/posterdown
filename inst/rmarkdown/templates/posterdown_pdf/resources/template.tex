@@ -99,6 +99,7 @@
 \renewcommand*{\bibfont}{\$bibliography_font_size$}
 \bibliography{$bibliography$}
 \defbibheading{bibliography}[\bibname]{%
+\setlength\bibitemsep{$bibliography_spacing$\itemsep}
 \section*{#1}%
 \markboth{#1}{#1}}
 \AtBeginDocument{%
