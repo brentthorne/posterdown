@@ -9,8 +9,6 @@
 #' @docType package
 #' @name posterdown
 #' @import rmarkdown
-#' @import devtools
-#' @import dplyr
 #' @import ggplot2
 #' @import knitr
 NULL
