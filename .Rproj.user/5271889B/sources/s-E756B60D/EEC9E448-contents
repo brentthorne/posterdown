@@ -1,4 +1,0 @@
-name: Posterdown Memoir Based PDF
-description: >
- Template for creating R Markdown based PDF via Latex and Memoir
-create_dir: true

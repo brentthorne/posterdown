@@ -2,7 +2,7 @@
 
 <img src="posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
 
-As a graduate student, I found that it is almost a rite of passage to take early research and analysis and generate a conference poster allowing for critical feedback, as well as meeting the people in your field. I have also noticed that many of my fellow graduate students use R and are also getting their feet wet with RMarkdown :blush:; however, we always had to go back to using MS Powerpoint or Keynote or Adobe Illustrator for generating conference posters :unamused:. Posterdown was created as a proof-of-concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
+As a graduate student, I found that it is almost a rite of passage to take early research and analysis and generate a conference poster allowing for critical feedback. This is also important for facilitating meeting the people in your field at poster sessions at academic meetings. I have also noticed that while many of my fellow graduate students use R and are getting their feet wet with RMarkdown :blush:, we always had to go back to using MS Powerpoint or Keynote or Adobe Illustrator for generating conference posters :unamused:. Posterdown was created as a proof-of-concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
 
 From this:
 
@@ -65,15 +65,15 @@ To use **posterdown** from RStudio:
     devtools::install_github("brentthorne/posterdown")
     ```
     
-3. Use the **New R Markdown** dialog to create a conference poster from the templates
+3. Use the **File / New File / R Markdown.. / From Template / Posterdown PDF** dialog pathway to create a conference poster from the _Posterdown PDF_ template provided.
 
     ![New R Markdown](posterdown_picture.png)
 
-    _**NOTE** If you do not see the **posterdown** template in this dialogue box try to restart the R session or close and re-open RStudio._
+    _**NOTE** If you do not see the **Posterdown PDF** template in this dialogue box, restart the R session or close and re-open RStudio._
 
 ## Customization
 
-Posterdown uses Latex to generate the PDF poster but more specifically it uses the [Memoir Latex](http://texdoc.net/texmf-dist/doc/latex/memoir/memman.pdf) class. Memoir was chosen for its flexibility in page sizing as well as thorough documentation. I am fairly new to the world of Latex, and found this class to have a reasonable amount of customization available, at least for my skill level. If there are any users who think there may be better options for down the road I am more than willing to listen! 
+Posterdown uses Latex to generate the PDF poster but more specifically it uses the [Memoir Latex](http://texdoc.net/texmf-dist/doc/latex/memoir/memman.pdf) class. Memoir was chosen for its flexibility in page sizing as well as its thorough documentation. I am fairly new to the world of Latex, and found this class to have a reasonable amount of customization available, at least for my skill level. If there are any users who think there may be better options for down the road I am more than willing to listen! 
 
 ### YAML Options
 
@@ -129,6 +129,6 @@ As you add content to your RMarkdown file, you will notice that the output pdf w
 - [ ] Gradient colour options
 - [ ] True YAML multi-author/ multi-affiliation support
 - [ ] Toggle citation section on/off as per user's choice
-- [ ] Make colour options standardized (probably hex colours if possible)
+- [x] ~~Make colour options standardized (probably hex colours if possible)~~
 - [ ] Allow users to choose colour options from a palette??
 - [ ] Fill/style Section headings if user wishes
