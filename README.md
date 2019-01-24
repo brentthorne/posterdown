@@ -1,16 +1,16 @@
 # posterdown
 
-<img src="posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
+<img src="Images/posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
 
 As a graduate student, I found that it is almost a rite of passage to take early research and analysis and generate a conference poster allowing for critical feedback. This is also important for facilitating meeting the people in your field at poster sessions at academic meetings. I have also noticed that while many of my fellow graduate students use R and are getting their feet wet with RMarkdown :blush:, we always had to go back to using MS Powerpoint or Keynote or Adobe Illustrator for generating conference posters :unamused:. Posterdown was created as a proof-of-concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
 
 From this:
 
-<img src="code_pic.png" width="50%" height="50%">
+<img src="Images/code_pic.png" width="50%" height="50%">
 
 To this:
 
-<img src="example_poster.png" width="50%" height="50%">
+<img src="Images/example_poster1.png" width="50%" height="50%">
 
 
 Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my Master's degree so I will have limited time to work on updating this package in the next few months but nevertheless I will do what I can! :smile: 
@@ -67,7 +67,7 @@ To use **posterdown** from RStudio:
     
 3. Use the **File / New File / R Markdown.. / From Template / Posterdown PDF** dialog pathway to create a conference poster from the _Posterdown PDF_ template provided.
 
-    ![New R Markdown](posterdown_picture.png)
+    ![New R Markdown](Images/posterdown_picture.png)
 
     _**NOTE** If you do not see the **Posterdown PDF** template in this dialogue box, restart the R session or close and re-open RStudio._
 
@@ -131,4 +131,4 @@ As you add content to your RMarkdown file, you will notice that the output pdf w
 - [ ] Toggle citation section on/off as per user's choice
 - [x] ~~Make colour options standardized (probably hex colours if possible)~~
 - [ ] Allow users to choose colour options from a palette??
-- [ ] Fill/style Section headings if user wishes
+- [x] ~~Fill/style Section headings if user wishes~~
