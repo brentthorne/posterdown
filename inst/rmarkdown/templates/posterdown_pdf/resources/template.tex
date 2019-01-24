@@ -15,6 +15,7 @@
 \RequirePackage{lmodern}
 \RequirePackage{multicol}
 \RequirePackage{graphicx}
+\RequirePackage{lipsum}
 \RequirePackage{blindtext}
 \RequirePackage[svgnames,table]{xcolor}
 \RequirePackage{tikz}
@@ -22,6 +23,7 @@
 \RequirePackage{color}
 \RequirePackage{geometry}
 \RequirePackage{adjmulticol}
+\RequirePackage[skins,most,listings,skins]{tcolorbox}
 
 
 %For kable extra package :)
@@ -48,6 +50,7 @@
 \definecolor{columnlinecol}{HTML}{$columnline_col$}
 \definecolor{posterbgcol}{HTML}{$poster_bgcol$}
 \definecolor{headerbgcol}{HTML}{$header_bgcol$}
+\definecolor{headerbordercol}{HTML}{$header_bordercol$}
 
 % Text Colours
 \definecolor{titletextcol}{HTML}{$title_textcol$}
@@ -84,10 +87,24 @@
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{columnlinecol}}
 
+%define section header title features
 \setsubsubsecheadstyle{\small\color{headertextcol}\textbf}% Set \section style
-\setsecheadstyle{\small\color{headertextcol}}
 \setsecnumformat{}
 \def\sectionmark#1{\markboth{#1}{#1}}
+
+
+%tcolorbox magic from my stack exchange question
+\newtcolorbox{myboxstuff}[1][]{code={\parindent=0em},colframe=headerbordercol,left skip=0pt,valign=center,halign=center,fontupper=\Large\bfseries,colupper=headertextcol,boxrule=$header_borderwidth$,$header_boxshape$,colback=headerbgcol, #1}
+\newcommand{\mybox}[1]{%
+\begin{myboxstuff}
+\strut #1
+\end{myboxstuff}%
+}
+\makeheadstyles{MyBox}{
+    \setsecheadstyle{\mybox}
+}
+\headstyles{MyBox}\makepagestyle{MyBox}
+
 
 %-----------------------------------------------------
 
@@ -96,7 +113,7 @@
 
 %biblatex options
 \RequirePackage[sorting=none,backend=biber]{biblatex}
-\renewcommand*{\bibfont}{\$bibliography_font_size$}
+\renewcommand*{\bibfont}{\tiny}
 \bibliography{$bibliography$}
 \defbibheading{bibliography}[\bibname]{%
 \section*{#1}%
@@ -109,9 +126,11 @@
 \author{$author$}
 \title{$title$}
 \counterwithout{section}{chapter}
+
+
 \makechapterstyle{mydefault}{
 \addtocounter{secnumdepth}{2}
-\setsecheadstyle{\centering\Large\color{headertextcol}\textbf}
+\setsecheadstyle{\mybox}
 \setsubsecheadstyle{\itshape}
 \setsubsubsecheadstyle{\itshape}
 }
