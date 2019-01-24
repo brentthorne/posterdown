@@ -5,6 +5,7 @@
 %% %%
 %% %%	Initial class provided by:
 %% %%		Brent Thorne
+%% %% Contributors: Shea Connell (SC)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[article,$font_size$,extrafontsizes]{memoir}
@@ -96,9 +97,10 @@
 
 %biblatex options
 \RequirePackage[sorting=none,backend=biber]{biblatex}
-\renewcommand*{\bibfont}{\$bibliography_font_size$}
+\renewcommand*{\bibfont}{\$bibliography_textsize$} %% SC
 \bibliography{$bibliography$}
 \defbibheading{bibliography}[\bibname]{%
+\setlength\bibitemsep{$bibliography_spacing$\itemsep} %% SC
 \section*{#1}%
 \markboth{#1}{#1}}
 \AtBeginDocument{%
@@ -184,9 +186,9 @@ $endif$
   \centering
   \color{titletextcol}
 \vspace{0.5in}
-  \Huge{$title$}  \\[0.3in]
-  \color{authortextcol} \Large{$author$} \\[0.2in]
-  \color{affiliationtextcol} \large{$affiliation$}
+  \$title_textsize${$title$}  \\[0.3in]  %% SC
+  \color{authortextcol} \$author_textsize${$author$} \\[0.2in] %% SC
+  \color{affiliationtextcol} \$affiliation_textsize${$affiliation$} %% SC
   \vspace{0.2in}
 
 % end title section -------------------
@@ -195,7 +197,7 @@ $endif$
 
 % Brgin body of poster
 \begin{adjmulticols*}{$column_numbers$}{10mm}{10mm}
-\normalsize{
+\$body_textsize${  %% SC
 \color{bodytextcol}
 $body$
 }
