@@ -26,7 +26,7 @@ body_textcol: "000000" # Colour of main text in the body of poster
 footnote_textcol: "ffffff" # Colour of footnote text if used
 
 #----POSTER SIZE & COLUMN FORMATTING----#
-poster_height: "40in" # height in inches of poster
+poster_height: "39in" # height in inches of poster
 poster_width: "45in" # width in inches of poster
 column_numbers: 4 # Number of columns that the poster has
 column_margins: "5mm" # Margin spacing for columns
@@ -111,8 +111,6 @@ kable(iris[1:4,],align = "c", caption = "Tables are a breeze with Kable and Kabl
 
 ```
 
-\vspace{1in}
-
 ```{r, out.width='75%', fig.width=4, fig.height=3, fig.cap='A typical plot using ggplot using the classic iris dataset.'}
 
 library(ggplot2)
@@ -126,7 +124,6 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
 
 ```
 
-\vspace{1in}
 
 ```{r, out.width='85%', fig.width=4.5, fig.height=4, fig.cap='Another typical plot using ggplot, this time with a different theme and r code chunk options for fig.width and fig.height.'}
 
@@ -160,7 +157,7 @@ ggplot(data=iris,
 
 ```
 
-\lipsum[1-3]
+\lipsum[1-5]
 
 # Next Steps
 
