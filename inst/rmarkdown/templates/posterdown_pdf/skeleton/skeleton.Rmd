@@ -4,9 +4,16 @@ title: '\fontfamily{phv}\selectfont Using posterdown to generate reproducible co
 author: "Author One^1^ Author Two^2^"
 affiliation: "^1^Department of Poster Layouts, University of Markdown; ^2^Deparment of Another Institution, Institution University"
 
-#----FONT STYLE----#
-font_size: "30pt" #sets '\normalsize' (sizes of the title and sections headings will adjust based on it)
+#----FONT STYLE & SIZE----#
 font_family: "palatino" # choose from typical latex fonts (example: "palatino")
+font_size: "30pt" #sets '\normalsize' (sizes of the title and sections headings will adjust based on it, not recommended as memoir has limited options)
+
+# Sizes are standard LaTeX options (tiny, scriptsize, footnotesize, small, normalsize, large, Large, LARGE, huge and Huge)
+title_textsize: "Huge"         # Poster title fontsize
+author_textsize: "Large"       # Author list font size
+affiliation_textsize: "large"  # Affiliation font size
+body_textsize: "normalsize"    # Size of the main poster body text
+bibliography_textsize: "tiny"  # size of the bibliography text size (handy for one too many references!)
 
 #----COLOURS----#
 
@@ -40,7 +47,9 @@ header_boxshape: "sharp corners" # Lots of options can be used for this. Another
 
 #----OTHER----#
 bibliography: MyLibrary # name of the .bib file used for referencing
+bibliography_spacing: 0.8 # sets the multiplier for line spacing of bibliography spacing (between 0 and 1) 
 output: posterdown::posterdown_pdf
+
 ---
 
 ```{r, include=FALSE}

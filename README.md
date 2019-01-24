@@ -84,7 +84,12 @@ YAML header options have been created to provide more freedom in design (i.e. co
 | `title` | Poster title, acts as you would expect from RMarkdown. You can add line breaks in your title with \\break. |
 | `author` | List of authors which (as of now) only has true support for a single author, however I have provided a hacky way to have many authors until I can find the time to figure out how to implement something like the [rticles](https://github.com/rstudio/rticles/blob/master/inst/rmarkdown/templates/mdpi_article/skeleton/skeleton.Rmd) packages does|
 | `affiliation` | Author affiliations, which just as the `author` section is currently a hacky version of what I would ultimately like to produce. |
-| `font_size` | Represents the value for `\normaltextsize` in latex. All other font sizes are adjusted from this baseline. For example, the title in the skeleton document is given the Latex command `\Huge`, meaning that the title text will be "huge" relative to the `font_size` chosen. See [Here](https://www.overleaf.com/learn/latex/Font_sizes,_families,_and_styles) for a useful resource for a better understanding of the Latex text sizing options.|
+| `title_textsize`| Title font size. Sizes can be one of: "tiny", "scriptsize", "footnotesize", "small", "normalsize", "large", "Large", "LARGE", "huge" or "Huge", see `font_size` below for more information.
+| `author_textsize`| Author list font size
+| `affiliation_textsize`| Affiliations list font size
+| `body_textsize`| Font size of the poster's main body
+| `bibliography_textsize`| Bibliography font size
+| `font_size` | Represents the point value for `\normaltextsize` in latex. All other font sizes are adjusted from this baseline. For example, if the title in the skeleton document is given the Latex command `\Huge`, meaning that the title text will be "huge" relative to the `font_size` chosen. See [Here](https://www.overleaf.com/learn/latex/Font_sizes,_families,_and_styles) for a useful resource for a better understanding of the Latex text sizing options.|
 | `font_family` | Selects the font family to be used on the poster. In the future I will try to implement multiple font families for various components of the poster (such as different fonts for the title versus the main body text).  For now, only standard Latex fonts are available, see [here](https://www.overleaf.com/learn/latex/Font_typefaces) for a list of possible options.|
 | `title_bgcol` | The background colour for the title section of the poster (currently using hex values to define this colour) |
 | `poster_bgcol`| Background colour of the poster's main body section. |
@@ -98,6 +103,7 @@ YAML header options have been created to provide more freedom in design (i.e. co
 | `poster_width` | Width of the final poster output. Units can be: "in", "mm", "cm" |
 | `column_numbers` | Number of columns you wish for the poster to have in the main section of the poster. |
 | `bibliography` | Name of the `.bib`. file which you are using to source material. As of right now only `biblatex` is working but I intend to add support of `natbib` which is my preference.
+| `bibliography_spacing` | Sets the mutiplier for line spacing between bibliography entries, default value is `0.8`. Useful if you need to squeeze more space from somewhere.
 | `output` | For generating `posterdown_pdf`, in the future other poster designs or templates may be made for this package and thus this option in the YAML will be more flexible. For now this is the only option. |
 
 ### Markdown Customization
