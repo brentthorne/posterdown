@@ -8,12 +8,12 @@ affiliation: "^1^Department of Poster Layouts, University of Markdown; ^2^Deparm
 font_family: "palatino" # choose from typical latex fonts (example: "palatino")
 font_size: "30pt" #sets '\normalsize' (sizes of the title and sections headings will adjust based on it, not recommended as memoir has limited options)
 
-# Sizes are standard Latex options (tiny, scriptsize, footnotesize, small, normalsize, large, Large, LARGE, huge and Huge)
-title_font_size: "Huge"         # Poster title fontsize
-author_size: "Large"            # Author list font size
-affiliation_size: "large"       # Affiliation font size
-body_font_size: "normalsize"    # Size of the main poster body text
-bibliography_font_size: "tiny"  # size of the bibliography text size (handy for one too many references!)
+# Sizes are standard LaTeX options (tiny, scriptsize, footnotesize, small, normalsize, large, Large, LARGE, huge and Huge)
+title_textsize: "Huge"         # Poster title fontsize
+author_textsize: "Large"       # Author list font size
+affiliation_textsize: "large"  # Affiliation font size
+body_textsize: "normalsize"    # Size of the main poster body text
+bibliography_textsize: "tiny"  # size of the bibliography text size (handy for one too many references!)
 
 #----COLOURS----#
 
