@@ -95,6 +95,10 @@ YAML header options have been created to provide more freedom in design (i.e. co
 | `poster_bgcol`| Background colour of the poster's main body section. |
 | `title_textcol` | Colour of the main title text. |
 | `header_textcol` | Colour of the Section Header Text. |
+| `header_bgcol` | Colour of the header title box. |
+| `header_bordercol` | Colour of the border around the header text box. |
+| `header_borderwidth` | Thickness of the header title box border. |
+| `header_boxshape` | Shape of the corners for the header title box (Options include: `sharp corners` or `rounded corners`. For more options please see the [tcolorbox manual]() and search for "sharp corners", **HINT** there are LOTS of options there :smile: . |
 | `cite_col` | Colour of the citation link elements when using `biblatex`. |
 | `url_col` | Colour of URL links specifically |
 | `link_col` | Colour of in-document links (example would be referencing a Figure or a Table) |
@@ -105,6 +109,7 @@ YAML header options have been created to provide more freedom in design (i.e. co
 | `bibliography` | Name of the `.bib`. file which you are using to source material. As of right now only `biblatex` is working but I intend to add support of `natbib` which is my preference.
 | `bibliography_spacing` | Sets the mutiplier for line spacing between bibliography entries, default value is `0.8`. Useful if you need to squeeze more space from somewhere.
 | `output` | For generating `posterdown_pdf`, in the future other poster designs or templates may be made for this package and thus this option in the YAML will be more flexible. For now this is the only option. |
+
 
 ### Markdown Customization
 
