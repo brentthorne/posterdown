@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/brentthorne/posterdown.svg?branch=daily-dev)](https://travis-ci.com/brentthorne/posterdown)
+
 # posterdown
 
 <img src="Images/posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
