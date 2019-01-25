@@ -190,31 +190,43 @@ $endif$
 
 \newpagecolor{posterbgcol}
 
-%begin the document
-\begin{document}
-
-\begin{mdframed}[style=brentsmdfstyle]
-
 %sets footnote to be white hopefully
 \renewcommand\footnoterule{}
 \renewcommand{\thempfootnote}{\footnotesize\color{footnotetextcol}{\arabic{mpfootnote}}}
 
-% group which adds title author and other infor
-% Used instead of \maketitle for better spacing options
-\begingroup
-  \centering
+
+%top title box
+\newtcolorbox{topbox}{
+enhanced,
+colback=titlebgcol,
+colframe=red,
+halign=center,
+sharp corners,
+ overlay={
+    \node[anchor=south west]
+      at ([xshift=1in,yshift=0.6\baselineskip]frame.south west)
+       {\includegraphics[width=15pc]{Figures/posterdownlogo}};}
+}
+
+% -------------- begin the document ----------------- %
+\begin{document}
+
+% -------------- Top Section Start ------------------ %
+
+%tcolorbox allows for pictures hopefully
+\begin{topbox}
   \color{titletextcol}
-\vspace{0.5in}
+  \vspace{0.5in}
   \$title_textsize${$title$}  \\[0.3in]  %% SC
   \color{authortextcol} \$author_textsize${$author$} \\[0.2in] %% SC
   \color{affiliationtextcol} \$affiliation_textsize${$affiliation$} %% SC
-  \vspace{0.2in}
+  \vspace{0.5in}
+\end{topbox}
 
-% end title section -------------------
-  \endgroup
-\end{mdframed}
+% ---------------- Top Section End ------------------%
 
-% Brgin body of poster
+
+% Begin body of poster
 \begin{adjmulticols*}{$column_numbers$}{10mm}{10mm}
 \$body_textsize${  %% SC
 \color{bodytextcol}

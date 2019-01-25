@@ -18,7 +18,7 @@ bibliography_textsize: "tiny"  # size of the bibliography text size (handy for o
 #----COLOURS----#
 
 #Background/ Line Colours
-title_bgcol: "0b4545"  #Hex colour for background of poster title section (default is blue)
+title_bgcol: "000000"  #Hex colour for background of poster title section (default is blue)
 poster_bgcol: "ffffff" #colour of the poster main background
 cite_col: "CC0000" #colour of ciation elements
 url_col: "008080" #colour of url links
