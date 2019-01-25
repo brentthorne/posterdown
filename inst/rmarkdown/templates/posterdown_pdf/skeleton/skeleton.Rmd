@@ -1,55 +1,61 @@
 ---
-#----ESSENTIALS----#
+#---POSTER SIZE & DEFAULT FONT---#
+poster_height: "38in" # height in inches of poster
+poster_width: "45in" # width in inches of poster
+font_family: "palatino" # choose from typical latex fonts (example: "palatino")
+font_size: "30pt" #please see github.com/brentthorne/posterdown for compatible options.
+
+#---TITLE BOX OPTIONS---#
+#ESSENTIALS
 title: '\fontfamily{phv}\selectfont Using posterdown to generate reproducible conference posters via RMarkdown > Knitr > Markdown > Pandoc > Latex > PDF workflow'
 author: "Author One^1^ Author Two^2^"
 affiliation: "^1^Department of Poster Layouts, University of Markdown; ^2^Deparment of Another Institution, Institution University"
-
-#----FONT STYLE & SIZE----#
-font_family: "palatino" # choose from typical latex fonts (example: "palatino")
-font_size: "30pt" #sets '\normalsize' (sizes of the title and sections headings will adjust based on it, not recommended as memoir has limited options)
-
-# Sizes are standard LaTeX options (tiny, scriptsize, footnotesize, small, normalsize, large, Large, LARGE, huge and Huge)
+#STYLE & FORMATTING
+titlebox_bgcol: "008080"  #Colour of the Title Box background
+titlebox_bordercol: "0b4545" #Colour of the title Box border.
+titlebox_shape: "all"
+titlebox_borderwidth: "1cm"
+title_textcol: "ffffff" #colour of title text
+author_textcol: "0b4545" # Colour of author text
+affiliation_textcol: "FFFFFF" # Colour of affiliation text
 title_textsize: "Huge"         # Poster title fontsize
 author_textsize: "Large"       # Author list font size
 affiliation_textsize: "large"  # Affiliation font size
+#ADDING LOGOS
+logoleft_name: 'Figures/posterdownlogo'
+logoleft_width: '3in'
+logoleft_xshift: '1in'
+logoleft_yshift: '1in'
+logoright_name: 'Figures/posterdownlogo'
+logoright_width: '3in'
+logoright_xshift: '-1in'
+logoright_yshift: '1in'
+
+#---POSTER BODY OPTIONS---#
+body_bgcol: "ffffff" #colour of the poster main background
 body_textsize: "normalsize"    # Size of the main poster body text
-bibliography_textsize: "tiny"  # size of the bibliography text size (handy for one too many references!)
+body_textcol: "000000" # Colour of main text in the body of poster
+column_numbers: 4 # Number of columns that the poster has
+column_margins: "0.5in" # Margin spacing for columns
+columnline_col: "008080" #colour 
+#SECTION TITLE STYLING
+sectitle_textcol: "ffffff" # Colour of the poster section titles
+sectitle_bgcol: "0b4545" # Colour of the section title box
+sectitle_bordercol: "0b4545" # Colour of the border around the section title box.
+sectitle_borderwidth: "2mm" # Thicknes of the section title box border
+sectitle_boxshape: "south" # Changes the shape of the section title box.
 
-#----COLOURS----#
+#---BIBLIOGRAPHY OPTIONS---#
+bibliography: MyLibrary # name of the .bib file used for referencing
+bibliography_spacing: 0.8 # sets the multiplier for line spacing of bibliography spacing (between 0 and 1)
+bibliography_textsize: "small"  # size of the bibliography text size (handy for one too many references!)
 
-#Background/ Line Colours
-title_bgcol: "000000"  #Hex colour for background of poster title section (default is blue)
-poster_bgcol: "ffffff" #colour of the poster main background
+#---OTHER---#
 cite_col: "CC0000" #colour of ciation elements
 url_col: "008080" #colour of url links
 link_col: "008080" #colour of other links within the poster
-columnline_col: "ffffff" #colour 
-
-#Text Colours
-title_textcol: "ffffff" #colour of title text
-author_textcol: "008080" # Colour of author text
-affiliation_textcol: "FFFFFF" # Colour of affiliation text
-body_textcol: "000000" # Colour of main text in the body of poster
 footnote_textcol: "ffffff" # Colour of footnote text if used
-
-#----POSTER SIZE & COLUMN FORMATTING----#
-poster_height: "39in" # height in inches of poster
-poster_width: "45in" # width in inches of poster
-column_numbers: 4 # Number of columns that the poster has
-column_margins: "5mm" # Margin spacing for columns
-
-#---- Section Titles Styling ----#
-header_textcol: "ffffff" # Colour of the poster header titles
-header_bgcol: "0b4545" # Colour of the header title box
-header_bordercol: "0b4545" # Colour of the border around the box (if you dont want one then set border size to 0)
-header_borderwidth: "6pt" # Thicknes of the header box border
-header_boxshape: "sharp corners" # Lots of options can be used for this. Another example is "rounded corners". I will make a list soon!
-
-#----OTHER----#
-bibliography: MyLibrary # name of the .bib file used for referencing
-bibliography_spacing: 0.8 # sets the multiplier for line spacing of bibliography spacing (between 0 and 1) 
 output: posterdown::posterdown_pdf
-
 ---
 
 ```{r, include=FALSE}
@@ -57,8 +63,7 @@ knitr::opts_chunk$set(echo = FALSE, results = 'asis',fig.height = 3.5, fig.width
 ```
 
 <!--
-Bellow you will find typical RMarkdown syntax which should fill in the columns for the poster from top to bottom left to right. The more information you have the more will be filled. Please let me know if you have feedback at brentthorne18@gmail.com or at github.com/brentthorne/posterdown
-
+Bellow you will find typical RMarkdown syntax which should fill in the columns for the poster from top to bottom left to right. The more information you have the more will be filled. Please let me know if you have feedback at brentthorne18@gmail.com or at github.com/brentthorne/posterdown.
 ENJOY! XD
 -->
 
@@ -89,25 +94,21 @@ ggplot() +
 
 # Objectives
 
-\large
-
 1. Easy to use reproducible poster design. 
 2. Integration with `RMarkdown`.
 3. Easy transition from `posterdown` to `thesisdown` or `rticles`
 
-\small
+\lipsum[2]
+\lipsum[2]
 
 # Methods
 
-This package uses the same workflow approach as the `RMarkdown` you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > Latex > PDF
-
-\lipsum[1-3]
+This package uses the same workflow approach as the `RMarkdown` you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > Latex > PDF.
 
 # Results
 
 Usually you want to have a nice table displaying some important results that you have calcualated. In posterdown this is as easy as using the `kable` table formatting you are probably use to as per typical `RMarkdown` formatting. I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf).
 
-\vspace{1in}
 
 ```{r}
 library(kableExtra)
@@ -120,7 +121,9 @@ kable(iris[1:4,],align = "c", caption = "Tables are a breeze with Kable and Kabl
 
 ```
 
-```{r, out.width='75%', fig.width=4, fig.height=3, fig.cap='A typical plot using ggplot using the classic iris dataset.'}
+\vspace{0.5in}
+
+```{r, out.width='80%', fig.width=4, fig.height=5, fig.cap='A typical plot using ggplot using the classic iris dataset.'}
 
 library(ggplot2)
 library(ggthemes)
@@ -166,7 +169,7 @@ ggplot(data=iris,
 
 ```
 
-\lipsum[1-5]
+\lipsum[1-2]
 
 # Next Steps
 

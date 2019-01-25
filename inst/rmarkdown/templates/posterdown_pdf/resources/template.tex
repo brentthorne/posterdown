@@ -47,17 +47,18 @@
 %%%%%%%%% COLOURS %%%%%%%%
 
 %Fill/ Line Colours
-\definecolor{titlebgcol}{HTML}{$title_bgcol$}
+\definecolor{titleboxbgcol}{HTML}{$titlebox_bgcol$}
+\definecolor{titleboxbordercol}{HTML}{$titlebox_bordercol$}
 \definecolor{columnlinecol}{HTML}{$columnline_col$}
-\definecolor{posterbgcol}{HTML}{$poster_bgcol$}
-\definecolor{headerbgcol}{HTML}{$header_bgcol$}
-\definecolor{headerbordercol}{HTML}{$header_bordercol$}
+\definecolor{posterbgcol}{HTML}{$body_bgcol$}
+\definecolor{sectitlebgcol}{HTML}{$sectitle_bgcol$}
+\definecolor{sectitlebordercol}{HTML}{$sectitle_bordercol$}
 
 % Text Colours
 \definecolor{titletextcol}{HTML}{$title_textcol$}
 \definecolor{authortextcol}{HTML}{$author_textcol$}
 \definecolor{affiliationtextcol}{HTML}{$affiliation_textcol$}
-\definecolor{headertextcol}{HTML}{$header_textcol$}
+\definecolor{sectitletextcol}{HTML}{$sectitle_textcol$}
 \definecolor{bodytextcol}{HTML}{$body_textcol$}
 \definecolor{footnotetextcol}{HTML}{$footnote_textcol$}
 \definecolor{citecol}{HTML}{$cite_col$}
@@ -69,7 +70,7 @@
     colorlinks=true,
     linkcolor=linkcol,
     citecolor=citecol,
-    filecolor=magenta,
+    filecolor=linkcol,
     urlcolor=urlcol,
 }
 
@@ -88,14 +89,14 @@
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{columnlinecol}}
 
-%define section header title features
-\setsubsubsecheadstyle{\small\color{headertextcol}\textbf}% Set \section style
+%define section title features
+\setsubsubsecheadstyle{\small\color{sectitletextcol}\textbf}% Set \section style
 \setsecnumformat{}
 \def\sectionmark#1{\markboth{#1}{#1}}
 
 
 %tcolorbox magic from my stack exchange question
-\newtcolorbox{myboxstuff}[1][]{code={\parindent=0em},colframe=headerbordercol,left skip=0pt,valign=center,halign=center,fontupper=\Large\bfseries,colupper=headertextcol,boxrule=$header_borderwidth$,$header_boxshape$,colback=headerbgcol, #1}
+\newtcolorbox{myboxstuff}[1][]{code={\parindent=0em},colframe=sectitlebordercol,nobeforeafter,left skip=0pt,valign=center,halign=center,fontupper=\Large\bfseries,colupper=sectitletextcol,boxrule=$sectitle_borderwidth$,colback=sectitlebgcol,sharp corners=$sectitle_boxshape$, #1}
 \newcommand{\mybox}[1]{%
 \begin{myboxstuff}
 \strut #1
@@ -140,18 +141,18 @@
 \chapterstyle{mydefault}
 
 %define column spacing
-\setlength\columnsep{1in}
+\setlength\columnsep{$column_margins$}
 
-\setlength\parindent{1em}
-\setlength\parskip{1em}
+\setlength\parindent{0em}
+\setlength\parskip{0em}
 \setlength\hangparas{0}
 
 %spacing after section head title
-\setaftersecskip{0.3in}
-\setbeforesecskip{1in}
-\setlength\textfloatsep{0.3in}
-\setlength\floatsep{0.3in}
-\setlength\intextsep{0.3in}
+\setaftersecskip{0em}
+\setbeforesecskip{1.5em}
+\setlength\textfloatsep{0in}
+\setlength\floatsep{0in}
+\setlength\intextsep{0in}
 
 \setstocksize{$poster_height$}{$poster_width$}
 \settrimmedsize{\stockheight}{\stockwidth}{*}
@@ -167,14 +168,6 @@
 \setlength{\trimedge}{0pt}
 \setlength{\uppermargin}{0pt}
 \checkandfixthelayout
-
-\mdfdefinestyle{brentsmdfstyle}{%
-  backgroundcolor=titlebgcol,
-  linecolor=columnlinecol,
-  topline=false,
-  leftline=false,
-  rightline=false,
-  linewidth=2mm}
 
 %Footnote to white
 \RequirePackage{footmisc}
@@ -198,14 +191,19 @@ $endif$
 %top title box
 \newtcolorbox{topbox}{
 enhanced,
-colback=titlebgcol,
-colframe=red,
+colback=titleboxbgcol,
+colframe=titleboxbordercol,
 halign=center,
-sharp corners,
+boxrule=$titlebox_borderwidth$,
+sharp corners=$titlebox_shape$,
  overlay={
     \node[anchor=south west]
-      at ([xshift=1in,yshift=0.6\baselineskip]frame.south west)
-       {\includegraphics[width=15pc]{Figures/posterdownlogo}};}
+      at ([xshift=$logoleft_xshift$,yshift=$logoleft_yshift$]frame.south west)
+       {\includegraphics[width=$logoleft_width$]{$logoleft_name$}};
+    \node[anchor=south east]
+      at ([xshift=$logoright_xshift$,yshift=$logoright_yshift$]frame.south east)
+       {\includegraphics[width=$logoright_width$]{$logoright_name$}};}
+
 }
 
 % -------------- begin the document ----------------- %
@@ -220,14 +218,14 @@ sharp corners,
   \$title_textsize${$title$}  \\[0.3in]  %% SC
   \color{authortextcol} \$author_textsize${$author$} \\[0.2in] %% SC
   \color{affiliationtextcol} \$affiliation_textsize${$affiliation$} %% SC
-  \vspace{0.5in}
+  \vspace{1cm}
 \end{topbox}
 
 % ---------------- Top Section End ------------------%
 
 
 % Begin body of poster
-\begin{adjmulticols*}{$column_numbers$}{10mm}{10mm}
+\begin{adjmulticols*}{$column_numbers$}{$column_margins$}{$column_margins$}
 \$body_textsize${  %% SC
 \color{bodytextcol}
 $body$
