@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/brentthorne/posterdown.svg?branch=daily-dev)](https://travis-ci.com/brentthorne/posterdown)
+[![Build Status](https://travis-ci.com/brentthorne/posterdown.svg?branch=master)](https://travis-ci.com/brentthorne/posterdown)
 
 # posterdown
 
