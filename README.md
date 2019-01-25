@@ -115,6 +115,8 @@ YAML header options have been created to provide more freedom in design (i.e. co
 
 #### Adding Logos
 
+|     Option    | Description |
+|---------------|-------------|
 | `logoleft_name` | Name of the image file you want to use for the logo to the **left**. |
 | `logoleft_width` | Width of the image you chose (**Note**: The height will adjust automatically based on the width to avoid distortion :smile:) |
 | `logoleft_xshift` | Value to move the image along the x-axis based on the anchor being the **left** bottom corner. |
@@ -126,6 +128,8 @@ YAML header options have been created to provide more freedom in design (i.e. co
 
 ### Poster Body Options
 
+|     Option    | Description |
+|---------------|-------------|
 | `body_bgcol`| Background colour of the poster's main body. |
 | `body_textsize`| Font size of the poster's main paragraphs from the body. |
 | `body_textcol` | Colour of the main body text. |
@@ -153,6 +157,8 @@ YAML header options have been created to provide more freedom in design (i.e. co
 
 ### Other
 
+|     Option    | Description |
+|---------------|-------------|
 | `cite_col` | Colour of the citation link elements when using `biblatex`. |
 | `url_col` | Colour of URL links specifically. |
 | `link_col` | Colour of in-document links (example would be referencing a Figure or a Table). |
