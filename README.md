@@ -1,16 +1,16 @@
 # posterdown
 
-<img src="posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
+<img src="Images/posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
 
 As a graduate student, I found that it is almost a rite of passage to take early research and analysis and generate a conference poster allowing for critical feedback. This is also important for facilitating meeting the people in your field at poster sessions at academic meetings. I have also noticed that while many of my fellow graduate students use R and are getting their feet wet with RMarkdown :blush:, we always had to go back to using MS Powerpoint or Keynote or Adobe Illustrator for generating conference posters :unamused:. Posterdown was created as a proof-of-concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
 
 From this:
 
-<img src="code_pic.png" width="50%" height="50%">
+<img src="Images/code_pic.png" width="50%" height="50%">
 
 To this:
 
-<img src="example_poster.png" width="50%" height="50%">
+<img src="Images/example_poster1.png" width="50%" height="50%">
 
 
 Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my Master's degree so I will have limited time to work on updating this package in the next few months but nevertheless I will do what I can! :smile: 
@@ -67,7 +67,7 @@ To use **posterdown** from RStudio:
     
 3. Use the **File / New File / R Markdown.. / From Template / Posterdown PDF** dialog pathway to create a conference poster from the _Posterdown PDF_ template provided.
 
-    ![New R Markdown](posterdown_picture.png)
+    ![New R Markdown](Images/posterdown_picture.png)
 
     _**NOTE** If you do not see the **Posterdown PDF** template in this dialogue box, restart the R session or close and re-open RStudio._
 
@@ -95,6 +95,10 @@ YAML header options have been created to provide more freedom in design (i.e. co
 | `poster_bgcol`| Background colour of the poster's main body section. |
 | `title_textcol` | Colour of the main title text. |
 | `header_textcol` | Colour of the Section Header Text. |
+| `header_bgcol` | Colour of the header title box. |
+| `header_bordercol` | Colour of the border around the header text box. |
+| `header_borderwidth` | Thickness of the header title box border. |
+| `header_boxshape` | Shape of the corners for the header title box (Options include: `sharp corners` or `rounded corners`. For more options please see the [tcolorbox manual]() and search for "sharp corners", **HINT** there are LOTS of options there :smile: . |
 | `cite_col` | Colour of the citation link elements when using `biblatex`. |
 | `url_col` | Colour of URL links specifically |
 | `link_col` | Colour of in-document links (example would be referencing a Figure or a Table) |
@@ -105,6 +109,7 @@ YAML header options have been created to provide more freedom in design (i.e. co
 | `bibliography` | Name of the `.bib`. file which you are using to source material. As of right now only `biblatex` is working but I intend to add support of `natbib` which is my preference.
 | `bibliography_spacing` | Sets the mutiplier for line spacing between bibliography entries, default value is `0.8`. Useful if you need to squeeze more space from somewhere.
 | `output` | For generating `posterdown_pdf`, in the future other poster designs or templates may be made for this package and thus this option in the YAML will be more flexible. For now this is the only option. |
+
 
 ### Markdown Customization
 
@@ -137,4 +142,4 @@ As you add content to your RMarkdown file, you will notice that the output pdf w
 - [ ] Toggle citation section on/off as per user's choice
 - [x] ~~Make colour options standardized (probably hex colours if possible)~~
 - [ ] Allow users to choose colour options from a palette??
-- [ ] Fill/style Section headings if user wishes
+- [x] ~~Fill/style Section headings if user wishes~~

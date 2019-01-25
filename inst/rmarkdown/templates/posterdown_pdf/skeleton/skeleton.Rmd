@@ -23,27 +23,33 @@ poster_bgcol: "ffffff" #colour of the poster main background
 cite_col: "CC0000" #colour of ciation elements
 url_col: "008080" #colour of url links
 link_col: "008080" #colour of other links within the poster
-columnline_col: "0b4545" #colour 
-header_bgcol: "008080"
+columnline_col: "ffffff" #colour 
 
 #Text Colours
 title_textcol: "ffffff" #colour of title text
 author_textcol: "008080" # Colour of author text
 affiliation_textcol: "FFFFFF" # Colour of affiliation text
 body_textcol: "000000" # Colour of main text in the body of poster
-header_textcol: "CC0000" # Colour of the poster header titles
-footnote_textcol: "FFFFFF" # Colour of footnote text if used
+footnote_textcol: "ffffff" # Colour of footnote text if used
 
 #----POSTER SIZE & COLUMN FORMATTING----#
-poster_height: "38in" # height in inches of poster
+poster_height: "39in" # height in inches of poster
 poster_width: "45in" # width in inches of poster
-column_numbers: 3 # Number of columns that the poster has
-column_margins: "10mm" # Margin spacing for columns
+column_numbers: 4 # Number of columns that the poster has
+column_margins: "5mm" # Margin spacing for columns
+
+#---- Section Titles Styling ----#
+header_textcol: "ffffff" # Colour of the poster header titles
+header_bgcol: "0b4545" # Colour of the header title box
+header_bordercol: "0b4545" # Colour of the border around the box (if you dont want one then set border size to 0)
+header_borderwidth: "6pt" # Thicknes of the header box border
+header_boxshape: "sharp corners" # Lots of options can be used for this. Another example is "rounded corners". I will make a list soon!
 
 #----OTHER----#
 bibliography: MyLibrary # name of the .bib file used for referencing
 bibliography_spacing: 0.8 # sets the multiplier for line spacing of bibliography spacing (between 0 and 1) 
 output: posterdown::posterdown_pdf
+
 ---
 
 ```{r, include=FALSE}
@@ -95,9 +101,13 @@ ggplot() +
 
 This package uses the same workflow approach as the `RMarkdown` you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > Latex > PDF
 
+\lipsum[1-3]
+
 # Results
 
 Usually you want to have a nice table displaying some important results that you have calcualated. In posterdown this is as easy as using the `kable` table formatting you are probably use to as per typical `RMarkdown` formatting. I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf).
+
+\vspace{1in}
 
 ```{r}
 library(kableExtra)
@@ -109,8 +119,6 @@ kable(iris[1:4,],align = "c", caption = "Tables are a breeze with Kable and Kabl
   kable_styling(latex_options = c("striped","HOLD_position"),full_width = TRUE, font_size = 25)
 
 ```
-
-\vspace{1in}
 
 ```{r, out.width='75%', fig.width=4, fig.height=3, fig.cap='A typical plot using ggplot using the classic iris dataset.'}
 
@@ -125,7 +133,6 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
 
 ```
 
-\vspace{1in}
 
 ```{r, out.width='85%', fig.width=4.5, fig.height=4, fig.cap='Another typical plot using ggplot, this time with a different theme and r code chunk options for fig.width and fig.height.'}
 
@@ -140,7 +147,7 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
 
 ```
 
-\vspace{1in}
+
 
 ```{r, out.width='80%', fig.width=4.5, fig.align='center', echo=TRUE, fig.height=5, fig.cap='Another figure showing how base R plots might look on this poster!'}
 
@@ -159,6 +166,7 @@ ggplot(data=iris,
 
 ```
 
+\lipsum[1-5]
 
 # Next Steps
 
@@ -171,6 +179,6 @@ There is still **A LOT** of work to do on this package which include (but are no
 - Include References section only if initiated by the user like in RMarkdown.
 
 <!--- Here you can set the size of the citation text as well as remove the "References" section if you choose not to have one for some reason :) -->
-\printbibliography
+\small\printbibliography
 
 
