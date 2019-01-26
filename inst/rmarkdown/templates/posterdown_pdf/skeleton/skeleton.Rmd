@@ -43,7 +43,7 @@ sectitle_textcol: "ffffff" # Colour of the poster section titles
 sectitle_bgcol: "0b4545" # Colour of the section title box
 sectitle_bordercol: "0b4545" # Colour of the border around the section title box.
 sectitle_borderwidth: "2mm" # Thicknes of the section title box border
-sectitle_boxshape: "south" # Changes the shape of the section title box.
+sectitle_boxshape: "uphill" # Changes the shape of the section title box.
 
 #---BIBLIOGRAPHY OPTIONS---#
 bibliography: MyLibrary # name of the .bib file used for referencing
@@ -90,7 +90,6 @@ ggplot() +
   theme_solarized() +
   NULL
 ```
-
 
 # Objectives
 
@@ -151,7 +150,6 @@ ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
 ```
 
 
-
 ```{r, out.width='80%', fig.width=4.5, fig.align='center', echo=TRUE, fig.height=5, fig.cap='Another figure showing how base R plots might look on this poster!'}
 
 # Here is some code for people
@@ -183,5 +181,3 @@ There is still **A LOT** of work to do on this package which include (but are no
 
 <!--- Here you can set the size of the citation text as well as remove the "References" section if you choose not to have one for some reason :) -->
 \small\printbibliography
-
-

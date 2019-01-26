@@ -26,7 +26,6 @@
 \RequirePackage{adjmulticol}
 \RequirePackage[skins,most,listings,skins]{tcolorbox}
 
-
 %For kable extra package :)
 \RequirePackage{booktabs}
 \RequirePackage{longtable}
@@ -44,16 +43,28 @@
 \RequirePackage{makecell}
 \RequirePackage{wrapfig}
 
-%%%%%%%%% COLOURS %%%%%%%%
+%rof hyperrefs
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcol,
+    citecolor=citecol,
+    filecolor=linkcol,
+    urlcolor=urlcol,
+}
+%For figure and table placement
+\RequirePackage{float}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
 
+%%%%%%%%% COLOURS %%%%%%%%
 %Fill/ Line Colours
 \definecolor{titleboxbgcol}{HTML}{$titlebox_bgcol$}
 \definecolor{titleboxbordercol}{HTML}{$titlebox_bordercol$}
 \definecolor{columnlinecol}{HTML}{$columnline_col$}
-\definecolor{posterbgcol}{HTML}{$body_bgcol$}
+\definecolor{bodybgcol}{HTML}{$body_bgcol$}
 \definecolor{sectitlebgcol}{HTML}{$sectitle_bgcol$}
 \definecolor{sectitlebordercol}{HTML}{$sectitle_bordercol$}
-
 % Text Colours
 \definecolor{titletextcol}{HTML}{$title_textcol$}
 \definecolor{authortextcol}{HTML}{$author_textcol$}
@@ -65,20 +76,8 @@
 \definecolor{urlcol}{HTML}{$url_col$}
 \definecolor{linkcol}{HTML}{$link_col$}
 
-\RequirePackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=linkcol,
-    citecolor=citecol,
-    filecolor=linkcol,
-    urlcolor=urlcol,
-}
 
-%For figure and table placement
-\RequirePackage{float}
-\floatplacement{figure}{H}
-\floatplacement{table}{H}
-
+%Memoir spacing options
 %spacing between figure/ table and caption
 \setlength{\abovecaptionskip}{0.4in}
 \setlength{\belowcaptionskip}{0.2in}
@@ -94,9 +93,37 @@
 \setsecnumformat{}
 \def\sectionmark#1{\markboth{#1}{#1}}
 
+%%%%%%%%%%%% TCOLORBOXES TO THE RESCUE %%%%%%%%%%%%%%%%%%%%
+%Title Box
+\newtcolorbox{topbox}{
+enhanced,
+colback=titleboxbgcol,
+colframe=titleboxbordercol,
+halign=center,
+boxrule=$titlebox_borderwidth$,
+sharp corners=$titlebox_shape$,
+ overlay={
+    \node[anchor=south west]
+      at ([xshift=$logoleft_xshift$,yshift=$logoleft_yshift$]frame.south west)
+       {\includegraphics[width=$logoleft_width$]{$logoleft_name$}};
+    \node[anchor=south east]
+      at ([xshift=$logoright_xshift$,yshift=$logoright_yshift$]frame.south east)
+       {\includegraphics[width=$logoright_width$]{$logoright_name$}};}
 
-%tcolorbox magic from my stack exchange question
-\newtcolorbox{myboxstuff}[1][]{code={\parindent=0em},colframe=sectitlebordercol,nobeforeafter,left skip=0pt,valign=center,halign=center,fontupper=\Large\bfseries,colupper=sectitletextcol,boxrule=$sectitle_borderwidth$,colback=sectitlebgcol,sharp corners=$sectitle_boxshape$, #1}
+}
+%Body Section Title Box
+\newtcolorbox{myboxstuff}[1][]{
+code={\parindent=0em},
+colframe=sectitlebordercol,
+nobeforeafter,
+left skip=0pt,
+valign=center,
+halign=center,
+fontupper=\Large\bfseries,
+colupper=sectitletextcol,
+boxrule=$sectitle_borderwidth$,
+colback=sectitlebgcol,
+sharp corners=$sectitle_boxshape$, #1}
 \newcommand{\mybox}[1]{%
 \begin{myboxstuff}
 \strut #1
@@ -106,12 +133,9 @@
     \setsecheadstyle{\mybox}
 }
 \headstyles{MyBox}\makepagestyle{MyBox}
-
-
 %-----------------------------------------------------
-
+%Make sure that the page is empty of any preset items from memoir
 \thispagestyle{empty}
-\definecolor{light-gray}{gray}{0.9}
 
 %biblatex options
 \RequirePackage[sorting=none,backend=biber]{biblatex}
@@ -125,12 +149,10 @@
   \renewcommand{\bibname}{References}
 }
 
-%bring in the users information
-\author{$author$}
-\title{$title$}
+%Remove section numbering & set 2nd level header as first level
+%to avoid the automatic new page generated from memoir chapter
+%formatting
 \counterwithout{section}{chapter}
-
-
 \makechapterstyle{mydefault}{
 \addtocounter{secnumdepth}{2}
 \setsecheadstyle{\mybox}
@@ -138,11 +160,13 @@
 \setsubsubsecheadstyle{\itshape}
 }
 
+%set the chapterstyle
 \chapterstyle{mydefault}
 
 %define column spacing
 \setlength\columnsep{$column_margins$}
 
+%spacing params
 \setlength\parindent{0em}
 \setlength\parskip{0em}
 \setlength\hangparas{0}
@@ -181,36 +205,17 @@ $endif$
 % choose font family
 \RequirePackage{$font_family$}
 
-\newpagecolor{posterbgcol}
+% define the BODYBGCOL
+\newpagecolor{bodybgcol}
 
 %sets footnote to be white hopefully
 \renewcommand\footnoterule{}
 \renewcommand{\thempfootnote}{\footnotesize\color{footnotetextcol}{\arabic{mpfootnote}}}
 
-
-%top title box
-\newtcolorbox{topbox}{
-enhanced,
-colback=titleboxbgcol,
-colframe=titleboxbordercol,
-halign=center,
-boxrule=$titlebox_borderwidth$,
-sharp corners=$titlebox_shape$,
- overlay={
-    \node[anchor=south west]
-      at ([xshift=$logoleft_xshift$,yshift=$logoleft_yshift$]frame.south west)
-       {\includegraphics[width=$logoleft_width$]{$logoleft_name$}};
-    \node[anchor=south east]
-      at ([xshift=$logoright_xshift$,yshift=$logoright_yshift$]frame.south east)
-       {\includegraphics[width=$logoright_width$]{$logoright_name$}};}
-
-}
-
-% -------------- begin the document ----------------- %
+%-------------- Begin Document -------------------%
 \begin{document}
 
-% -------------- Top Section Start ------------------ %
-
+%-------------- Title Box Start ------------------%
 %tcolorbox allows for pictures hopefully
 \begin{topbox}
   \color{titletextcol}
@@ -220,10 +225,8 @@ sharp corners=$titlebox_shape$,
   \color{affiliationtextcol} \$affiliation_textsize${$affiliation$} %% SC
   \vspace{1cm}
 \end{topbox}
-
-% ---------------- Top Section End ------------------%
-
-
+%--------------- Title Box End -------------------%
+%----------------- Body Start --------------------%
 % Begin body of poster
 \begin{adjmulticols*}{$column_numbers$}{$column_margins$}{$column_margins$}
 \$body_textsize${  %% SC
@@ -231,5 +234,7 @@ sharp corners=$titlebox_shape$,
 $body$
 }
 \end{adjmulticols*}
+%------------------ Body End ---------------------%
 %end the poster
 \end{document}
+
