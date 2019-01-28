@@ -136,6 +136,7 @@ YAML header options have been created to provide more freedom in design (i.e. co
 | `column_numbers` | Number of columns you wish for the poster to have in the main section of the poster. |
 | `column_margins` | Spcaing between each column as well as the edge of the poster.|
 | `columnline_col` | Colour of the line which divides each column in the poster. |
+| `columnline_width` | Width of line between each column. |
 
 #### Section Title Styling
 
