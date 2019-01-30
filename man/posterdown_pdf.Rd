@@ -2,7 +2,7 @@
 % Please edit documentation in R/posterdown_pdf.R
 \name{posterdown_pdf}
 \alias{posterdown_pdf}
-\title{Posterdown PDF format (using 'memoir' document class)}
+\title{Posterdown PDF format (using Memoir LaTeX document class)}
 \usage{
 posterdown_pdf(..., keep_tex = TRUE)
 }
@@ -16,13 +16,12 @@ R Markdown output format to pass to
   \code{\link[rmarkdown:render]{render}}
 }
 \description{
-Posterdown PDF format (using 'memoir' document class)
+Posterdown PDF format (using Memoir LaTeX document class)
 }
 \examples{
 
 \dontrun{
 library(rmarkdown)
-draft("MyArticle.Rmd", template = "posterdown_generic", package = "posterdown")
+draft("MyArticle.Rmd", template = "posterdown_pdf", package = "posterdown")
 }
-
 }

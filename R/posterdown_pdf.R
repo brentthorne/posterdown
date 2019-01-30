@@ -1,4 +1,4 @@
-#' Posterdown PDF format (using 'memoir' document class)
+#' Posterdown PDF format (using Memoir LaTeX document class)
 #'
 #' @inheritParams rmarkdown::pdf_document
 #' @param ... Additional arguments to \code{rmarkdown::pdf_document}
@@ -10,9 +10,9 @@
 #'
 #' \dontrun{
 #' library(rmarkdown)
-#' draft("MyArticle.Rmd", template = "posterdown_generic", package = "posterdown")
+#' draft("MyArticle.Rmd", template = "posterdown_pdf", package = "posterdown")
 #' }
-#'
+#' @return
 #' @export
 posterdown_pdf <- function(..., keep_tex = TRUE) {
   inherit_pdf_document(...,

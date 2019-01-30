@@ -9,6 +9,7 @@
 #' @docType package
 #' @name posterdown
 #' @import rmarkdown
+#' @import bookdown
 #' @import ggplot2
 #' @import knitr
 NULL
