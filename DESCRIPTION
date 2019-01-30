@@ -17,6 +17,6 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/brentthorne/posterdown
 BugReports: https://github.com/brentthorne/posterdown/issues
-Imports: rmarkdown, knitr, yaml, tinytex, ggplot2, rticles, kableExtra, Cairo
+Imports: rmarkdown, bookdown, knitr, yaml, tinytex, ggplot2, rticles, kableExtra, Cairo
 SystemRequirements: GNU make
 RoxygenNote: 6.1.1

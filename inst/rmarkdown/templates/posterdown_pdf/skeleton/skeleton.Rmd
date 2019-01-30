@@ -1,5 +1,4 @@
 ---
-#
 # PLEASE SEE THE README for in depth description github.com/brentthorne/posterdown
 #
 #---POSTER SIZE & DEFAULT FONT---#
@@ -83,6 +82,7 @@ Here is a map made to show the study site using `ggplot2`, `ggspatial`, and `sf`
 ```{r, out.width="80%", fig.cap='This is a map of Canada, the ggspatial package is great for GIS folks in R! \\label{mymapfig}', cache=TRUE}
 library(ggplot2)
 library(ggspatial)
+library(tidyverse)
 library(ggthemes)
 library(sf)
 
