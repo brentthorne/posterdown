@@ -12,8 +12,9 @@
 #' library(rmarkdown)
 #' draft("MyArticle.Rmd", template = "posterdown_pdf", package = "posterdown")
 #' }
-#' @return
 #' @export
+
+# This is borrowed from the thesisdown package github.com/ismayc/thesisdown
 posterdown_pdf <- function(..., keep_tex = TRUE) {
   inherit_pdf_document(...,
                        keep_tex = keep_tex,
