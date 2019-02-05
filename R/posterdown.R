@@ -13,6 +13,7 @@
 #' @name posterdown
 #' @import rmarkdown
 #' @import bookdown
+#' @import pagedown
 #' @import ggplot2
 #' @import knitr
 NULL
