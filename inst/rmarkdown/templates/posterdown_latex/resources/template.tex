@@ -1,0 +1,240 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% %%	Posterdown PDF class for LaTeX files	 08-JAN-2019
+%% %%	For any information please send an e-mail to:
+%% %%		brentthonre18@gmail.com (Brent Thorne)
+%% %%
+%% %%	Initial class provided by:
+%% %%		Brent Thorne
+%% %% Contributors: Shea Connell (SC)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[article,$font_size$,extrafontsizes]{memoir}
+
+%utf-8 seems to be important
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{multicol}
+\RequirePackage{graphicx}
+\RequirePackage{lipsum}
+\RequirePackage{blindtext}
+\RequirePackage[svgnames,table]{xcolor}
+\RequirePackage{tikz}
+\RequirePackage[framemethod=tikz]{mdframed}
+\RequirePackage{color}
+\RequirePackage{geometry}
+\RequirePackage{adjmulticol}
+\RequirePackage[skins,most,listings,skins]{tcolorbox}
+
+%For kable extra package :)
+\RequirePackage{booktabs}
+\RequirePackage{longtable}
+\RequirePackage{array}
+\RequirePackage{multirow}
+\RequirePackage{wrapfig}
+\RequirePackage{float}
+\RequirePackage{colortbl}
+\RequirePackage{pdflscape}
+\RequirePackage{pagecolor}
+\RequirePackage{tabu}
+\RequirePackage{threeparttable}
+\RequirePackage{threeparttablex}
+\RequirePackage[normalem]{ulem}
+\RequirePackage{makecell}
+\RequirePackage{wrapfig}
+
+%rof hyperrefs
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcol,
+    citecolor=citecol,
+    filecolor=linkcol,
+    urlcolor=urlcol,
+}
+%For figure and table placement
+\RequirePackage{float}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
+
+%%%%%%%%% COLOURS %%%%%%%%
+%Fill/ Line Colours
+\definecolor{titleboxbgcol}{HTML}{$titlebox_bgcol$}
+\definecolor{titleboxbordercol}{HTML}{$titlebox_bordercol$}
+\definecolor{columnlinecol}{HTML}{$columnline_col$}
+\definecolor{bodybgcol}{HTML}{$body_bgcol$}
+\definecolor{sectitlebgcol}{HTML}{$sectitle_bgcol$}
+\definecolor{sectitlebordercol}{HTML}{$sectitle_bordercol$}
+% Text Colours
+\definecolor{titletextcol}{HTML}{$title_textcol$}
+\definecolor{authortextcol}{HTML}{$author_textcol$}
+\definecolor{affiliationtextcol}{HTML}{$affiliation_textcol$}
+\definecolor{sectitletextcol}{HTML}{$sectitle_textcol$}
+\definecolor{bodytextcol}{HTML}{$body_textcol$}
+\definecolor{footnotetextcol}{HTML}{$footnote_textcol$}
+\definecolor{citecol}{HTML}{$cite_col$}
+\definecolor{urlcol}{HTML}{$url_col$}
+\definecolor{linkcol}{HTML}{$link_col$}
+
+
+%Memoir spacing options
+%spacing between figure/ table and caption
+\setlength{\abovecaptionskip}{0.4in}
+\setlength{\belowcaptionskip}{0.2in}
+\captionnamefont{\footnotesize\sffamily\bfseries}
+\captiontitlefont{\footnotesize\sffamily}
+
+%define column options
+\setlength{\columnseprule}{$columnline_width$}
+\def\columnseprulecolor{\color{columnlinecol}}
+
+%define section title features
+\setsubsubsecheadstyle{\small\color{sectitletextcol}\textbf}% Set \section style
+\setsecnumformat{}
+\def\sectionmark#1{\markboth{#1}{#1}}
+
+%%%%%%%%%%%% TCOLORBOXES TO THE RESCUE %%%%%%%%%%%%%%%%%%%%
+%Title Box
+\newtcolorbox{topbox}{
+enhanced,
+colback=titleboxbgcol,
+colframe=titleboxbordercol,
+halign=center,
+boxrule=$titlebox_borderwidth$,
+sharp corners=$titlebox_shape$,
+ overlay={
+    \node[anchor=south west]
+      at ([xshift=$logoleft_xshift$,yshift=$logoleft_yshift$]frame.south west)
+       {\includegraphics[width=$logoleft_width$]{$logoleft_name$}};
+    \node[anchor=south east]
+      at ([xshift=$logoright_xshift$,yshift=$logoright_yshift$]frame.south east)
+       {\includegraphics[width=$logoright_width$]{$logoright_name$}};}
+
+}
+%Body Section Title Box
+\newtcolorbox{myboxstuff}[1][]{
+code={\parindent=0em},
+colframe=sectitlebordercol,
+nobeforeafter,
+left skip=0pt,
+valign=center,
+halign=center,
+fontupper=\Large\bfseries,
+colupper=sectitletextcol,
+boxrule=$sectitle_borderwidth$,
+colback=sectitlebgcol,
+sharp corners=$sectitle_boxshape$, #1}
+\newcommand{\mybox}[1]{%
+\begin{myboxstuff}
+\strut #1
+\end{myboxstuff}%
+}
+\makeheadstyles{MyBox}{
+    \setsecheadstyle{\mybox}
+}
+\headstyles{MyBox}\makepagestyle{MyBox}
+%-----------------------------------------------------
+%Make sure that the page is empty of any preset items from memoir
+\thispagestyle{empty}
+
+%biblatex options
+\RequirePackage[sorting=none,backend=biber]{biblatex}
+\renewcommand*{\bibfont}{\$bibliography_textsize$} %% SC
+\bibliography{$bibliography$}
+\defbibheading{bibliography}[\bibname]{%
+\setlength\bibitemsep{$bibliography_spacing$\itemsep} %% SC
+\section*{#1}%
+\markboth{#1}{#1}}
+\AtBeginDocument{%
+  \renewcommand{\bibname}{References}
+}
+
+%Remove section numbering & set 2nd level header as first level
+%to avoid the automatic new page generated from memoir chapter
+%formatting
+\counterwithout{section}{chapter}
+\makechapterstyle{mydefault}{
+\addtocounter{secnumdepth}{2}
+\setsecheadstyle{\mybox}
+\setsubsecheadstyle{\itshape}
+\setsubsubsecheadstyle{\itshape}
+}
+
+%set the chapterstyle
+\chapterstyle{mydefault}
+
+%define column spacing
+\setlength\columnsep{$column_margins$}
+
+%spacing params
+\setlength\parindent{0em}
+\setlength\parskip{0em}
+\setlength\hangparas{0}
+
+%spacing after section head title
+\setaftersecskip{0em}
+\setbeforesecskip{1.5em}
+\setlength\textfloatsep{0in}
+\setlength\floatsep{0in}
+\setlength\intextsep{0in}
+
+\setstocksize{$poster_height$}{$poster_width$}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\settypeblocksize{$poster_height$}{$poster_width$}{*}
+\setlrmargins{*}{*}{1}
+\setulmarginsandblock{2.5cm}{*}{*}
+\setmarginnotes{0em}{0cm}{0cm}
+\setlength{\footskip}{0cm}
+\setlength{\footnotesep}{0cm}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{0pt}
+\setlength{\uppermargin}{0pt}
+\checkandfixthelayout
+
+%Footnote to white
+\RequirePackage{footmisc}
+\def\footnotelayout{\centering\color{footnotetextcol}}
+
+% see https://stackoverflow.com/a/47122900
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+% choose font family
+\RequirePackage{$font_family$}
+
+% define the BODYBGCOL
+\newpagecolor{bodybgcol}
+
+%sets footnote to be white hopefully
+\renewcommand\footnoterule{}
+\renewcommand{\thempfootnote}{\footnotesize\color{footnotetextcol}{\arabic{mpfootnote}}}
+
+%-------------- Begin Document -------------------%
+\begin{document}
+
+%-------------- Title Box Start ------------------%
+%tcolorbox allows for pictures hopefully
+\begin{topbox}
+  \color{titletextcol}
+  \vspace{0.5in}
+  \$title_textsize${$title$}  \\[0.3in]  %% SC
+  \color{authortextcol} \$author_textsize${$author$} \\[0.2in] %% SC
+  \color{affiliationtextcol} \$affiliation_textsize${$affiliation$} %% SC
+  \vspace{1cm}
+\end{topbox}
+%--------------- Title Box End -------------------%
+%----------------- Body Start --------------------%
+% Begin body of poster
+\begin{adjmulticols*}{$column_numbers$}{$column_margins$}{$column_margins$}
+\$body_textsize${  %% SC
+\color{bodytextcol}
+$body$
+}
+\end{adjmulticols*}
+%------------------ Body End ---------------------%
+%end the poster
+\end{document}
+

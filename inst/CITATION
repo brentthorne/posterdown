@@ -1,0 +1,16 @@
+citHeader("To cite 'posterdown' in publications use:")
+
+ year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
+ vers <- paste("R package version", meta$Version)
+
+ citEntry(entry="Manual",
+		  title = "posterdown: An R Package",
+		  author = personList(as.person("W. Brent Thorne")),
+		  year = 2019,
+		  url = "https://github.com/brentthorne/posterdown",
+		  note = vers,
+		  textVersion =
+		  paste("W. Brent Thorne (",
+				2019,
+				"). posterdown: An R Packge. ",
+				vers, ".", sep=""))
