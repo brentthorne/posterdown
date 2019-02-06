@@ -1,11 +1,9 @@
 ---
 # PLEASE SEE THE README for in depth description github.com/brentthorne/posterdown
-#
 #---POSTER SIZE & DEFAULT FONT---#
 poster_height: "38in" # height in inches of poster
 poster_width: "45in" # width in inches of poster
 font_family: "Palatino" # choose from typical html fonts (example: "Palatino")
-
 #---TITLE BOX OPTIONS---#
 #ESSENTIALS
 title: 'Using posterdown to generate reproducible conference posters via RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF workflow'
@@ -18,6 +16,7 @@ titlebox_bgcol: "#008080"  #Colour of the Title Box background
 titlebox_bordercol: "#0b4545" #Colour of the title Box border.
 titlebox_shape: "" #ONLY posterdown_PDF
 titlebox_borderwidth: "1cm"
+titletext_fontfamily: Helvetica
 title_textcol: "#ffffff" #colour of title text
 author_textcol: "#0b4545" # Colour of author text
 affiliation_textcol: "#FFFFFF" # Colour of affiliation text
@@ -27,18 +26,25 @@ affiliation_textsize: "40pt"  # Affiliation font size
 #ADDING LOGOS
 logoleft_name: "Figures/posterdownlogo.png"
 logoright_name: "Figures/posterdownlogo.png"
-
 #---POSTER BODY OPTIONS---#
 body_bgcol: "#ffffff" #colour of the poster main background
 body_textsize: "45px"    # Size of the main poster body text
 body_textcol: "#000000" # Colour of main text in the body of poster
-column_numbers: 4 # Number of columns that the poster has
+column_numbers: 3 # Number of columns that the poster has
 column_margins: "0.5in" # Margin spacing for columns
 columnline_col: "#008080" #colour 
 columnline_width: "1mm" #width of line between each column
 columnline_style: dashed #style of the column line seperator.
-
-
+#SECTION TITLE STYLING
+sectitle_textcol: "#ffffff" # Colour of the poster section titles
+sectitle_bgcol: "#0b4545" # Colour of the section title box
+sectitle_bordercol: "#0b4545" # Colour of the border around the section title box.
+sectitle_borderwidth: "2mm" # Thicknes of the section title box border
+sectitle_boxshape: "4mm 0mm" # Changes the shape of the section title box.
+sectitle2_textcol: "#0b4545" # Color of 2nd level header text.
+#--OTHER--#
+link_col: "#0b4545" #colour of other links within the poster
+#--Standard Options--#
 output: 
   posterdown::posterdown_html:
     self_contained: false
@@ -49,7 +55,7 @@ bibliography: MyBib.bib
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(results = 'asis', echo = FALSE, warning = FALSE, message = FALSE, fig.align = 'center')
+knitr::opts_chunk$set(results = 'asis', echo = FALSE, comment = FALSE, warning = FALSE, message = FALSE, fig.align = 'center')
 ```
 
 <!--
@@ -66,7 +72,7 @@ Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow f
 Here is a map made to show the study site using `ggplot2`, `ggspatial`, and `sf` and you can even reference this with a hyperlink, this will take you to **Figure \@ref(fig:mymapfig)**.
 
 
-```{r, mymapfig, out.width="100%", cache=TRUE, fig.cap='Map of Long Lake eample from the [ggspatial](github.com/paleolimbot/ggspatial) package.'}
+```{r, mymapfig, out.width="100%", cache=TRUE, fig.cap='Map of Long Lake eample from the [ggspatial](https://github.com/paleolimbot/ggspatial) package.'}
 library(ggplot2)
 library(ggspatial)
 
@@ -102,7 +108,34 @@ knitr::kable(iris[1:5, 1:4], caption = 'Table caption.',align = 'c',"html") %>%
 ```
 
 
-```{r, out.width='100%', fig.height=10, fig.cap='Using ggplot and patchwork to generate a layout of multiple plots in one figure. The iris dataset was used to generate (a) a line graph, (b) a scatterplot, and (c) a boxplot all together!'}
+Look at this animation!!!! Figure \@ref(fig:gganimatefig).
+
+```{r,gganimatefig, out.width='80%', cache=TRUE, fig.align='center', echo=TRUE, fig.cap='WOW THIS IS AN AWESOME GIF!'}
+
+library(ggplot2)
+library(gganimate)
+library(gapminder)
+
+ggplot(gapminder, aes(gdpPercap,
+                      lifeExp,
+                      size = pop,
+                      colour = country)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  # Here comes the gganimate specific bits
+  labs(title = 'Year: {frame_time}',
+       x = 'GDP per capita',
+       y = 'life expectancy') +
+  transition_time(year) +
+  ease_aes('linear')
+
+```
+
+
+```{r, out.width='100%', fig.height=5, fig.cap='Using ggplot and patchwork to generate a layout of multiple plots in one figure. The iris dataset was used to generate (a) a line graph, (b) a scatterplot, and (c) a boxplot all together!'}
 
 library(tidyverse)
 library(patchwork)
@@ -124,50 +157,12 @@ p_line +
 
 ```
 
-
-```{r, out.width='85%', fig.width=4.5, fig.height=4, fig.cap='Another typical plot using ggplot, this time with a different theme and r code chunk options for fig.width and fig.height.'}
-
-library(ggplot2)
-library(ggthemes)
-
-ggplot(data = iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) +
-  geom_point() +
-  theme_tufte() +
-  labs(x = "Sepal Length", y = "Sepeal Width") +
-  NULL
-
-```
-
-
-```{r, out.width='80%', fig.width=4.5, fig.align='center', echo=TRUE, fig.height=5, fig.cap='Another figure showing how base R plots might look on this poster!'}
-
-# Here is some code for people
-# to look at and be in awe of!!
-library(ggplot2)
-library(ggthemes)
-
-ggplot(data=iris, aes(x = Sepal.Width,
-                      y = Sepal.Length,
-                      colour = Species)) +
-  geom_point() +
-  theme_tufte() +
-  NULL
-
-```
-
 # Next Steps
 
 There is still **A LOT** of work to do on this package which include (but are note limited to): 
 
-- Better softcoding for front end user options in YAML
-- Images in the title section for logo placement which is a common attribut to posters as far as I have come to know.
-- Figure out compatiability with `natbib` which wasn't working during the initial set up.
-- MUCH BETTER PACKAGE DOCUMENTATION. For example, there is nothing in the README...
-- Include References section only if initiated by the user like in RMarkdown.
-
 # Conclusion
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis leo sit amet est commodo sollicitudin at id ante. In pretium, metus at semper volutpat, risus enim congue libero, non viverra nunc ligula accumsan lorem. Vestibulum finibus magna a dui pellentesque, eu blandit felis ultricies. Fusce eget tempor dolor. Curabitur nec magna risus. Praesent nisi quam, pulvinar vitae est at, aliquam venenatis nisi. Mauris placerat commodo justo ut suscipit. Aenean pretium, sem ac volutpat suscipit, libero nulla rutrum dolor, et lobortis elit lacus et nisl. In augue nulla, dignissim non tempor sit amet, ultricies rhoncus tellus.
 
 ```{r, leafletfig, fig.cap='Here is a leaflet figure which whill run as expected online, when printed it will take the last state it is left in beofre choosing to print.'}
 library(leaflet)

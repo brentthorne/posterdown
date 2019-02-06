@@ -62,7 +62,7 @@
         float: right;
         width: 10%;
         height: 100%;
-        background-color: #008080;
+        background-color: $titlebox_bgcol$;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -79,7 +79,26 @@
         -webkit-transform: translateY(-50%);
       }
       #title {
-        font-family: Helvetica;
+        font-family: $titletext_fontfamily$;
+            }
+      /* unvisited link */
+      a:link {
+        color: $link_col$;
+      }
+
+      /* visited link */
+      a:visited {
+        color: $link_col$;
+      }
+
+      /* mouse over link */
+      a:hover {
+        color: $link_col$;
+      }
+
+      /* selected link */
+      a:active {
+        color: $link_col$;
       }
       .poster_body {
         -webkit-column-count: $column_numbers$; /* Chrome, Safari, Opera */
@@ -136,18 +155,18 @@
       }
       .poster_body h1 {
         text-align: center;
-        color: #ffffff;
+        color: $sectitle_textcol$;
         font-size: 50pt;
-        border: 2mm solid #0b4545;
-        background-color: #0b4545;
-        border-radius: 4mm 0mm;
+        border: $sectitle_borderwidth$ solid $sectitle_bordercol$;
+        background-color: $sectitle_bgcol$;
+        border-radius: $sectitle_boxshape$;
         margin-top: 2mm;
         margin-bottom: 2mm;
         padding-top: 5mm;
         padding-bottom: 5mm;
       }
       .poster_body h2 {
-        color: #174545;
+        color: $sectitle2_textcol$;
         font-size: 40pt;
         padding-left: 4mm;
       }
