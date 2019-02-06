@@ -1,3 +1,4 @@
+# Most here is from thesisdown for the posterdown_pdf option
 find_file <- function(template, file) {
   template <- system.file("rmarkdown", "templates", template, file,
                           package = "posterdown")

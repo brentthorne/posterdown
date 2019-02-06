@@ -1,0 +1,4 @@
+name: Posterdown HTML
+description: >
+ Template for creating R Markdown based PDF via HTML and CSS
+create_dir: true
