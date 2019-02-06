@@ -1,4 +1,4 @@
-name: Posterdown PDF
+name: Posterdown PDF (Legacy)
 description: >
- Template for creating R Markdown based PDF via Latex
+ Template for creating R Markdown based PDF via LaTeX. Legacy Option, no updates past Feb 6 2019.
 create_dir: true

@@ -5,11 +5,15 @@
 #' @author Brent Thorne
 #'
 #' @section poster_pdf:
-#' Creates an R Markdown template fo a PDF poster document
+#' Creates an R Markdown template for a PDF poster document via LaTeX
+#' @section poster_html:
+#' Creates an R Markdown template for a PDF poster document via HTML
+#'
 #' @docType package
 #' @name posterdown
 #' @import rmarkdown
 #' @import bookdown
+#' @import pagedown
 #' @import ggplot2
 #' @import knitr
 NULL
