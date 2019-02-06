@@ -2,7 +2,7 @@
 
 # posterdown
 
-<img src="Images/posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
+<img src="images/posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
 
 
 >Please consider supporting posterdown on [Patreon](https://www.patreon.com/brentthorne) to ensure continued support and development for this package, as (grad school + open source developer != :dollar:) . You can also follow me (Brent Thorne) on [twitter](twitter.com/brentthorne18) for upcoming features which may not be released on github.
@@ -12,11 +12,11 @@ As a graduate student, I found that it is almost a rite of passage to take early
 
 From this:
 
-<img src="Images/code_pic.png" width="50%" height="50%">
+<img src="images/code_pic.png" width="50%" height="50%">
 
 To this:
 
-<img src="Images/example_poster1.png" width="50%" height="50%">
+<img src="images/example_poster1.png" width="50%" height="50%">
 
 
 Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my Master's degree so I will have limited time to work on updating this package in the next few months but nevertheless I will do what I can! :smile: 
@@ -25,18 +25,19 @@ Please feel free to give me feedback or requests for changes in the [issues](htt
 
 To cite `posterdown` in publications, use:
 
- > W. Brent Thorne (2019). posterdown: An R Packge. R package version 0.1.2.
+`W. Brent Thorne (2019). posterdown: An R Packge. R package version 0.1.2.`
 
 A BibTeX entry for LaTeX users is:
 
- > @Manual{,
+```
+  @Manual{,
     title = {posterdown: An R Package},
     author = {W. Brent Thorne},
     year = {2019},
     url = {https://github.com/brentthorne/posterdown},
     note = {R package version 0.1.2},
   }
-
+```
 ## Installation
 
 You can install and use **posterdown** from github using the `devtools` package as seen below.
@@ -104,7 +105,7 @@ devtools::install_github("brentthorne/posterdown")
     
 3. Use the **File / New File / R Markdown.. / From Template / Posterdown HTML**  or **Posterdown LaTeX** dialog pathway to create a conference poster.
 
-    ![New R Markdown](Images/posterdown_picture.png)
+    ![New R Markdown](images/posterdown_picture.png)
 
 >   _**NOTE:** If you do not see the **Posterdown HTML** or **Posterdown LaTeX** templates in this dialogue box, restart the R session or close and re-open RStudio._
 
