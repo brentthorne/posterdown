@@ -19,7 +19,7 @@ To this:
 <img src="images/example_poster1.png" width="50%" height="50%">
 
 
-Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my Master's degree so I will have limited time to work on updating this package in the next few months but nevertheless I will do what I can! :smile: 
+Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my Master's degree so I will have limited time to work on updating this package in the next few months but, nevertheless, I will do what I can! :smile: 
 
 #### Citation
 
