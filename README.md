@@ -30,7 +30,7 @@ To cite `posterdown` in publications, use:
 A BibTeX entry for LaTeX users is:
 
 ```
-  @Manual{,
+  @Manual{posterdown,
     title = {posterdown: An R Package},
     author = {W. Brent Thorne},
     year = {2019},
