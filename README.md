@@ -4,9 +4,19 @@
 
 <img src="images/posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
 
+**Support**
 
->Please consider supporting posterdown on [Patreon](https://www.patreon.com/brentthorne) to ensure continued support and development for this package, as (grad school + open source developer != :dollar:) . You can also follow me (Brent Thorne) on [twitter](twitter.com/brentthorne18) for upcoming features which may not be released on github.
+_Please consider supporting posterdown on [Patreon](https://www.patreon.com/brentthorne) to ensure continued support and development for this package, as (grad school + open source developer != :dollar:) ._
 
+_**You can also support via cyrptocurrencies at:**_
+
+_**Bitcoin**: 1KZ3zyNsxdR8NjYL9vomb9fmpkXSXvK5VR <br>_
+_**Ethereum**: 0x71a18c5E3300a33F1139a9eA0abc0D029E3C30F7 <br>_
+_**Litecoin**: LR4usZRgjJGLAg3Tu5PSBjgUaVtdts9Wnw <br>_
+
+_You can also follow me (Brent Thorne) on [twitter](twitter.com/brentthorne18) for upcoming features which may not be released on github._
+
+#
 
 As a graduate student, I found that it is almost a rite of passage to take early research and analysis and generate a conference poster allowing for critical feedback. This is also important for facilitating meeting the people in your field at poster sessions at academic meetings. I have also noticed that while many of my fellow graduate students use R and are getting their feet wet with RMarkdown :blush:, we always had to go back to using MS Powerpoint or Keynote or Adobe Illustrator for generating conference posters :unamused:. Posterdown was created as a proof-of-concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
 
