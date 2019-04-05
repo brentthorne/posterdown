@@ -225,6 +225,7 @@ YAML header options have been created to provide more freedom in design (i.e. co
 | `url_col` | LaTeX | Colour of URL links specifically. |
 | `link_col` | HTML, LaTeX | Colour of in-document links (example would be referencing a Figure or a Table). |
 | `footnote_textcol` | LaTeX | Colour of the footnote text. |
+| `header-includes` | LaTeX | (Optional) Content to include in the header, provided as a one line command or a YAML list with one command per line. For example, to use a sans-serif font as the default font: `header-includes: \renewcommand{\familydefault}{\sfdefault}`.|
 | `output` | HTML, LaTeX | For generating `posterdown_html` or `posterdown_latex`, in the future other poster designs or templates may be made for this package and thus this option in the YAML will be more flexible. `posterdown_pdf` will be kept for legacy use but will not be updated, new projects which would have used it should now use `posterdown_latex`.|
 
 ## Markdown Customization
