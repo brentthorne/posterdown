@@ -2,10 +2,15 @@
 % Please edit documentation in R/posterdown_html.R
 \name{posterdown_html}
 \alias{posterdown_html}
+\alias{posterdown_betterland}
 \title{Posterdown HTML format (using bookdown::html_document2)}
 \usage{
 posterdown_html(..., template = find_resource("posterdown_html",
   "template.html"), css = NULL)
+
+posterdown_betterland(...,
+  template = find_resource("posterdown_betterland", "template.html"),
+  css = NULL)
 }
 \arguments{
 \item{...}{Additional arguments to \code{rmarkdown::html_document}}
@@ -19,7 +24,8 @@ R Markdown output format to pass to
   \code{\link[rmarkdown:render]{render}}
 }
 \description{
-Posterdown HTML format (using bookdown::html_document2)
+The output format \code{poster_betterland()} mimics the style of the
+\dQuote{BetterPoster} movement from twitter.
 }
 \examples{
 

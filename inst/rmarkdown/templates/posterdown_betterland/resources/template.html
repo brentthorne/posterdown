@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+$for(author-meta)$<meta name="author" content="$author-meta$" />$endfor$
+$if(date-meta)$<meta name="date" content="$date-meta$" />$endif$
+<title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$if(highlightjs)$
+<link rel="stylesheet" href="$highlightjs$/$if(highlightjs-theme)$$highlightjs-theme$$else$default$endif$.css" $if(html5)$$else$type="text/css" $endif$/>
+<script src="$highlightjs$/highlight.js"></script>
+<script type="text/javascript">hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+$endif$
+
+$if(highlighting-css)$<style type="text/css">$highlighting-css$</style>$endif$
+
+$for(css)$
+<link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+$endfor$
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=$middle_fontfamily$' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=$font_family$' rel='stylesheet'>
+
+
+
+<!--
+Here are the required style attributes for css to make this poster work :)
+-->
+<style>
+@page {
+size: $poster_width$ $poster_height$;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0px;
+padding: 0px;
+width: $poster_height$;
+height: $poster_width$;
+text-align: justify;
+font-size: $body_textsize$;
+}
+/* RMarkdown Class Styles */
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+padding-left: 2cm;
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: $secondary_colour$24;
+color: $primary_colour$;
+padding: 1.2mm;
+border-radius: 2mm;
+}
+caption {
+margin-bottom: 10px;
+font-size: $caption_fontsize$;
+font-style: italic;
+}
+tbody tr:nth-child(odd) {
+    background-color: $primary_colour$20;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+  line-height: 1.42857143;
+}
+.caption {
+font-size: $caption_fontsize$;
+font-style: italic;
+}
+.references {
+font-size: 20px;
+line-height: 90%;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 0px;
+}
+.outer {
+width: $poster_width$;
+height: $poster_height$;
+-webkit-column-count: 2; /* Chrome, Safari, Opera */
+-moz-column-count: 2; /* Firefox */
+column-count: 2;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 50%;
+-moz-column-rule-width: 50%;
+column-rule-width: 50%;
+-webkit-column-rule-style: solid;
+-moz-column-rule-style: solid;
+column-rule-style: solid;
+-webkit-column-rule-color: black;
+-moz-column-rule-color: black;
+column-rule-color: black;
+-webkit-column-gap: 50%;
+background-color: $body_bgcol$;
+font-family: $font_family$;
+}
+span.citation {
+  color: $secondary_colour$;
+  font-weight: bold;
+}
+a {
+text-decoration: none;
+color: $secondary_colour$;
+}
+#title {
+font-size: $title_textsize$;
+text-align: left;
+padding-right: 7%;
+padding-left: 7%;
+margin: 0;
+line-height: 80%;
+border-bottom: 0;
+}
+#author {
+padding-right: 7%;
+padding-left: 7%;
+color: $primary_colour$;
+margin: 0;
+line-height: 85%;
+font-size: $author_textsize$;
+}
+#affiliation {
+padding-right: 7%;
+padding-left: 7%;
+padding-top: 1em;
+color: $affiliation_textcol$;
+font-style: italic;
+font-size: $affiliation_textsize$;
+margin: 0;
+}
+sup {
+color: $accent_colour$;
+}
+.affiliation sup {
+font-size: 20px;
+}
+.author sup {
+font-size: 30px;
+}
+.outer h1 {
+text-align: center;
+margin-top: 0.5in;
+margin-bottom: 0.5in;
+}
+.outer h2 {
+text-align: center;
+}
+.outer p {
+padding-right: 7%;
+padding-left: 7%;
+color: #000000;
+}
+.outer ol {
+padding-left: 12%;
+padding-right: 12%;
+text-align: left;
+}
+.middle {
+width: calc($poster_width$ / 2);
+height: $poster_height$;
+position: absolute;
+margin-left: calc($poster_width$ / 4);
+background-color: $primary_colour$;
+color: $middle_textcol$;
+font-family: $middle_fontfamily$;
+background-image: linear-gradient($primary_colour$ 50%, $secondary_colour$);
+}
+.middle strong {
+color: #FFFFFF;
+}
+#middle-img-left {
+width: 20%;
+left: 0.5in;
+bottom: 0.2in;
+position: absolute;
+opacity: 0.5
+}
+#middle-img-right {
+width: 18%;
+right: 0.5in;
+bottom: 0.2in;
+position: absolute;
+opacity: 0.6
+}
+.middle p {
+padding-left: 5%;
+padding-right: 5%;
+padding-top: 20%;
+font-size: 170px;
+text-align: left;
+}
+.fab {
+color: #00000030;
+font-size: 25px;
+}
+.twitter, i {
+color: #00000030;
+font-size: 35px;
+text-decoration: none;
+}
+a.email {
+text-decoration: none;
+color: #00000030;
+font-size: 35px;
+}
+.envelope {
+color: #00000030;
+font-size: 5px;
+text-decoration: none;
+}
+.poster_wrap {
+width: 42in;
+height: 30in;
+padding: 0cm;
+}
+span > #tab:mytable {
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+<div class="poster_wrap">
+<div class="column outer">
+<br>
+<h1 id="title">$title$</h1>
+<br>
+<h3 id="author" class="author">
+$for(author)$$author.name$<sup> $author.affil$</sup><br>
+$if(author.twitter)$<a class="twitter" href="https://mobile.twitter.com/$author.twitter$"><i class="fab fa-twitter"></i>&nbsp;&nbsp;@$author.twitter$</a><br>
+$else$$endif$
+$if(author.email)$
+<a class='envelope'><i class="fas fa-envelope"></i></a> $author.email$
+$else$$endif$
+$sep$<br> $endfor$
+</h3>
+<p id="affiliation" class="affiliation">
+$for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$<br> $endfor$
+</p>
+
+$body$
+
+</div>
+<div class="column middle">
+<p>$for(main_findings)$$main_findings$$sep$<br><br> $endfor$</p>
+<img id="middle-img-left" src=$logoleft_name$>
+<img id="middle-img-right" src="$logoright_name$">
+</div>
+</div>
+
+$if(math)$
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+var script = document.createElement("script");
+script.type = "text/javascript";
+var src = "$if(mathjax)$$mathjax$$endif$";
+if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+if (location.protocol !== "file:" && /^https?:/.test(src))
+src = src.replace(/^https?:/, '');
+script.src = src;
+document.getElementsByTagName("head")[0].appendChild(script);
+})();
+</script>
+$endif$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+</body>
+</html>
