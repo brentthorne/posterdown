@@ -212,6 +212,11 @@ $endif$
 \renewcommand\footnoterule{}
 \renewcommand{\thempfootnote}{\footnotesize\color{footnotetextcol}{\arabic{mpfootnote}}}
 
+%include arbitrary input from header-includes field
+$for(header-includes)$
+$header-includes$
+$endfor$
+
 %-------------- Begin Document -------------------%
 \begin{document}
 
