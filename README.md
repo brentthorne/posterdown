@@ -38,13 +38,13 @@ Please feel free to give me feedback or requests for changes in the [issues](htt
 
 To cite `posterdown` in publications, use:
 
-`W. Brent Thorne (2019). posterdown: An R Packge. R package version 0.1.2.`
+`W. Brent Thorne (2019). posterdown: An R Package Built to Generate Reproducible Conference Posters for the Academic and Professional World Were Powerpoint and Pages Just Wont Cut It. R package version 0.1.2.`
 
 A BibTeX entry for LaTeX users is:
 
 ```
   @Manual{posterdown,
-    title = {posterdown: An R Package},
+    title = {posterdown: An R Package Built to Generate Reproducible Conference Posters for the Academic and Professional World Were Powerpoint and Pages Just Wont Cut It},
     author = {W. Brent Thorne},
     year = {2019},
     url = {https://github.com/brentthorne/posterdown},
