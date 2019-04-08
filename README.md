@@ -28,6 +28,9 @@ To this:
 
 [<img src="images/example_poster1.png" width="50%" height="50%">](https://brentthorne.github.io/posterdown_html_showcase/)
 
+**NEW OPTION:**
+
+[<img src="images/betterposterland.jpg" width="50%" height="50%">](https://twitter.com/brentthorne18/status/1115096932068790272)
 
 Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my Master's degree so I will have limited time to work on updating this package in the next few months but, nevertheless, I will do what I can! :smile: 
 
@@ -92,6 +95,8 @@ tinytex::install_tinytex()
 The **posterdown** package provides a familiar workflow for those used to working in [RMarkdown](https://rmarkdown.rstudio.com/). This package has two templates **`posterdown_latex`** and **`posterdown_html`**. 
 
 ### HTML
+
+**`posterdown_betterland`** uses the [#betterposter](https://twitter.com/mikemorrison/status/1110191245035479041) design to layout your poster in a new and exciting wayy. Stnd out from the crowd and encourage meaningful discussion with your work! More to come on this poster desing and how to use is soon!
 
 **`posterdown_html`** utilizes the wonderful work being done by @RLesur and @yihui on [pagedown](github.com/rstudio/pagedown). This method allows for some cool features like the ability to run an html wiget (aka shiny app or a leaflet map) live in the poster (unless you print it obviously). It even allows for integration with one of my favourite R packages [gganimate](github.com/thomasp85/gganimate). 
 
