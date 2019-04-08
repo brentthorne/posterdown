@@ -28,6 +28,7 @@ caption_fontsize: "20pt"
 #Middle of the poster
 middle_fontfamily: "Special Elite"
 middle_textcol: "#FFFFFF90"
+middle_fontsize: "17px"
 main_findings:
   - "Make **better posters** with <br> RMarkdown + **posterdown**."
   - "Transition from **poster** to **manuscript** with ease!"
