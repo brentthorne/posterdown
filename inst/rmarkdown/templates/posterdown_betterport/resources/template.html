@@ -50,8 +50,8 @@ padding: 0;
 body {
 margin: 0px;
 padding: 0px;
-width: $poster_height$;
-height: $poster_width$;
+width: $poster_width$;
+height: $poster_height$;
 text-align: justify;
 font-size: $body_textsize$;
 }
@@ -114,7 +114,7 @@ font-size: $caption_fontsize$;
 font-style: italic;
 }
 .references {
-font-size: 20px;
+font-size: $reference_textsize$;
 line-height: 90%;
 }
 /* Create three unequal columns that floats next to each other */
@@ -124,25 +124,30 @@ padding: 0px;
 }
 .outer {
 width: $poster_width$;
-height: $poster_height$;
--webkit-column-count: 2; /* Chrome, Safari, Opera */
--moz-column-count: 2; /* Firefox */
-column-count: 2;
+height: calc($poster_height$ * 0.6325);
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
 -webkit-column-fill: auto;
 -moz-column-fill: auto;
 column-fill: auto;
--webkit-column-rule-width: 50%;
+column-gap: 0;
+padding-left: 0cm;
+padding-right: 0cm;
+/* -webkit-column-rule-width: 50%;
 -moz-column-rule-width: 50%;
-column-rule-width: 50%;
--webkit-column-rule-style: solid;
--moz-column-rule-style: solid;
-column-rule-style: solid;
+column-rule-width: 50%; */
+-webkit-column-rule-style: none;
+-moz-column-rule-style: none;
+column-rule-style: none;
 -webkit-column-rule-color: black;
 -moz-column-rule-color: black;
 column-rule-color: black;
--webkit-column-gap: 50%;
 background-color: $body_bgcol$;
 font-family: $font_family$;
+margin-top: calc($poster_height$ * 0.25);
+padding-top: 1em;
+padding-bottom: 1em;
 }
 span.citation {
   color: $secondary_colour$;
@@ -155,23 +160,23 @@ color: $secondary_colour$;
 #title {
 font-size: $title_textsize$;
 text-align: left;
-padding-right: 7%;
-padding-left: 7%;
+padding-right: 5%;
+padding-left: 5%;
 margin: 0;
 line-height: 80%;
 border-bottom: 0;
 }
 #author {
-padding-right: 7%;
-padding-left: 7%;
+padding-right: 5%;
+padding-left: 5%;
 color: $primary_colour$;
 margin: 0;
 line-height: 85%;
 font-size: $author_textsize$;
 }
 #affiliation {
-padding-right: 7%;
-padding-left: 7%;
+padding-right: 5%;
+padding-left: 5%;
 padding-top: 1em;
 color: $affiliation_textcol$;
 font-style: italic;
@@ -188,8 +193,8 @@ font-size: 20px;
 font-size: 30px;
 }
 .author_extra {
-padding-right: 7%;
-padding-left: 7%;
+padding-right: 5%;
+padding-left: 5%;
 color: $secondary_colour$;
 margin: 0;
 line-height: 85%;
@@ -203,21 +208,20 @@ margin-bottom: 0.5in;
 .outer h2 {
 text-align: center;
 }
-.outer p {
-padding-right: 7%;
-padding-left: 7%;
+.outer p, .level2 {
+padding-right: 5%;
+padding-left: 5%;
 color: #000000;
 }
 .outer ol {
-padding-left: 12%;
-padding-right: 12%;
+padding-left: 8%;
+padding-right: 8%;
 text-align: left;
 }
 .middle {
-width: calc($poster_width$ / 2);
-height: $poster_height$;
+width: $poster_width$;
+height: calc($poster_height$ * 0.25);
 position: absolute;
-margin-left: calc($poster_width$ / 4);
 background-color: $primary_colour$;
 color: $middle_textcol$;
 font-family: $middle_fontfamily$;
@@ -227,23 +231,29 @@ background-image: linear-gradient($primary_colour$ 50%, $secondary_colour$);
 color: #FFFFFF;
 }
 #middle-img-left {
-width: 20%;
+width: 10%;
 left: 0.5in;
 bottom: 0.2in;
 position: absolute;
 opacity: 0.5
 }
+#middle-img-center {
+width: 10%;
+left: calc($poster_width$ * 0.45);
+bottom: 0.5in;
+position: absolute;
+opacity: 0.5
+}
 #middle-img-right {
-width: 18%;
+width: 10%;
 right: 0.5in;
 bottom: 0.2in;
 position: absolute;
 opacity: 0.6
 }
 .middle p {
-padding-left: 5%;
-padding-right: 5%;
-padding-top: 20%;
+padding-left: 7%;
+padding-right: 7%;
 font-size: $middle_fontsize$;
 text-align: left;
 }
@@ -267,10 +277,19 @@ font-size: 5px;
 text-decoration: none;
 }
 .poster_wrap {
-width: 42in;
-height: 30in;
+width: $poster_width$;
+height: $poster_height$;
 padding: 0cm;
 }
+.emphasis_bottom {
+width: $poster_width$;
+height: calc($poster_height$ * 0.1);
+margin-top: calc($poster_height$ * 0.9);
+position: absolute;
+background-color: $primary_colour$;
+background-image: linear-gradient($secondary_colour$ 10%, $primary_colour$);
+}
+
 span > #tab:mytable {
   font-weight: bold;
 }
@@ -283,10 +302,9 @@ $include-before$
 $endfor$
 
 <div class="poster_wrap">
+
 <div class="column outer">
-<br>
 <h1 id="title">$title$</h1>
-<br>
 <h3 id="author" class="author">
 
 $for(author)$
@@ -319,7 +337,10 @@ $body$
 </div>
 <div class="column middle">
 <p>$for(main_findings)$$main_findings$$sep$<br><br> $endfor$</p>
+</div>
+<div class="emphasis_bottom">
 <img id="middle-img-left" src=$logoleft_name$>
+<img id="middle-img-center" src=$logocenter_name$>
 <img id="middle-img-right" src="$logoright_name$">
 </div>
 </div>

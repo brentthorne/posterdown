@@ -26,3 +26,12 @@ posterdown_betterland <- function(...,
                             css = NULL) {
   pagedown::poster_relaxed(..., css = css, template = template)
 }
+#' @description The output format \code{poster_betterport()} mimics the style of the
+#' \dQuote{BetterPoster} movement from twitter.
+#' @rdname posterdown_html
+#' @export
+posterdown_betterport <- function(...,
+                                  template = find_resource("posterdown_betterport", "template.html"),
+                                  css = NULL) {
+  pagedown::poster_relaxed(..., css = css, template = template)
+}

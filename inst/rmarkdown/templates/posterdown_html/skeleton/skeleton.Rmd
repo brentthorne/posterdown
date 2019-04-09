@@ -111,7 +111,6 @@ knitr::kable(iris[1:5, 1:4], caption = 'Table caption.',align = 'c',"html") %>%
   kable_styling(full_width = TRUE)
 ```
 
-
 Look at this animation [@gganimate2017] !!!! Figure \@ref(fig:gganimatefig).
 
 ```{r,gganimatefig, out.width='80%', cache=TRUE, fig.align='center', echo=TRUE, fig.cap='WOW THIS IS AN AWESOME GIF!'}

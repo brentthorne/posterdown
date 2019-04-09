@@ -8,27 +8,33 @@ title: A Better Reproducible Poster Title
 author:
   - name: W. Brent Thorne
     affil: 1,*
+    main: true
     orcid: '0000-0002-1099-3857'
     twitter: brentthorne18 
     email: bthorne2@brocku.ca
   - name: Another G. Contributor
     affil: 2
-    email: ag.con@posterdown.net
+    email: 'ag.con@posterdown.net'
+  - name: Person Three
+    affil: 3
 affiliation:
   - num: 1
     address: Department of Earth Science, Brock University
   - num: 2
     address: Department of Graphics and Layouts, University of Posters; Canada
+  - num: 3
+    address: Another Institute of a place where work gets done, Earth, Milky Way
 #STYLE & FORMATTING
 title_textsize: "125pt"
 author_textsize: "1.17em"
+authorextra_textsize: "35px"
 affiliation_textsize: "25px"
 affiliation_textcol: '#00000080'
 caption_fontsize: "20pt"
 #Middle of the poster
 middle_fontfamily: "Special Elite"
 middle_textcol: "#FFFFFF90"
-middle_fontsize: "17px"
+middle_fontsize: "170px"
 main_findings:
   - "Make **better posters** with <br> RMarkdown + **posterdown**."
   - "Transition from **poster** to **manuscript** with ease!"
@@ -68,7 +74,7 @@ This is the `posterdown_betterland` template for the {posterdown} package! I was
 
 # Results
 
-```{r, out.width='90%', fig.height=4, fig.cap='Using {ggplot} and {patchwork} to generate a layout of multiple plots in one figure [@patchwork2017].'}
+```{r, out.width='90%', fig.height=5.5, fig.cap='Using {ggplot} and {patchwork} to generate a layout of multiple plots in one figure [@patchwork2017].'}
 
 library(tidyverse)
 library(patchwork)
@@ -121,5 +127,7 @@ ggplot() +
   theme(legend.position = "bottom")
 
 ```
+
+A **BIG** thank you to [Romain Leasur](https://twitter.com/RLesur) and [Yihui Xie](https://twitter.com/xieyihui) for their wonderfull work on [{pagedown}](https://github.com/rstudio/pagedown) which had made this poster possible [@pagedown]!
 
 # References
