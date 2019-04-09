@@ -57,7 +57,7 @@ accent_colour: "#cc0000"
 body_bgcol: "#ffffff"
 body_textsize: "45px"
 body_textcol: "#000000"
-reference_textsize: "26px"
+reference_textsize: "23px"
 #--Standard Options--#
 output: 
   posterdown::posterdown_betterport:
@@ -185,7 +185,6 @@ kable(dt, caption = 'Here is a caption for the table made with the {kableExtra} 
   kable_styling(full_width = T) %>% 
   row_spec(0, color = "#fff", background = "#0b454580")
 ```
-
 
 A **BIG** thank you to [Romain Leasur](https://twitter.com/RLesur) and [Yihui Xie](https://twitter.com/xieyihui) for their wonderfull work on [{pagedown}](https://github.com/rstudio/pagedown) which had made this poster possible [@pagedown]!
 
