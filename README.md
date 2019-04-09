@@ -96,7 +96,9 @@ The **posterdown** package provides a familiar workflow for those used to workin
 
 ### HTML
 
-**`posterdown_betterland`** uses the [#betterposter](https://twitter.com/mikemorrison/status/1110191245035479041) design to layout your poster in a new and exciting wayy. Stnd out from the crowd and encourage meaningful discussion with your work! More to come on this poster desing and how to use is soon!
+**`posterdown_betterland`** uses the [#betterposter](https://twitter.com/mikemorrison/status/1110191245035479041) design to layout your poster in a new and exciting way. Stand out from the crowd and encourage meaningful discussion with your work! More to come on this poster desing and how to use is soon!
+
+**`posterdown_betterport`** uses the portrait version of the [#betterposter](https://twitter.com/mikemorrison/status/1110191245035479041) design.
 
 **`posterdown_html`** utilizes the wonderful work being done by @RLesur and @yihui on [pagedown](github.com/rstudio/pagedown). This method allows for some cool features like the ability to run an html wiget (aka shiny app or a leaflet map) live in the poster (unless you print it obviously). It even allows for integration with one of my favourite R packages [gganimate](github.com/thomasp85/gganimate). 
 
