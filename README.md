@@ -4,6 +4,8 @@
 
 <img src="images/posterdown_hexlogo1.png" alt="poster logo" align="right" width = "25%" height="25%"/>
 
+**Currently undergoing major changes, please use the previous [release](https://github.com/brentthorne/posterdown/releases) _OR_ ensure you know which commit you downloaded :)**
+
 **Support**
 
 _Please consider supporting posterdown on [Patreon](https://www.patreon.com/brentthorne) to ensure continued support and development for this package, as (grad school + open source developer != :dollar:) ._
