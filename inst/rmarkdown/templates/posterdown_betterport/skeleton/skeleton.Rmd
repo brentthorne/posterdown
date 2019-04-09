@@ -80,6 +80,7 @@ This is the `posterdown_betterland` template for the {posterdown} package! I was
 HTML documents such as this allow for "live" posters (aka GIFs or embeded videos etc), see Figure \@ref(fig:mymapfig) bellow for an example of a study site map made using the {ggspatial} or Figure \@ref(fig:gganimatefig) for an example using the [{gganimate}](github.com/thomasp85/gganimate) package by [@gganimate2017]. I can even change the order of the figures in the poster and [{posterdown}](github.com/brentthorne/posterdown) will take care of the formatting of Figure numbers for you, see Figure \@ref(fig:mymapfig).
 
 ```{r, mymapfig, out.width="100%", cache=FALSE, fig.cap='Map of Long Lake eample from the [ggspatial](https://github.com/paleolimbot/ggspatial) package [@ggspatial].', comment=FALSE}
+
 library(ggspatial)
 load_longlake_data()
 
