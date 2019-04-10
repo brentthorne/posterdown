@@ -98,7 +98,7 @@ tinytex::install_tinytex()
 
 ## Overview
 
-The **posterdown** package provides a familiar workflow for those used to working in [RMarkdown](https://rmarkdown.rstudio.com/). This package has two templates **`posterdown_latex`** and **`posterdown_html`**. 
+The **posterdown** package provides a familiar workflow for those used to working in [RMarkdown](https://rmarkdown.rstudio.com/). This package has ~~two~~ _four_ templates **`posterdown_latex`**, **`posterdown_html`**, **`posterdown_betterland`**, and **`posterdown_betterport`**
 
 ### HTML
 
