@@ -2,7 +2,7 @@
 # PLEASE SEE THE README for in depth description github.com/brentthorne/posterdown
 poster_height: "32in"
 poster_width: "46in"
-font_family: 'Rasa'
+font_family: 'Indie Flower'
 #ESSENTIALS
 title: A Better Reproducible Poster Title
 author:
@@ -29,7 +29,7 @@ title_textsize: "125pt"
 author_textsize: "1.17em"
 authorextra_textsize: "35px"
 affiliation_textsize: "25px"
-affiliation_textcol: '#00000080'
+affiliation_textcol: '#00000060'
 caption_fontsize: "20pt"
 #Middle of the poster
 middle_fontfamily: "Special Elite"
@@ -42,9 +42,9 @@ logoleft_name: "Figures/qr-code-black.png"
 logoright_name: "Figures/posterdownlogo.png"
 #---POSTER BODY OPTIONS---#
 primary_colour: '#0b4545'
-secondary_colour: '#008080'
+secondary_colour: '#008080' 
 accent_colour: "#cc0000"
-body_bgcol: "#ffffff"
+body_bgcol: "#FFFFFF"
 body_textsize: "45px"
 body_textcol: "#000000"
 #--Standard Options--#
@@ -54,6 +54,7 @@ output:
     pandoc_args: --mathjax
     highlight: espresso
     number_sections: false
+link-citations: true
 bibliography: MyBib.bib
 ---
 
@@ -80,7 +81,7 @@ library(tidyverse)
 library(patchwork)
 library(ggthemes)
 
-theme_set(theme_gray() + theme_tufte() + theme(legend.position = "none"))
+theme_set(theme_tufte() + theme(legend.position = "none"))
 
 base <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species))
   
@@ -110,22 +111,24 @@ kable(dt, caption = 'Here is a caption for the table made with the {kableExtra} 
   row_spec(0, color = "#fff", background = "#0b454580")
 ```
 
-
-```{r, mymapfig, out.width="100%", echo=TRUE, cache=FALSE, fig.cap='Map of Long Lake eample from the [ggspatial](https://github.com/paleolimbot/ggspatial) package [@ggspatial].', comment=FALSE}
-
+```{r, echo=TRUE}
 library(ggplot2)
 library(ggspatial)
 
 load_longlake_data()
 
-ggplot() + 
-  theme_minimal() +
+map <- ggplot() + 
+  theme_pander() +
   layer_spatial(longlake_depthdf,
                 aes(colour = DEPTH)) +
-  annotation_scale(location = "tl") +
-  annotation_north_arrow(location = "br") +
   theme(legend.position = "bottom")
+```
 
+```{r, mymapfig, out.width='70%', cache=FALSE, fig.cap='Map of Long Lake eample from the [ggspatial](https://github.com/paleolimbot/ggspatial) package [@ggspatial].',strip.white= TRUE, comment=FALSE}
+
+ggsave(map,filename = "Figures/map.svg", width = 3.5, height = 3.5, device = 'svg', bg = 'transparent')
+
+knitr::include_graphics("Figures/map.svg")
 ```
 
 A **BIG** thank you to [Romain Leasur](https://twitter.com/RLesur) and [Yihui Xie](https://twitter.com/xieyihui) for their wonderfull work on [{pagedown}](https://github.com/rstudio/pagedown) which had made this poster possible [@pagedown]!
