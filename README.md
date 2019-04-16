@@ -2,7 +2,7 @@
 
 # posterdown
 
-<img src="images/posterdownlogo_2019.svg" alt="posterdown logo" align="right" width = "25%" height="25%"/>
+<img src="images/posterdownlogo_2019.png" alt="posterdown logo" align="right" width = "25%" height="25%"/>
 
 **Currently undergoing major changes, please use the previous [release](https://github.com/brentthorne/posterdown/releases) _OR_ ensure you know which commit you downloaded :)** _PS I work daily off of the [dev](https://github.com/brentthorne/posterdown/tree/dev) branch but will merge when I have made reasonable updates so still beware :thumbsup:_
 
