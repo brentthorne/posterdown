@@ -4,3 +4,4 @@
 *.Ruserdata
 .Rproj.user
 *skeleton.html
+/skeleton_files/
