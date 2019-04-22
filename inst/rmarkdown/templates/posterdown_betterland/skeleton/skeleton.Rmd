@@ -2,7 +2,7 @@
 # PLEASE SEE THE README for in depth description github.com/brentthorne/posterdown
 poster_height: "32in"
 poster_width: "46in"
-font_family: 'Indie Flower'
+font_family: 'Rasa'
 #ESSENTIALS
 title: A Better Reproducible Poster Title
 author:
@@ -14,7 +14,7 @@ author:
     email: bthorne2@brocku.ca
   - name: Another G. Contributor
     affil: 2
-    email: 'ag.con@posterdown.net'
+    email: ag.con@posterdown.net
   - name: Person Three
     affil: 3
 affiliation:
@@ -65,7 +65,7 @@ options(knitr.table.format = "html")
 
 # Introduction
 
-This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@thorneposterdown2019]. If you are not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionallity of this package :)
+This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@thorneposterdown2019]. If you are not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
 
 # Methods
 
