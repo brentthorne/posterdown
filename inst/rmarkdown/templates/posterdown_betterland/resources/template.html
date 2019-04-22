@@ -46,17 +46,14 @@ Here are the required style attributes for css to make this poster work :)
 size: $poster_width$ $poster_height$;
 margin: 0;
 padding: 0;
-background-color: $body_bgcol$;
 }
 body {
 margin: 0px;
 padding: 0px;
-width: $poster_width$;
-height: $poster_height$;
+width: $poster_height$;
+height: $poster_width$;
 text-align: justify;
 font-size: $body_textsize$;
-background-color: $body_bgcol$;
-color: $body_textcol$;
 }
 /* RMarkdown Class Styles */
 /* center align leaflet map,
@@ -146,7 +143,6 @@ column-rule-color: black;
 -webkit-column-gap: 50%;
 background-color: $body_bgcol$;
 font-family: $font_family$;
-color: $body_textcol$;
 }
 span.citation {
   color: $secondary_colour$;
@@ -210,7 +206,7 @@ text-align: center;
 .outer p {
 padding-right: 7%;
 padding-left: 7%;
-color: $body_textcol$;
+color: #000000;
 }
 .outer ol {
 padding-left: 12%;
@@ -252,29 +248,28 @@ font-size: $middle_fontsize$;
 text-align: left;
 }
 .fab {
-color: $affiliation_textcol$;
+color: #00000030;
 font-size: 25px;
 }
 .twitter, i {
-color: $affiliation_textcol$;
+color: #00000030;
 font-size: 35px;
 text-decoration: none;
 }
 a.email {
 text-decoration: none;
-color: $affiliation_textcol$;
+color: #00000030;
 font-size: 35px;
 }
 .envelope {
-color: $affiliation_textcol$;
+color: #00000030;
 font-size: 5px;
 text-decoration: none;
 }
 .poster_wrap {
-width: $poster_width$;
-height: $poster_height$;
+width: 42in;
+height: 30in;
 padding: 0cm;
-background-color: $body_bgcol$;
 }
 span > #tab:mytable {
   font-weight: bold;
