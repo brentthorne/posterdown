@@ -3,6 +3,5 @@
 *.RData
 *.Ruserdata
 .Rproj.user
-# ignore skeleton files
-skeleton.html
+*skeleton.html
 skeleton_files/
