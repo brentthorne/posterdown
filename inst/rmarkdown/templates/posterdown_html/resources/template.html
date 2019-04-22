@@ -282,8 +282,8 @@ $endfor$
   <!-- Poster Title -->
   <div class= "poster_title">
     <h1 id="title">$title$</h1>
-    <h3 id="author">$for(author)$$author$$sep$, $endfor$</h3>
-    <h5 id="affiliation">$affiliation$</h5>
+    <h3 id="author">$for(author)$$author.name$<sup>$author.affil$</sup>$sep$, $endfor$</h3>
+    <h5 id="affiliation">$for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$, $endfor$</h5>
 
   </div>
   <!-- Right Logo  -->

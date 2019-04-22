@@ -8,9 +8,15 @@ font_family: "Palatino" # choose from typical html fonts (example: "Palatino")
 #ESSENTIALS
 title: 'Using posterdown to generate reproducible conference posters via RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF workflow'
 author: 
-  - 'W. Brent Thorne^1^'
-  - 'William B. Thorne^1^'
-affiliation: '^1^Department of Earth Science, Brock University'
+  - name: Brent Thorne
+    affil: 1
+  - name: Another Contributor
+    affil: 2
+affiliation: 
+  - num: 1
+    address: Department of Earth Science, Brock University
+  - num: 2
+    address: Department of Graphics and Layouts, University of Posters; Canada
 #STYLE & FORMATTING
 titlebox_bgcol: "#008080"  #Colour of the Title Box background
 titlebox_bordercol: "#0b4545" #Colour of the title Box border.
@@ -102,7 +108,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue 
 
 # Results
 
-Usually you want to have a nice table displaying some important results that you have calcualated. In posterdown this is as easy as using the `kable` table formatting you are probably use to as per typical `RMarkdown` formatting. I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) [@kableExtra2019]. Hopfully I can make this with an inline refernce like, Table \@ref(tab:mytable).
+Usually you want to have a nice table displaying some important results that you have calculated. In posterdown this is as easy as using the `kable` table formatting you are probably use to as per typical `RMarkdown` formatting. I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) [@kableExtra2019]. Hopefully I can make this with an inline reference like, Table \@ref(tab:mytable).
 
 
 ```{r, mytable, out.width='80%'}
