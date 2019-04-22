@@ -1,295 +1,308 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"$if(lang)$ lang="$lang$" xml:lang="$lang$"$endif$>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="generator" content="pandoc" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    $for(author-meta)$<meta name="author" content="$author-meta$" />$endfor$
-    $if(date-meta)$<meta name="date" content="$date-meta$" />$endif$
-    <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
 
-    $for(header-includes)$
-    $header-includes$
-    $endfor$
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
 
-    $if(highlightjs)$
-    <link rel="stylesheet" href="$highlightjs$/$if(highlightjs-theme)$$highlightjs-theme$$else$default$endif$.css" $if(html5)$$else$type="text/css" $endif$/>
-    <script src="$highlightjs$/highlight.js"></script>
-    <script type="text/javascript">hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
-    $endif$
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=$font_family$' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=$titletext_fontfamily$' rel='stylesheet'>
 
-    $if(highlighting-css)$<style type="text/css">$highlighting-css$</style>$endif$
+$for(author-meta)$<meta name="author" content="$author-meta$" />$endfor$
+$if(date-meta)$<meta name="date" content="$date-meta$" />$endif$
+<title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
 
-    $for(css)$
-    <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
-    $endfor$
+$for(header-includes)$
+$header-includes$
+$endfor$
 
-    <style>
-      @page {
-          size: $poster_width$ $poster_height$;
-          margin: 0;
-          padding: 0;
-      }
-      body {
-        margin: 0;
-        font-size: $body_textsize$;
-        width: $poster_width$;
-        height: $poster_height$;
-        padding: 0;
-        text-align: justify;
-        font-family: $font_family$;
-        background-color: $body_bgcol$;
-      }
-      .title_container {
-        width: 100%;
-        height: 15%;
-        overflow: hidden;
-        background-color: $titlebox_bgcol$;
-        border: $titlebox_borderwidth$ solid $titlebox_bordercol$;
-      }
-      .logo_left {
-        float: left;
-        width: 10%;
-        height: 100%;
-        background-color: $titlebox_bgcol$;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .logo_right {
-        float: right;
-        width: 10%;
-        height: 100%;
-        background-color: $titlebox_bgcol$;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .poster_title {
-        text-align: center;
-        position: relative;
-        float: left;
-        width: 80%;
-        height: 100%;
-        color: $title_textcol$;
-        top: 50%;
-        transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-      }
-      #title {
-        font-family: $titletext_fontfamily$;
-            }
-      /* unvisited link */
-      a:link {
-        color: $link_col$;
-      }
+$if(highlightjs)$
+<link rel="stylesheet" href="$highlightjs$/$if(highlightjs-theme)$$highlightjs-theme$$else$default$endif$.css" $if(html5)$$else$type="text/css" $endif$/>
+<script src="$highlightjs$/highlight.js"></script>
+<script type="text/javascript">hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+$endif$
 
-      /* visited link */
-      a:visited {
-        color: $link_col$;
-      }
+$if(highlighting-css)$<style type="text/css">$highlighting-css$</style>$endif$
 
-      /* mouse over link */
-      a:hover {
-        color: $link_col$;
-      }
+$for(css)$
+<link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+$endfor$
 
-      /* selected link */
-      a:active {
-        color: $link_col$;
-      }
-      .poster_body {
-        -webkit-column-count: $column_numbers$; /* Chrome, Safari, Opera */
-        -moz-column-count: $column_numbers$; /* Firefox */
-        column-count: $column_numbers$;
-        -webkit-column-fill: auto;
-        -moz-column-fill: auto;
-        column-fill: auto;
-        -webkit-column-rule-width: $columnline_width$;
-        -moz-column-rule-width: $columnline_width$;
-        column-rule-width: $columnline_width$;
-        -webkit-column-rule-style: $columnline_style$;
-        -moz-column-rule-style: $columnline_style$;
-        column-rule-style: $columnline_style$;
-        -webkit-column-rule-color: $columnline_col$;
-        -moz-column-rule-color: $columnline_col$;
-        column-rule-color: $columnline_col$;
-        width: 100%;
-        height: 85%;
-        padding-left: 1cm;
-        padding-right: 1cm;
-        padding-bottom: 1cm;
-        padding-top: 1cm;
-        color: $body_textcol$;
-      }
-      .poster_title h1 {
-        font-size: $title_textsize$;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        padding-top: 1cm;
-        padding-bottom: 0;
-      }
-      .poster_title h3 {
-        color: $author_textcol$;
-        font-size: $author_textsize$;
-        margin: 0;
-        padding: 0;
-        padding-top: 1cm;
-        padding-bottom: 0.5cm;
-        border: 0;
-      }
-      .poster_title h5 {
-        color: $affiliation_textcol$;
-        font-size: $affiliation_texsize$;
-        margin: 0;
-        padding: 0;
-        border: 0;
-        padding-top: 1cm;
-      }
-      img {
-        margin-top: 2cm;
-        margin-bottom: 0;
-      }
-      .poster_body h1 {
-        text-align: center;
-        color: $sectitle_textcol$;
-        font-size: 50pt;
-        border: $sectitle_borderwidth$ solid $sectitle_bordercol$;
-        background-color: $sectitle_bgcol$;
-        border-radius: $sectitle_boxshape$;
-        margin-top: 2mm;
-        margin-bottom: 2mm;
-        padding-top: 5mm;
-        padding-bottom: 5mm;
-      }
-      .poster_body h2 {
-        color: $sectitle2_textcol$;
-        font-size: 40pt;
-        padding-left: 4mm;
-      }
-      .span h1 {
-        text-align: center;
-        color: #ffffff;
-        font-size: 50pt;
-        border: 2mm solid yellow;
-        background-color: yellow;
-        border-radius: 4mm 0mm;
-        margin-top: 5mm;
-        margin-bottom: 5mm;
-        padding-top: 5mm;
-        padding-bottom: 5mm;
-        width: 100%
-      }
-      .span {
-        background-color: red;
-        width: 200%;
-        position:relative;
-      }
-      /* center align leaflet map,
-      from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
-      .html-widget {
-        margin: auto;
-        position: sticky;
-        margin-top: 2cm;
-        margin-bottom: 2cm;
-      }
-      .leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
-        position: sticky;
-        width: 100%;
-      }
-      pre.sourceCode.r {
-        background-color: #dddddd40;
-        border-radius: 4mm;
-        padding: 4mm;
-        width: 75%;
-        /* align-items: center; */
-        margin: auto;
-        padding-left: 2cm;
-      }
-      code.sourceCode.r{
-        background-color: transparent;
-        font-size: 20pt;
-        border-radius: 2mm;
-      }
-      .caption {
-        font-size: 25pt;
-      }
-      .table caption {
-        font-size: 25pt;
-        padding-bottom: 3mm;
+<style>
+@page {
+size: $poster_width$ $poster_height$;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0;
+font-size: $body_textsize$;
+width: $poster_width$;
+height: $poster_height$;
+padding: 0;
+text-align: justify;
+font-family: $font_family$;
+background-color: $body_bgcol$;
+}
+.title_container {
+width: 100%;
+height: 15%;
+overflow: hidden;
+background-color: $titlebox_bgcol$;
+border: $titlebox_borderwidth$ solid $titlebox_bordercol$;
+}
+.logo_left {
+float: left;
+width: 10%;
+height: 100%;
+background-color: $titlebox_bgcol$;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.logo_right {
+float: right;
+width: 10%;
+height: 100%;
+background-color: $titlebox_bgcol$;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.poster_title {
+text-align: center;
+position: relative;
+float: left;
+width: 80%;
+height: 100%;
+color: $title_textcol$;
+top: 50%;
+transform: translateY(-50%);
+-webkit-transform: translateY(-50%);
+}
+#title {
+font-family: $titletext_fontfamily$;
+}
+/* unvisited link */
+a:link {
+color: $link_col$;
+}
 
-      }
-      code {
-        font-size: 25pt;
-        font-family: monospace;
-        background-color: #00808024;
-        color: #0b4545;
-        padding: 1.2mm;
-        border-radius: 2mm;
-      }
-      table {
-        font-size: 40px;
-        margin: auto;
-        border-top: 3px solid #666;
-        border-bottom: 3px solid #666;
-      }
-      table thead th {
-        border-bottom: 3px solid #ddd;
-      }
-      td {
-        padding: 8px;
-      }
-      th {
-        padding: 15px;
-      }
-      caption {
-        margin-bottom: 10px;
-      }
-      .poster_body p {
-        margin-right: 4mm;
-        margin-left: 4mm;
-        margin-top: 6mm;
-        margin-bottom: 10mm;
-      }
-      .poster_body ol {
-        margin-right: 4mm;
-        margin-left: 4mm;
-      }
-      #ul {
-        margin-right: 4mm;
-        margin-left: 4mm;
-      }
-      .references p {
-        font-size: 20pt;
-      }
-    </style>
+/* visited link */
+a:visited {
+color: $link_col$;
+}
 
-  </head>
-  <body>
+/* mouse over link */
+a:hover {
+color: $link_col$;
+}
+
+/* selected link */
+a:active {
+color: $link_col$;
+}
+.poster_body {
+-webkit-column-count: $column_numbers$; /* Chrome, Safari, Opera */
+-moz-column-count: $column_numbers$; /* Firefox */
+column-count: $column_numbers$;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: $columnline_width$;
+-moz-column-rule-width: $columnline_width$;
+column-rule-width: $columnline_width$;
+-webkit-column-rule-style: $columnline_style$;
+-moz-column-rule-style: $columnline_style$;
+column-rule-style: $columnline_style$;
+-webkit-column-rule-color: $columnline_col$;
+-moz-column-rule-color: $columnline_col$;
+column-rule-color: $columnline_col$;
+width: 100%;
+height: 85%;
+padding-left: 1cm;
+padding-right: 1cm;
+padding-bottom: 1cm;
+padding-top: 1cm;
+color: $body_textcol$;
+}
+.poster_title h1 {
+font-size: $title_textsize$;
+margin: 0;
+padding: 0;
+border: 0;
+padding-top: 1cm;
+padding-bottom: 0;
+}
+.poster_title h3 {
+color: $author_textcol$;
+font-size: $author_textsize$;
+margin: 0;
+padding: 0;
+padding-top: 1cm;
+padding-bottom: 0.5cm;
+border: 0;
+}
+.poster_title h5 {
+color: $affiliation_textcol$;
+font-size: $affiliation_texsize$;
+margin: 0;
+padding: 0;
+border: 0;
+padding-top: 1cm;
+}
+img {
+margin-top: 2cm;
+margin-bottom: 0;
+}
+.poster_body h1 {
+text-align: center;
+color: $sectitle_textcol$;
+font-size: 50pt;
+border: $sectitle_borderwidth$ solid $sectitle_bordercol$;
+background-color: $sectitle_bgcol$;
+border-radius: $sectitle_boxshape$;
+margin-top: 2mm;
+margin-bottom: 2mm;
+padding-top: 5mm;
+padding-bottom: 5mm;
+}
+.poster_body h2 {
+color: $sectitle2_textcol$;
+font-size: 40pt;
+padding-left: 4mm;
+}
+.span h1 {
+text-align: center;
+color: #ffffff;
+font-size: 50pt;
+border: 2mm solid yellow;
+background-color: yellow;
+border-radius: 4mm 0mm;
+margin-top: 5mm;
+margin-bottom: 5mm;
+padding-top: 5mm;
+padding-bottom: 5mm;
+width: 100%
+}
+.span {
+background-color: red;
+width: 200%;
+position:relative;
+}
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+/* align-items: center; */
+margin: auto;
+padding-left: 2cm;
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+.caption {
+font-size: 25pt;
+}
+.table caption {
+font-size: 25pt;
+padding-bottom: 3mm;
+
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #00808024;
+color: #0b4545;
+padding: 1.2mm;
+border-radius: 2mm;
+}
+table {
+font-size: 40px;
+margin: auto;
+border-top: 3px solid #666;
+border-bottom: 3px solid #666;
+}
+table thead th {
+border-bottom: 3px solid #ddd;
+}
+td {
+padding: 8px;
+}
+th {
+padding: 15px;
+}
+caption {
+margin-bottom: 10px;
+}
+.poster_body p {
+margin-right: 4mm;
+margin-left: 4mm;
+margin-top: 6mm;
+margin-bottom: 10mm;
+}
+.poster_body ol {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+#ul {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+.references p {
+font-size: 20pt;
+}
+</style>
+
+</head>
+<body>
 
 $for(include-before)$
 $include-before$
 $endfor$
 
 <div class="title_container">
-  <!-- Left Logo  -->
-  <div class="logo_left">
-    <img src= '$logoleft_name$' style="width: 80%">
-  </div>
-  <!-- Poster Title -->
-  <div class= "poster_title">
-    <h1 id="title">$title$</h1>
-    <h3 id="author">$for(author)$$author.name$<sup>$author.affil$</sup>$sep$, $endfor$</h3>
-    <h5 id="affiliation">$for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$, $endfor$</h5>
+<!-- Left Logo  -->
+<div class="logo_left">
+<img src= '$logoleft_name$' style="width: 80%">
+</div>
+<!-- Poster Title -->
+<div class= "poster_title">
+<h1 id="title">$title$</h1>
+<h3 id="author">$for(author)$$author.name$<sup>$author.affil$</sup>$sep$, $endfor$</h3>
+<h5 id="affiliation">$for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$, $endfor$</h5>
 
-  </div>
-  <!-- Right Logo  -->
-    <div class="logo_right">
-          <img src="$logoright_name$" style="width: 80%">
-  </div>
+</div>
+<!-- Right Logo  -->
+<div class="logo_right">
+<img src="$logoright_name$" style="width: 80%">
+</div>
 </div>
 
 <div class='poster_body'>
@@ -299,16 +312,16 @@ $body$
 $if(math)$
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "$if(mathjax)$$mathjax$$endif$";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
+(function () {
+var script = document.createElement("script");
+script.type = "text/javascript";
+var src = "$if(mathjax)$$mathjax$$endif$";
+if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+if (location.protocol !== "file:" && /^https?:/.test(src))
+src = src.replace(/^https?:/, '');
+script.src = src;
+document.getElementsByTagName("head")[0].appendChild(script);
+})();
 </script>
 $endif$
 
@@ -316,5 +329,5 @@ $for(include-after)$
 $include-after$
 $endfor$
 
-  </body>
+</body>
 </html>
