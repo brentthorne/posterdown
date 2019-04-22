@@ -75,9 +75,9 @@ options(knitr.table.format = "html")
 
 # Introduction
 
-This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@thorneposterdown2019]. If you are not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionallity of this package :) 
+This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@thorneposterdown2019]. If you are not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :) 
 
-HTML documents such as this allow for "live" posters (aka GIFs or embeded videos etc), see Figure \@ref(fig:mymapfig) bellow for an example of a study site map made using the {ggspatial} or Figure \@ref(fig:gganimatefig) for an example using the [{gganimate}](github.com/thomasp85/gganimate) package by [@gganimate2017]. I can even change the order of the figures in the poster and [{posterdown}](github.com/brentthorne/posterdown) will take care of the formatting of Figure numbers for you, see Figure \@ref(fig:mymapfig).
+HTML documents such as this allow for "live" posters (aka GIFs or embedded videos etc), see Figure \@ref(fig:mymapfig) bellow for an example of a study site map made using the {ggspatial} or Figure \@ref(fig:gganimatefig) for an example using the [{gganimate}](github.com/thomasp85/gganimate) package by [@gganimate2017]. I can even change the order of the figures in the poster and [{posterdown}](github.com/brentthorne/posterdown) will take care of the formatting of Figure numbers for you, see Figure \@ref(fig:mymapfig).
 
 ```{r, mymapfig, out.width="100%", cache=FALSE, fig.cap='Map of Long Lake eample from the [ggspatial](https://github.com/paleolimbot/ggspatial) package [@ggspatial].', comment=FALSE}
 

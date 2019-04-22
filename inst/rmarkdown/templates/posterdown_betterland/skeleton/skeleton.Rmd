@@ -2,7 +2,7 @@
 # PLEASE SEE THE README for in depth description github.com/brentthorne/posterdown
 poster_height: "32in"
 poster_width: "46in"
-font_family: 'Indie Flower'
+font_family: 'Rasa'
 #ESSENTIALS
 title: A Better Reproducible Poster Title
 author:
@@ -14,7 +14,7 @@ author:
     email: bthorne2@brocku.ca
   - name: Another G. Contributor
     affil: 2
-    email: 'ag.con@posterdown.net'
+    email: ag.con@posterdown.net
   - name: Person Three
     affil: 3
 affiliation:
