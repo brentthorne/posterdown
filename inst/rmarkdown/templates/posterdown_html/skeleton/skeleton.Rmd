@@ -3,20 +3,26 @@
 #---POSTER SIZE & DEFAULT FONT---#
 poster_height: "38in" # height in inches of poster
 poster_width: "45in" # width in inches of poster
-font_family: "Palatino" # choose from typical html fonts (example: "Palatino")
+font_family: Rasa # choose from typical html fonts (example: "Palatino")
 #---TITLE BOX OPTIONS---#
 #ESSENTIALS
 title: 'Using posterdown to generate reproducible conference posters via RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF workflow'
 author: 
-  - 'W. Brent Thorne^1^'
-  - 'William B. Thorne^1^'
-affiliation: '^1^Department of Earth Science, Brock University'
+  - name: Brent Thorne
+    affil: 1
+  - name: Another Contributor
+    affil: 2
+affiliation: 
+  - num: 1
+    address: Department of Earth Science, Brock University
+  - num: 2
+    address: Department of Graphics and Layouts, University of Posters; Canada
 #STYLE & FORMATTING
 titlebox_bgcol: "#008080"  #Colour of the Title Box background
 titlebox_bordercol: "#0b4545" #Colour of the title Box border.
 titlebox_shape: "" #ONLY posterdown_PDF
 titlebox_borderwidth: "1cm"
-titletext_fontfamily: Helvetica
+titletext_fontfamily: Special Elite
 title_textcol: "#ffffff" #colour of title text
 author_textcol: "#0b4545" # Colour of author text
 affiliation_textcol: "#FFFFFF" # Colour of affiliation text
@@ -102,7 +108,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue 
 
 # Results
 
-Usually you want to have a nice table displaying some important results that you have calcualated. In posterdown this is as easy as using the `kable` table formatting you are probably use to as per typical `RMarkdown` formatting. I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) [@kableExtra2019]. Hopfully I can make this with an inline refernce like, Table \@ref(tab:mytable).
+Usually you want to have a nice table displaying some important results that you have calculated. In posterdown this is as easy as using the `kable` table formatting you are probably use to as per typical `RMarkdown` formatting. I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) [@kableExtra2019]. Hopefully I can make this with an inline reference like, Table \@ref(tab:mytable).
 
 
 ```{r, mytable, out.width='80%'}
@@ -161,8 +167,6 @@ p_line +
 ```
 
 # Next Steps
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu hendrerit tortor. Donec mi tellus, efficitur et porttitor eu, auctor eu tellus. Quisque faucibus vestibulum sapien vel lacinia. Ut auctor lorem non interdum blandit.
 
 Aliquam sed faucibus risus, quis efficitur erat. Vestibulum semper mauris quis tempus eleifend. Aliquam sagittis dictum ipsum, quis viverra ligula eleifend ut. Curabitur sagittis vitae arcu eget faucibus. In non elementum felis. Duis et aliquam nunc. Nunc pulvinar sapien nunc, vel pretium nisi efficitur in. Fusce fringilla maximus leo et maximus. Fusce at ligula laoreet, iaculis mi at, auctor odio. Praesent sed elementum justo. Aenean consectetur risus rhoncus tincidunt efficitur. Praesent dictum mauris at diam maximus maximus [@thorneposterdown2019].
 
