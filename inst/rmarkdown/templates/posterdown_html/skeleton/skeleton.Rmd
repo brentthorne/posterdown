@@ -21,7 +21,7 @@ affiliation:
 titlebox_bgcol: "#008080"  #Colour of the Title Box background
 titlebox_bordercol: "#0b4545" #Colour of the title Box border.
 titlebox_shape: "" #ONLY posterdown_PDF
-titlebox_borderwidth: "1cm"
+titlebox_borderwidth: "0cm"
 titletext_fontfamily: Special Elite
 title_textcol: "#ffffff" #colour of title text
 author_textcol: "#0b4545" # Colour of author text
@@ -36,7 +36,7 @@ logoright_name: "Figures/posterdownlogo.png"
 body_bgcol: "#ffffff" #colour of the poster main background
 body_textsize: "45px"    # Size of the main poster body text
 body_textcol: "#000000" # Colour of main text in the body of poster
-column_numbers: 4 # Number of columns that the poster has
+column_numbers: 3 # Number of columns that the poster has
 column_margins: "0.5in" # Margin spacing for columns
 columnline_col: "#008080" #colour 
 columnline_width: "1mm" #width of line between each column
@@ -91,18 +91,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue 
 
 # Results
 
-Usually you want to have a nice table displaying some important results that you have calculated. In `posterdown` this is as easy as using the `kable` table formatting you are probably use to as per typical R Markdown formatting. I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) [@kableExtra2019]. You can reference tables like so: Table \@ref(tab:mytable).
+Usually you want to have a nice table displaying some important results that you have calculated. In `posterdown` this is as easy as using the `kable` table formatting you are probably use to as per typical R Markdown formatting.
 
+I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) [@kableExtra2019]. You can reference tables like so: Table \@ref(tab:mytable). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est.
 
 ```{r mytable, out.width='80%'}
-knitr::kable(iris[1:5, 1:4], caption = 'Table caption.',align = 'c',"html")
+knitr::kable(iris[1:10, 1:4], caption = 'Table caption.',align = 'c',"html")
 ```
 
-Or with figures: Figure \@ref(fig:standard-plot).
+Or with figures: Figure \@ref(fig:standard-plot), or Figure \@ref(fig:morefigs).
 
-```{r standard-plot, out.width='80%', fig.align='center', echo=TRUE, fig.cap='Great figure!'}
+```{r standard-plot, out.width='80%', fig.align='center', fig.cap='Great figure!', fig.height=10}
 plot(mtcars[1:2])
 ```
+
+```{r morefigs, out.width='80%', fig.cap='Amazing, right?!', fig.height=5}
+data <- iris
+
+plot(x = data$Sepal.Length, y = data$Sepal.Width, col = data$Species, pch = 19, xlab = "Sepal Length (cm)", ylab = "Sepal Width (cm)")
+
+```
+
 
 
 # Next Steps: More random text

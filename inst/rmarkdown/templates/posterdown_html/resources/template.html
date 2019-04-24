@@ -55,9 +55,14 @@ text-align: justify;
 font-family: $font_family$;
 background-color: $body_bgcol$;
 }
+.poster_wrap {
+width: $poster_width$;
+height: $poster_height$;
+padding: 0cm;
+}
 .title_container {
-width: 100%;
-height: 15%;
+width: $poster_width$;
+height: calc($poster_height$ * 0.15);
 overflow: hidden;
 background-color: $titlebox_bgcol$;
 border: $titlebox_borderwidth$ solid $titlebox_bordercol$;
@@ -130,11 +135,7 @@ column-rule-style: $columnline_style$;
 -moz-column-rule-color: $columnline_col$;
 column-rule-color: $columnline_col$;
 width: 100%;
-height: 85%;
-padding-left: 1cm;
-padding-right: 1cm;
-padding-bottom: 1cm;
-padding-top: 1cm;
+height: 100%;
 color: $body_textcol$;
 }
 .poster_title h1 {
@@ -144,6 +145,12 @@ padding: 0;
 border: 0;
 padding-top: 1cm;
 padding-bottom: 0;
+}
+.poster_body_wrap{
+width: $poster_width$;
+height: calc($poster_height$ * 0.83);
+padding-top: calc($poster_height$ * 0.01);
+padding-bottom: calc($poster_height$ * 0.01);
 }
 .poster_title h3 {
 color: $author_textcol$;
@@ -165,6 +172,9 @@ padding-top: 1cm;
 img {
 margin-top: 2cm;
 margin-bottom: 0;
+}
+.section {
+  padding: 1cm;
 }
 .poster_body h1 {
 text-align: center;
@@ -287,6 +297,8 @@ $for(include-before)$
 $include-before$
 $endfor$
 
+<div class="poster_wrap">
+
 <div class="title_container">
 <!-- Left Logo  -->
 <div class="logo_left">
@@ -305,8 +317,12 @@ $endfor$
 </div>
 </div>
 
+<div class='poster_body_wrap'>
 <div class='poster_body'>
 $body$
+</div>
+</div>
+
 </div>
 
 $if(math)$
