@@ -54,114 +54,51 @@ output:
 bibliography: MyBib.bib
 ---
 
-```{r, include=FALSE}
-knitr::opts_chunk$set(results = 'asis', echo = FALSE, comment = FALSE,  warning = FALSE, message = FALSE, fig.align = 'center')
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  results = 'asis',
+  echo = FALSE,
+  comment = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = 'center'
+)
 ```
-
-<!--
-Bellow you will find typical RMarkdown syntax which should fill in the columns for the poster from top to bottom left to right. The more information you have the more will be filled. Please let me know if you have feedback at brentthorne18@gmail.com or at github.com/brentthorne/posterdown.
-ENJOY! XD
--->
 
 # Introduction
 
-Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow for those who wish to take their `RMarkdown` skills to the conference world. Many creature comforts from `RMarkdown` are available in this package such as `Markdown` section notation, figure captioning, and even citations like this one [@rmarkdown]. The rest of this example poster will show how you can insert typical conference poster features into your own document. 
-
-## Study Site
-
-Here is a map made to show the study site using `ggplot2`, `ggspatial`, and `sf` and you can even reference this with a hyperlink, this will take you to **Figure \@ref(fig:mymapfig)** [@ggspatial; @ggthemes; @sf].
-
-
-```{r, mymapfig, out.width="100%", cache=FALSE, fig.cap='Map of Long Lake eample from the [ggspatial](https://github.com/paleolimbot/ggspatial) package.', comment=FALSE}
-library(ggplot2)
-library(ggspatial)
-
-load_longlake_data()
-
-ggplot() +  
-  annotation_map_tile() +
-  layer_spatial(longlake_depthdf, aes(colour = DEPTH)) +
-  annotation_scale(location = "tl") +
-  annotation_north_arrow(location = "br") +
-  theme(legend.position = "bottom")
-```
+Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow for those who wish to take their R Markdown skills to the conference world. Most features from R Markdown are available in this package such as Markdown section notation, figure captioning, and even citations like this one [@rmarkdown]. The rest of this example poster will show how you can insert typical conference poster features into your own document. 
 
 ## Objectives
 
 1. Easy to use reproducible poster design. 
-2. Integration with `RMarkdown`.
+2. Integration with R Markdown.
 3. Easy transition from `posterdown` to `thesisdown` or `rticles` [@rticles; @thesisdown].
 
 # Methods
 
-This package uses the same workflow approach as the `RMarkdown` you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF. You can even use the bibliography the same way [@turnerControlsWaterBalance2014].
+This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF. You can even use the bibliography the same way [@turnerControlsWaterBalance2014].
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor lorem ex. Pellentesque tempus accumsan nulla, nec eleifend erat rhoncus vel. Ut commodo metus ipsum, sed accumsan risus placerat ut.
+## Random text
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu hendrerit tortor. Donec mi tellus, efficitur et porttitor eu, auctor eu tellus. Quisque faucibus vestibulum sapien vel lacinia. Ut auctor lorem non interdum blandit.
 
 # Results
 
-Usually you want to have a nice table displaying some important results that you have calcualated. In posterdown this is as easy as using the `kable` table formatting you are probably use to as per typical `RMarkdown` formatting. I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) [@kableExtra2019]. Hopfully I can make this with an inline refernce like, Table \@ref(tab:mytable).
+Usually you want to have a nice table displaying some important results that you have calculated. In `posterdown` this is as easy as using the `kable` table formatting you are probably use to as per typical R Markdown formatting. I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) [@kableExtra2019]. You can reference tables like so: Table \@ref(tab:mytable).
 
+```{r mytable, out.width='80%'}
+knitr::kable(iris[1:5, 1:4], caption = 'Table caption.',align = 'c',"html")
+```
 
-```{r, mytable, out.width='80%'}
-library(kableExtra)
-knitr::kable(iris[1:5, 1:4], caption = 'Table caption.',align = 'c',"html") %>% 
-  kable_styling(full_width = TRUE)
+Or with figures: Figure \@ref(fig:standard-plot).
+
+```{r standard-plot, out.width='80%', fig.align='center', echo=TRUE, fig.cap='Great figure!'}
+plot(mtcars[1:2])
 ```
 
 
-Look at this animation [@gganimate2017] !!!! Figure \@ref(fig:gganimatefig).
-
-```{r,gganimatefig, out.width='80%', cache=TRUE, fig.align='center', echo=TRUE, fig.cap='WOW THIS IS AN AWESOME GIF!'}
-
-library(ggplot2)
-library(gganimate)
-library(gapminder)
-
-ggplot(gapminder, aes(gdpPercap,
-                      lifeExp,
-                      size = pop,
-                      colour = country)) +
-  geom_point(alpha = 0.7, show.legend = FALSE) +
-  scale_colour_manual(values = country_colors) +
-  scale_size(range = c(2, 12)) +
-  scale_x_log10() +
-  facet_wrap(~continent) +
-  # Here comes the gganimate specific bits
-  labs(title = 'Year: {frame_time}',
-       x = 'GDP per capita',
-       y = 'life expectancy') +
-  transition_time(year) +
-  ease_aes('linear')
-
-```
-
-
-```{r, out.width='100%', fig.height=5, fig.cap='Using ggplot and patchwork to generate a layout of multiple plots in one figure. The iris dataset was used to generate (a) a line graph, (b) a scatterplot, and (c) a boxplot all together!'}
-
-library(tidyverse)
-library(patchwork)
-library(ggthemes)
-
-theme_set(theme_gray() + theme_tufte() + theme(legend.position = "none"))
-
-base <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species))
-  
-p_point <- base + geom_point()
-p_line  <- base + geom_line() 
-p_area  <- base + geom_area()
-p_box1  <- ggplot(iris) + geom_boxplot(aes(x = Species, y = Sepal.Length, fill = Species))
-p_box2  <- ggplot(iris) + geom_boxplot(aes(x = Species, y = Sepal.Width, fill = Species))
-
-p_line + 
-  {p_point + p_box1} +
-  plot_layout(ncol = 1) + plot_annotation(tag_levels = "a", tag_prefix = "(",tag_suffix = ")")
-
-```
-
-# Next Steps
+# Next Steps: More random text
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu hendrerit tortor. Donec mi tellus, efficitur et porttitor eu, auctor eu tellus. Quisque faucibus vestibulum sapien vel lacinia. Ut auctor lorem non interdum blandit.
 
@@ -169,14 +106,6 @@ Aliquam sed faucibus risus, quis efficitur erat. Vestibulum semper mauris quis t
 
 # Conclusion
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu hendrerit tortor. Donec mi tellus, efficitur et porttitor eu, auctor eu tellus. Quisque faucibus vestibulum sapien vel lacinia. Ut auctor lorem non interdum blandit.
-
-```{r, leafletfig, fig.cap='Here is a leaflet figure which whill run as expected online, when printed it will take the last state it is left in beofre choosing to print.'}
-library(leaflet)
-
-leaflet() %>% 
-  addTiles()
-
-```
+Try `posterdown` out! Hopefully you like it!
 
 # References
