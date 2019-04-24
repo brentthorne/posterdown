@@ -1,10 +1,10 @@
 #' Posterdown LaTeX format (using Memoir LaTeX document class)
 #'
 #' @inheritParams rmarkdown::pdf_document
-#' @param ... Additional arguments to \code{rmarkdown::pdf_document}
+#' @param ... Additional arguments to `rmarkdown::pdf_document`
 #'
 #' @return R Markdown output format to pass to
-#'   \code{\link[rmarkdown:render]{render}}
+#'   [rmarkdown:render::render()]
 #'
 #' @examples
 #'

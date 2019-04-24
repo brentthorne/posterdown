@@ -1,8 +1,14 @@
-[![Build Status](https://travis-ci.com/brentthorne/posterdown.svg?branch=master)](https://travis-ci.com/brentthorne/posterdown)
 
 # posterdown
 
-<img src="images/betterhexlogo.png" alt="posterdown logo" align="right" width = "25%" height="25%"/>
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Build Status](https://travis-ci.com/brentthorne/posterdown.svg?branch=master)](https://travis-ci.com/brentthorne/posterdown)
+<!-- badges: end -->
+
+<img src="images/posterdown_hexapril2019.png" alt="posterdown logo" align="right" width = "25%" height="25%"/>
+
+**Currently undergoing major changes, please use the previous [release](https://github.com/brentthorne/posterdown/releases) _OR_ ensure you know which commit you downloaded :)** _PS I work daily off of the [dev](https://github.com/brentthorne/posterdown/tree/dev) branch but will merge when I have made reasonable updates so still beware :thumbsup:_
 
 >**Currently undergoing major changes, please use the previous [release](https://github.com/brentthorne/posterdown/releases) _OR_ ensure you know which commit you downloaded :)** 
 

@@ -16,7 +16,7 @@ posterdown_pdf(..., keep_tex = TRUE)
 }
 \value{
 R Markdown output format to pass to
-  \code{\link[rmarkdown:render]{render}}
+\code{\link[rmarkdown:render:render]{rmarkdown:render::render()}}
 }
 \description{
 Legacy function for the OG's of posterdown.

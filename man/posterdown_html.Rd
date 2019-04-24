@@ -26,7 +26,7 @@ posterdown_betterport(...,
 }
 \value{
 R Markdown output format to pass to
-  \code{\link[rmarkdown:render]{render}}
+\code{\link[rmarkdown:render:render]{rmarkdown:render::render()}}
 }
 \description{
 The output format \code{poster_betterland()} mimics the style of the
