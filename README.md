@@ -2,23 +2,23 @@
 
 # posterdown
 
-<img src="images/posterdown_hexapril2019.png" alt="posterdown logo" align="right" width = "25%" height="25%"/>
+<img src="images/betterhexlogo.png" alt="posterdown logo" align="right" width = "25%" height="25%"/>
 
-**Currently undergoing major changes, please use the previous [release](https://github.com/brentthorne/posterdown/releases) _OR_ ensure you know which commit you downloaded :)** _PS I work daily off of the [dev](https://github.com/brentthorne/posterdown/tree/dev) branch but will merge when I have made reasonable updates so still beware :thumbsup:_
+>**Currently undergoing major changes, please use the previous [release](https://github.com/brentthorne/posterdown/releases) _OR_ ensure you know which commit you downloaded :)** 
 
-**Support**
+>_PS I work daily off of the [dev](https://github.com/brentthorne/posterdown/tree/dev) branch but will merge when I have made reasonable updates so still beware :thumbsup:_
+
+### Support
 
 _Please consider supporting posterdown on [Patreon](https://www.patreon.com/brentthorne) to ensure continued support and development for this package, as (grad school + open source developer != :dollar:) ._
 
-_**You can also support via cyrptocurrencies at:**_
-
-_**Bitcoin**: 1KZ3zyNsxdR8NjYL9vomb9fmpkXSXvK5VR <br>_
-_**Ethereum**: 0x71a18c5E3300a33F1139a9eA0abc0D029E3C30F7 <br>_
-_**Litecoin**: LR4usZRgjJGLAg3Tu5PSBjgUaVtdts9Wnw <br>_
+**Bitcoin**: `1KZ3zyNsxdR8NjYL9vomb9fmpkXSXvK5VR`<br>
+**Ethereum**: `0x71a18c5E3300a33F1139a9eA0abc0D029E3C30F7`<br>
+ **Litecoin**: `LR4usZRgjJGLAg3Tu5PSBjgUaVtdts9Wnw`
 
 _You can also follow me (Brent Thorne) on [twitter](twitter.com/brentthorne18) for upcoming features which may not be released on github._
 
-#
+# Why posterdown
 
 As a graduate student, I found that it is almost a rite of passage to take early research and analysis and generate a conference poster allowing for critical feedback. This is also important for facilitating meeting the people in your field at poster sessions at academic meetings. I have also noticed that while many of my fellow graduate students use R and are getting their feet wet with RMarkdown :blush:, we always had to go back to using MS Powerpoint or Keynote or Adobe Illustrator for generating conference posters :unamused:. Posterdown was created as a proof-of-concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
 
@@ -30,11 +30,11 @@ To this:
 
 [<img src="images/example_poster1.png" width="50%" height="50%">](https://brentthorne.github.io/posterdown_html_showcase/)
 
-**NEW OPTION #1:**
+**NEW OPTION #1 `posterdown_betterland`:**
 
 [<img src="images/betterposterland.jpg" width="50%" height="50%">](https://twitter.com/brentthorne18/status/1115096932068790272)
 
-**NEW OPTION #2:**
+**NEW OPTION #2 `posterdown_betterport`:**
 
 [<img src="images/betterposterport.png" width="50%" height="50%">](https://twitter.com/brentthorne18/status/1115096932068790272)
 
