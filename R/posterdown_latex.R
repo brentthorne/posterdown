@@ -4,7 +4,7 @@
 #' @param ... Additional arguments to `rmarkdown::pdf_document`
 #'
 #' @return R Markdown output format to pass to
-#'   [rmarkdown:render::render()]
+#'   [rmarkdown::render()]
 #'
 #' @examples
 #'

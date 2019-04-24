@@ -1,11 +1,10 @@
-
-#' Posterdown HTML format (using bookdown::html_document2)
+#' Posterdown HTML format (using pagedown::poster_relaxed)
 #'
 #' @inheritParams pagedown::poster_relaxed
 #' @param ... Additional arguments to `rmarkdown::html_document`
 #'
 #' @return R Markdown output format to pass to
-#'   [rmarkdown:render::render()]
+#'   [rmarkdown::render()]
 #'
 #' @examples
 #'
@@ -21,7 +20,7 @@ posterdown_html <- function(...,
 }
 
 #' @description The output format `poster_betterland()` mimics the style of the
-#' \dQuote{BetterPoster} movement from twitter.
+#' BetterPoster movement from twitter.
 #' @rdname posterdown_html
 #' @export
 posterdown_betterland <- function(...,
@@ -31,7 +30,7 @@ posterdown_betterland <- function(...,
 }
 
 #' @description The output format `poster_betterport()` mimics the style of the
-#' \dQuote{BetterPoster} movement from twitter.
+#' BetterPoster movement from twitter.
 #' @rdname posterdown_html
 #' @export
 posterdown_betterport <- function(...,

@@ -4,7 +4,7 @@
 \alias{posterdown_html}
 \alias{posterdown_betterland}
 \alias{posterdown_betterport}
-\title{Posterdown HTML format (using bookdown::html_document2)}
+\title{Posterdown HTML format (using pagedown::poster_relaxed)}
 \usage{
 posterdown_html(..., template = find_resource("posterdown_html",
   "template.html"), css = NULL)
@@ -26,14 +26,14 @@ posterdown_betterport(...,
 }
 \value{
 R Markdown output format to pass to
-\code{\link[rmarkdown:render:render]{rmarkdown:render::render()}}
+\code{\link[rmarkdown:render]{rmarkdown::render()}}
 }
 \description{
 The output format \code{poster_betterland()} mimics the style of the
-\dQuote{BetterPoster} movement from twitter.
+BetterPoster movement from twitter.
 
 The output format \code{poster_betterport()} mimics the style of the
-\dQuote{BetterPoster} movement from twitter.
+BetterPoster movement from twitter.
 }
 \examples{
 
