@@ -1,3 +1,5 @@
+^skeleton\.html$
+^skeleton_files$
 ^.*\.Rproj$
 ^.*\.Rproj\.user$
 ^\.Rproj\.user$
