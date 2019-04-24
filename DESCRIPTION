@@ -1,6 +1,5 @@
 Package: posterdown
 Title: Generate PDF conference posters using R Markdown
-Version: 0.1.2
 Description: Posterdown expands on RMarkdown to generate PDF conference posters
 Authors@R: c(
     person("Brent", "Thorne",
@@ -11,6 +10,7 @@ Authors@R: c(
     person("Peter", "Higgins", role = "ctb"),
     person("Shea", "Connell", role = "ctb")
   )
+Version: 0.1.2.9000
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
