@@ -3,6 +3,7 @@
 \name{posterdown_html}
 \alias{posterdown_html}
 \alias{posterdown_betterland}
+\alias{posterdown_betterport}
 \title{Posterdown HTML format (using bookdown::html_document2)}
 \usage{
 posterdown_html(..., template = find_resource("posterdown_html",
@@ -10,6 +11,10 @@ posterdown_html(..., template = find_resource("posterdown_html",
 
 posterdown_betterland(...,
   template = find_resource("posterdown_betterland", "template.html"),
+  css = NULL)
+
+posterdown_betterport(...,
+  template = find_resource("posterdown_betterport", "template.html"),
   css = NULL)
 }
 \arguments{
@@ -25,6 +30,9 @@ R Markdown output format to pass to
 }
 \description{
 The output format \code{poster_betterland()} mimics the style of the
+\dQuote{BetterPoster} movement from twitter.
+
+The output format \code{poster_betterport()} mimics the style of the
 \dQuote{BetterPoster} movement from twitter.
 }
 \examples{

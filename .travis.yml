@@ -1,3 +1,5 @@
-language: r
-sudo: false
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
 cache: packages
+pandoc_version: 2.3.1

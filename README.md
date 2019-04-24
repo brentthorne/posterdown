@@ -10,19 +10,21 @@
 
 **Currently undergoing major changes, please use the previous [release](https://github.com/brentthorne/posterdown/releases) _OR_ ensure you know which commit you downloaded :)** _PS I work daily off of the [dev](https://github.com/brentthorne/posterdown/tree/dev) branch but will merge when I have made reasonable updates so still beware :thumbsup:_
 
-**Support**
+>**Currently undergoing major changes, please use the previous [release](https://github.com/brentthorne/posterdown/releases) _OR_ ensure you know which commit you downloaded :)** 
+
+>_PS I work daily off of the [dev](https://github.com/brentthorne/posterdown/tree/dev) branch but will merge when I have made reasonable updates so still beware :thumbsup:_
+
+### Support
 
 _Please consider supporting posterdown on [Patreon](https://www.patreon.com/brentthorne) to ensure continued support and development for this package, as (grad school + open source developer != :dollar:) ._
 
-_**You can also support via cyrptocurrencies at:**_
-
-_**Bitcoin**: 1KZ3zyNsxdR8NjYL9vomb9fmpkXSXvK5VR <br>_
-_**Ethereum**: 0x71a18c5E3300a33F1139a9eA0abc0D029E3C30F7 <br>_
-_**Litecoin**: LR4usZRgjJGLAg3Tu5PSBjgUaVtdts9Wnw <br>_
+**Bitcoin**: `1KZ3zyNsxdR8NjYL9vomb9fmpkXSXvK5VR`<br>
+**Ethereum**: `0x71a18c5E3300a33F1139a9eA0abc0D029E3C30F7`<br>
+ **Litecoin**: `LR4usZRgjJGLAg3Tu5PSBjgUaVtdts9Wnw`
 
 _You can also follow me (Brent Thorne) on [twitter](twitter.com/brentthorne18) for upcoming features which may not be released on github._
 
-#
+# Why posterdown
 
 As a graduate student, I found that it is almost a rite of passage to take early research and analysis and generate a conference poster allowing for critical feedback. This is also important for facilitating meeting the people in your field at poster sessions at academic meetings. I have also noticed that while many of my fellow graduate students use R and are getting their feet wet with RMarkdown :blush:, we always had to go back to using MS Powerpoint or Keynote or Adobe Illustrator for generating conference posters :unamused:. Posterdown was created as a proof-of-concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
 
@@ -34,9 +36,13 @@ To this:
 
 [<img src="images/example_poster1.png" width="50%" height="50%">](https://brentthorne.github.io/posterdown_html_showcase/)
 
-**NEW OPTION:**
+**NEW OPTION #1 `posterdown_betterland`:**
 
 [<img src="images/betterposterland.jpg" width="50%" height="50%">](https://twitter.com/brentthorne18/status/1115096932068790272)
+
+**NEW OPTION #2 `posterdown_betterport`:**
+
+[<img src="images/betterposterport.png" width="50%" height="50%">](https://twitter.com/brentthorne18/status/1115096932068790272)
 
 Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my Master's degree so I will have limited time to work on updating this package in the next few months but, nevertheless, I will do what I can! :smile: 
 
@@ -44,13 +50,13 @@ Please feel free to give me feedback or requests for changes in the [issues](htt
 
 To cite `posterdown` in publications, use:
 
-`W. Brent Thorne (2019). posterdown: An R Packge. R package version 0.1.2.`
+`W. Brent Thorne (2019). posterdown: An R Package Built to Generate Reproducible Conference Posters for the Academic and Professional World Were Powerpoint and Pages Just Wont Cut It. R package version 0.1.2.`
 
 A BibTeX entry for LaTeX users is:
 
 ```
   @Manual{posterdown,
-    title = {posterdown: An R Package},
+    title = {posterdown: An R Package Built to Generate Reproducible Conference Posters for the Academic and Professional World Were Powerpoint and Pages Just Wont Cut It},
     author = {W. Brent Thorne},
     year = {2019},
     url = {https://github.com/brentthorne/posterdown},
@@ -98,11 +104,13 @@ tinytex::install_tinytex()
 
 ## Overview
 
-The **posterdown** package provides a familiar workflow for those used to working in [RMarkdown](https://rmarkdown.rstudio.com/). This package has two templates **`posterdown_latex`** and **`posterdown_html`**. 
+The **posterdown** package provides a familiar workflow for those used to working in [RMarkdown](https://rmarkdown.rstudio.com/). This package has ~~two~~ _four_ templates **`posterdown_latex`**, **`posterdown_html`**, **`posterdown_betterland`**, and **`posterdown_betterport`**
 
 ### HTML
 
-**`posterdown_betterland`** uses the [#betterposter](https://twitter.com/mikemorrison/status/1110191245035479041) design to layout your poster in a new and exciting wayy. Stnd out from the crowd and encourage meaningful discussion with your work! More to come on this poster desing and how to use is soon!
+**`posterdown_betterland`** uses the [#betterposter](https://twitter.com/mikemorrison/status/1110191245035479041) design to layout your poster in a new and exciting way. Stand out from the crowd and encourage meaningful discussion with your work! More to come on this poster desing and how to use is soon!
+
+**`posterdown_betterport`** uses the portrait version of the [#betterposter](https://twitter.com/mikemorrison/status/1110191245035479041) design.
 
 **`posterdown_html`** utilizes the wonderful work being done by @RLesur and @yihui on [pagedown](github.com/rstudio/pagedown). This method allows for some cool features like the ability to run an html wiget (aka shiny app or a leaflet map) live in the poster (unless you print it obviously). It even allows for integration with one of my favourite R packages [gganimate](github.com/thomasp85/gganimate). 
 
