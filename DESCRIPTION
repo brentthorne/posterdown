@@ -12,6 +12,9 @@ Authors@R:
              role = "ctb"),
       person(given = "Shea",
              family = "Connell",
+             role = "ctb"),
+      person(given = "Luke",
+             family = "Johnston",
              role = "ctb"))
 Description: Posterdown expands on RMarkdown to generate
     PDF and HTML conference posters.
