@@ -43,6 +43,7 @@ columnline_width: "1mm" #width of line between each column
 columnline_style: dashed #style of the column line seperator.
 #SECTION TITLE STYLING
 sectitle_textcol: "#ffffff" # Colour of the poster section titles
+sectitle_textsize: "65pt"
 sectitle_bgcol: "#0b4545" # Colour of the section title box
 sectitle_bordercol: "#0b4545" # Colour of the border around the section title box.
 sectitle_borderwidth: "2mm" # Thicknes of the section title box border
