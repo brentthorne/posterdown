@@ -1,4 +1,4 @@
-name: Posterdown HTML
+name: Posterdown Betterland
 description: >
- Template for creating R Markdown based PDF via HTML and CSS
+ Template for creating R Markdown based PDF via HTML, CSS and the Better Poster Style
 create_dir: true

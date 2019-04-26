@@ -42,7 +42,8 @@ affiliation_textcol: '#00000080'
 caption_fontsize: "20pt"
 #Middle of the poster
 middle_fontfamily: "Special Elite"
-middle_textcol: "#FFFFFF90"
+middle_textcol: "#FFFFFF"
+middle:textalpha: 90
 middle_fontsize: "150px"
 main_findings:
   - "Make **better posters** with RMarkdown + **posterdown**."

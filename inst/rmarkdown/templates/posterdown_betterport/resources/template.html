@@ -163,8 +163,9 @@ text-align: left;
 padding-right: 5%;
 padding-left: 5%;
 margin: 0;
-line-height: 80%;
+line-height: 98%;
 border-bottom: 0;
+font-weight: normal;
 }
 #author {
 padding-right: 5%;
@@ -204,6 +205,7 @@ font-size: $authorextra_textsize$;
 text-align: center;
 margin-top: 0.5in;
 margin-bottom: 0.5in;
+font-weight: normal;
 }
 .outer h2 {
 text-align: center;
@@ -223,12 +225,18 @@ width: $poster_width$;
 height: calc($poster_height$ * 0.25);
 position: absolute;
 background-color: $primary_colour$;
-color: $middle_textcol$;
+color: $middle_textcol$$middle_textalpha$;
 font-family: $middle_fontfamily$;
 background-image: linear-gradient($primary_colour$ 50%, $secondary_colour$);
 }
 .middle strong {
-color: #FFFFFF;
+color: $middle_textcol$;
+}
+.middle strong > sup {
+color: $middle_textcol$;
+}
+.middle sup {
+color: $middle_textcol$$middle_textalpha$;
 }
 #middle-img-left {
 width: 10%;
@@ -304,7 +312,7 @@ $endfor$
 <div class="poster_wrap">
 
 <div class="column outer">
-<h1 id="title">$title$</h1>
+<h1 id="title">$title$</h1><br>
 <h3 id="author" class="author">
 
 $for(author)$
