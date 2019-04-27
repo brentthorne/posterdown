@@ -4,9 +4,9 @@ poster_height: "48in"
 poster_width: "36in"
 font_family: 'Rasa'
 #ESSENTIALS
-title: A Better Reproducible Poster Title
+title: '**A Better Reproducible Poster Title**'
 author:
-  - name: W. Brent Thorne
+  - name: '**W. Brent Thorne**'
     affil: 1,*
     main: true
     orcid: '0000-0002-1099-3857'
@@ -65,129 +65,65 @@ output:
     self_contained: false
     pandoc_args: --mathjax
     highlight: espresso
-    number_sections: false
+    number_sections: true
 bibliography: MyBib.bib
 ---
-
-```{r, include=FALSE}
-knitr::opts_chunk$set(results = 'asis', echo = FALSE, comment = FALSE,  warning = FALSE,tidy = FALSE, message = FALSE, fig.align = 'center')
-options(knitr.table.format = "html") 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  results = 'asis',
+  echo = FALSE,
+  comment = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = 'center'
+)
 ```
 
 # Introduction
 
-This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@thorneposterdown2019]. If you are not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :) 
+Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow for those who wish to take their R Markdown skills to the conference world. Most features from R Markdown are available in this package such as Markdown section notation, figure captioning, and even citations like this one [@rmarkdown]. The rest of this example poster will show how you can insert typical conference poster features into your own document. 
 
-HTML documents such as this allow for "live" posters (aka GIFs or embedded videos etc), see Figure \@ref(fig:mymapfig) bellow for an example of a study site map made using the {ggspatial} or Figure \@ref(fig:gganimatefig) for an example using the [{gganimate}](github.com/thomasp85/gganimate) package by [@gganimate2017]. I can even change the order of the figures in the poster and [{posterdown}](github.com/brentthorne/posterdown) will take care of the formatting of Figure numbers for you, see Figure \@ref(fig:mymapfig).
+## Objectives
 
-```{r, mymapfig, out.width="100%", cache=FALSE, fig.cap='Map of Long Lake eample from the [ggspatial](https://github.com/paleolimbot/ggspatial) package [@ggspatial].', comment=FALSE}
-
-library(ggspatial)
-load_longlake_data()
-
-ggplot() +
-  # loads background map tiles from a tile source
-  annotation_map_tile(zoomin = -1) +
-  
-  # annotation_spatial() layers don't train the scales, so data stays central
-  annotation_spatial(longlake_roadsdf, size = 2, col = "black") +
-  annotation_spatial(longlake_roadsdf, size = 1.6, col = "white") +
-
-  # raster layers train scales and get projected automatically
-  layer_spatial(longlake_depth_raster, aes(colour = stat(band1))) +
-  # make no data values transparent
-  scale_fill_viridis_c(na.value = NA) +
-  
-  # layer_spatial trains the scales
-  layer_spatial(longlake_depthdf, aes(fill = DEPTH_M)) +
-  
-  # spatial-aware automagic scale bar
-  annotation_scale(location = "tl") +
-
-  # spatial-aware automagic north arrow
-  annotation_north_arrow(location = "br", which_north = "true")
-```
+1. Easy to use reproducible poster design. 
+2. Integration with R Markdown.
+3. Easy transition from `posterdown` to `thesisdown` or `rticles` [@rticles; @thesisdown].
 
 # Methods
 
-1. Install R and `posterdown`, see [github](github.com/brentthorne/posterdown)
-2. Open the `posterdown_betterland` template
-3. Make all your poster dreams come true!
+This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF. You can even use the bibliography the same way [@turnerControlsWaterBalance2014].
 
 # Results
 
-```{r,gganimatefig, out.width='80%', cache=TRUE, fig.height=5, fig.align='center', fig.cap='WOW THIS IS AN AWESOME GIF!'}
+Usually you want to have a nice table displaying some important results that you have calculated. In `posterdown` this is as easy as using the `kable` table formatting you are probably use to as per typical R Markdown formatting.
 
-library(ggplot2)
-library(gganimate)
-library(gapminder)
+I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) [@kableExtra2019]. You can reference tables like so: Table \@ref(tab:mytable). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est.
 
-ggplot(gapminder, aes(gdpPercap,
-                      lifeExp,
-                      size = pop,
-                      colour = country)) +
-  geom_point(alpha = 0.7, show.legend = FALSE) +
-  scale_colour_manual(values = country_colors) +
-  scale_size(range = c(2, 12)) +
-  scale_x_log10() +
-  facet_wrap(~continent) +
-  # Here comes the gganimate specific bits
-  labs(title = 'Year: {frame_time}',
-       x = 'GDP per capita',
-       y = 'life expectancy') +
-  transition_time(year) +
-  ease_aes('linear')
+```{r mytable, out.width='80%', fig.align='center'}
+knitr::kable(iris[1:10, 1:4], caption = 'Table caption.', align = 'c')
+```
+
+Or with figures: Figure \@ref(fig:standard-plot), or Figure \@ref(fig:morefigs).
+
+```{r standard-plot, out.width='80%', fig.align='center', fig.cap='Great figure!', fig.height=10}
+plot(mtcars[1:2])
+```
+
+```{r morefigs, out.width='80%', fig.cap='Amazing, right?!', fig.height=5}
+data <- iris
+
+plot(x = data$Sepal.Length, y = data$Sepal.Width, col = data$Species, pch = 19, xlab = "Sepal Length (cm)", ylab = "Sepal Width (cm)")
 
 ```
 
-```{r, patchworkfig, out.width='90%', fig.height=7, echo=TRUE,fig.cap='Using {ggplot} and {patchwork} to generate a layout of multiple plots in one figure [@patchwork2017].'}
 
-library(tidyverse)
-library(patchwork)
-library(ggthemes)
 
-theme_set(theme_gray() + theme_tufte() +
-            theme(legend.position = "none"))
+# Next Steps: More random text
 
-base <- ggplot(iris, aes(x = Sepal.Length,
-                         y = Sepal.Width,
-                         colour = Species))
-  
-p_point <- base + geom_point()
-p_line  <- base + geom_line() 
-p_area  <- base + geom_area()
-p_box1  <- ggplot(iris) +
-  geom_boxplot(aes(x = Species,
-                   y = Sepal.Length,
-                   fill = Species))
+Aliquam sed faucibus risus, quis efficitur erat. Vestibulum semper mauris quis tempus eleifend. Aliquam sagittis dictum ipsum, quis viverra ligula eleifend ut. Curabitur sagittis vitae arcu eget faucibus. In non elementum felis. Duis et aliquam nunc. Nunc pulvinar sapien nunc, vel pretium nisi efficitur in. Fusce fringilla maximus leo et maximus. Fusce at ligula laoreet, iaculis mi at, auctor odio. Praesent sed elementum justo. Aenean consectetur risus rhoncus tincidunt efficitur. Praesent dictum mauris at diam maximus maximus [@thorneposterdown2019].
 
-p_box2  <- ggplot(iris) +
-  geom_boxplot(aes(x = Species,
-                   y = Sepal.Width, 
-                   fill = Species))
-p_line + 
-  {p_point + p_box1} +
-  plot_layout(ncol = 1) + 
-  plot_annotation(tag_levels = "a",
-                  tag_prefix = "(",
-                  tag_suffix = ")")
+# Conclusion
 
-```
-
-## More Figures and Tables
-
-```{r, mytable, fig.align='center', out.width='90%'}
-
-library(knitr)
-library(kableExtra)
-
-dt <- iris[c(1:2,50:51,101:102), 1:5]
-
-kable(dt, caption = 'Here is a caption for the table made with the {kableExtra} package [@kableExtra2019].',align = 'c', col.names = c("Sepal W","Sepal L","Pedal W","Pedal L","Species")) %>% 
-  kable_styling(full_width = T) %>% 
-  row_spec(0, color = "#fff", background = "#0b454580")
-```
-
-A **BIG** thank you to [Romain Leasur](https://twitter.com/RLesur) and [Yihui Xie](https://twitter.com/xieyihui) for their wonderfull work on [{pagedown}](https://github.com/rstudio/pagedown) which had made this poster possible [@pagedown]!
+Try `posterdown` out! Hopefully you like it!
 
 # References
