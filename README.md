@@ -13,8 +13,10 @@
 
 ### Support
 
-_Please consider supporting posterdown on [Patreon](https://www.patreon.com/brentthorne) to ensure continued support and development for this package, as (grad school + open source developer != :dollar:) ._
+_Please consider supporting posterdown to ensure continued support and development for this package, as **grad school + open source developer != :dollar:.**_
 
+**[Patreon](https://www.patreon.com/brentthorne)** - Monthly<br>
+**[PayPal](https://paypal.me/brentthorne)** - Single Payment<br>
 **Bitcoin**: `1KZ3zyNsxdR8NjYL9vomb9fmpkXSXvK5VR`<br>
 **Ethereum**: `0x71a18c5E3300a33F1139a9eA0abc0D029E3C30F7`<br>
  **Litecoin**: `LR4usZRgjJGLAg3Tu5PSBjgUaVtdts9Wnw`
