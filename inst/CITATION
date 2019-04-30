@@ -4,7 +4,7 @@ citHeader("To cite 'posterdown' in publications use:")
  vers <- paste("R package version", meta$Version)
 
  citEntry(entry="Manual",
-		  title = "posterdown: An R Package Built to Generate Reproducible Conference Posters for the Academic and Professional World Were Powerpoint and Pages Just Wont Cut It",
+		  title = "posterdown: An R Package Built to Generate Reproducible Conference Posters for the Academic and Professional World hWere Powerpoint and Pages Just Won't Cut It",
 		  author = personList(as.person("W. Brent Thorne")),
 		  year = 2019,
 		  url = "https://github.com/brentthorne/posterdown",

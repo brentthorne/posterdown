@@ -53,7 +53,7 @@ A BibTeX entry for LaTeX users is:
 
 ```
   @Manual{posterdown,
-    title = {posterdown: An R Package Built to Generate Reproducible Conference Posters for the Academic and Professional World Were Powerpoint and Pages Just Wont Cut It},
+    title = {posterdown: An R Package Built to Generate Reproducible Conference Posters for the Academic and Professional World hWere Powerpoint and Pages Just Won't Cut It},
     author = {W. Brent Thorne},
     year = {2019},
     url = {https://github.com/brentthorne/posterdown},
