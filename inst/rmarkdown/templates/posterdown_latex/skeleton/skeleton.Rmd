@@ -115,3 +115,5 @@ Aliquam sed faucibus risus, quis efficitur erat. Vestibulum semper mauris quis t
 Try `posterdown` out! Hopefully you like it!
 
 # References
+
+\printbibliography
