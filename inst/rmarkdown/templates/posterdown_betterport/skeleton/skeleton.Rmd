@@ -2,6 +2,8 @@
 # PLEASE SEE THE README for in depth description github.com/brentthorne/posterdown
 poster_height: "48in"
 poster_width: "36in"
+emph_size: 0.2 #percent coverage of the poster
+emphb_size: 0.1
 font_family: 'Rasa'
 #ESSENTIALS
 title: '**A Better Reproducible Poster Title**'
@@ -14,7 +16,7 @@ author:
     email: bthorne2@brocku.ca
   - name: Another G. Contributor
     affil: 2
-    main: false
+    main: true
     email: 'ag.con@posterdown.net'
   - name: Person Three
     affil: 3
@@ -72,7 +74,6 @@ bibliography: MyBib.bib
 knitr::opts_chunk$set(
   results = 'asis',
   echo = FALSE,
-  comment = FALSE,
   warning = FALSE,
   message = FALSE,
   fig.align = 'center'

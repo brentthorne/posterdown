@@ -65,7 +65,6 @@ bibliography: MyBib.bib
 knitr::opts_chunk$set(
   results = 'asis',
   echo = FALSE,
-  comment = FALSE,
   warning = FALSE,
   message = FALSE,
   fig.align = 'center'

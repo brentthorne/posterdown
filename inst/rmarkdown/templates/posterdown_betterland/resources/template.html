@@ -157,7 +157,11 @@ text-decoration: none;
 color: $secondary_colour$;
 }
 #title {
+$if(title_textsize)$
 font-size: $title_textsize$;
+$else$
+font-size: 125pt;
+$endif$
 text-align: left;
 padding-right: 7%;
 padding-left: 7%;

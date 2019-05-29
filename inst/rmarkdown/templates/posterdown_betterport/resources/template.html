@@ -54,6 +54,7 @@ width: $poster_width$;
 height: $poster_height$;
 text-align: justify;
 font-size: $body_textsize$;
+line-height: 1.05;
 }
 /* RMarkdown Class Styles */
 /* center align leaflet map,
@@ -97,18 +98,6 @@ margin-bottom: 10px;
 font-size: $caption_fontsize$;
 font-style: italic;
 }
-tbody tr:nth-child(odd) {
-    background-color: $primary_colour$20;
-}
-.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
-  border-spacing: 0;
-  border-style: none;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 20px;
-  padding-left: 20px;
-  line-height: 1.42857143;
-}
 .caption {
 font-size: $caption_fontsize$;
 font-style: italic;
@@ -124,10 +113,10 @@ padding: 0px;
 }
 .outer {
 width: $poster_width$;
-height: calc($poster_height$ * 0.6325);
--webkit-column-count: 3; /* Chrome, Safari, Opera */
--moz-column-count: 3; /* Firefox */
-column-count: 3;
+height: calc($poster_height$ * $if(emph_size)$ (1 - $emph_size$ - $emphb_size$ - 0.01) $else$ 0.6325 $endif$);
+-webkit-column-count: $column_numbers$; /* Chrome, Safari, Opera */
+-moz-column-count: $column_numbers$; /* Firefox */
+column-count: $column_numbers$;
 -webkit-column-fill: auto;
 -moz-column-fill: auto;
 column-fill: auto;
@@ -145,7 +134,7 @@ column-rule-style: none;
 column-rule-color: black;
 background-color: $body_bgcol$;
 font-family: $font_family$;
-margin-top: calc($poster_height$ * 0.25);
+margin-top: calc($poster_height$ * $if(emph_size)$ $emph_size$ $else$ 0.25 $endif$);
 padding-top: 1em;
 padding-bottom: 1em;
 }
@@ -160,25 +149,19 @@ color: $secondary_colour$;
 #title {
 font-size: $title_textsize$;
 text-align: left;
-padding-right: 5%;
-padding-left: 5%;
 margin: 0;
 line-height: 98%;
 border-bottom: 0;
 font-weight: normal;
 }
 #author {
-padding-right: 5%;
-padding-left: 5%;
 color: $primary_colour$;
 margin: 0;
 line-height: 85%;
 font-size: $author_textsize$;
 }
 #affiliation {
-padding-right: 5%;
-padding-left: 5%;
-padding-top: 1em;
+padding-top: 0.1em;
 color: $affiliation_textcol$;
 font-style: italic;
 font-size: $affiliation_textsize$;
@@ -201,8 +184,6 @@ text-align: left;
 font-size: 30px;
 }
 .author_extra {
-padding-right: 5%;
-padding-left: 5%;
 color: $secondary_colour$;
 margin: 0;
 line-height: 85%;
@@ -211,16 +192,35 @@ text-align: left;
 }
 .outer h1, h2, h3, h4, h5, h6 {
 text-align: center;
-margin-top: 0.5in;
-margin-bottom: 0.5in;
-font-weight: normal;
+margin: 0;
+font-weight: bold;
+}
+.section h1 {
+  text-align:center;
+  padding-bottom:5px;
+  background:
+    linear-gradient(
+      to left,
+      $body_bgcol$ 1%,
+      $body_bgcol$ 20%,
+      $primary_colour$75 33%,
+      $primary_colour$ 50%,
+      $primary_colour$75 66%,
+      $body_bgcol$ 80%,
+      $body_bgcol$ 99%
+    )
+    left
+    bottom
+    $body_bgcol$
+    no-repeat;
+  background-size:100% 5px ;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 .outer h2 {
 text-align: center;
 }
 .outer p, .level2 {
-padding-right: 5%;
-padding-left: 5%;
 color: #000000;
 }
 .outer ol {
@@ -230,7 +230,7 @@ text-align: left;
 }
 .middle {
 width: $poster_width$;
-height: calc($poster_height$ * 0.25);
+height: calc($poster_height$ * $if(emph_size)$ $emph_size$ $else$ 0.25 $endif$);
 position: absolute;
 background-color: $primary_colour$;
 color: $middle_textcol$$middle_textalpha$;
@@ -268,10 +268,11 @@ position: absolute;
 opacity: 0.6
 }
 .middle p {
-padding-left: 7%;
-padding-right: 7%;
 font-size: $middle_fontsize$;
 text-align: left;
+margin: 0;
+margin-left: 0.2em;
+margin-top: 0.75em;
 }
 .fab {
 color: #00000030;
@@ -299,11 +300,16 @@ padding: 0cm;
 }
 .emphasis_bottom {
 width: $poster_width$;
-height: calc($poster_height$ * 0.1);
-margin-top: calc($poster_height$ * 0.9);
+height: calc($poster_height$ * $if(emphb_size)$ $emphb_size$ $else$ 0.1 $endif$);
+margin-top: calc($poster_height$ * $if(emphb_size)$ (1 - $emphb_size$) $else$ 0.9 $endif$);
 position: absolute;
 background-color: $primary_colour$;
 background-image: linear-gradient($secondary_colour$ 10%, $primary_colour$);
+}
+
+.section, #author, #author_extra, #affiliation, #title {
+  padding-left: 7mm;
+  padding-right: 7mm;
 }
 
 span > #tab:mytable {
@@ -357,7 +363,7 @@ $body$
 <div class="emphasis_bottom">
 <img id="middle-img-left" src=$logoleft_name$>
 <img id="middle-img-center" src=$logocenter_name$>
-<img id="middle-img-right" src="$logoright_name$">
+<img id="middle-img-right" src=$logoright_name$>
 </div>
 </div>
 
