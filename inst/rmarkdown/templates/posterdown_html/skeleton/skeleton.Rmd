@@ -3,10 +3,10 @@
 #---POSTER SIZE & DEFAULT FONT---#
 poster_height: "38in" # height in inches of poster
 poster_width: "45in" # width in inches of poster
-font_family: Rasa # choose from typical html fonts (example: "Palatino")
+font_family: Palatino # choose from typical html fonts (example: "Palatino")
 #---TITLE BOX OPTIONS---#
 #ESSENTIALS
-title: 'Using posterdown to generate reproducible conference posters via RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF workflow'
+title: 'Using posterdown to `generate` reproducible conference posters via RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF workflow'
 author: 
   - name: Brent Thorne
     affil: 1
@@ -22,7 +22,7 @@ titlebox_bgcol: "#008080"  #Colour of the Title Box background
 titlebox_bordercol: "#0b4545" #Colour of the title Box border.
 titlebox_shape: "" #ONLY posterdown_PDF
 titlebox_borderwidth: "0cm"
-titletext_fontfamily: Special Elite
+titletext_fontfamily: Palatino
 title_textcol: "#ffffff" #colour of title text
 author_textcol: "#0b4545" # Colour of author text
 affiliation_textcol: "#FFFFFF" # Colour of affiliation text
