@@ -1,3 +1,4 @@
+<img src="images/betterhexlogo.png" alt="posterdown logo" align="right" width = "25%" height="25%"/>
 
 # posterdown
 
@@ -6,7 +7,11 @@
 [![Build Status](https://travis-ci.com/brentthorne/posterdown.svg?branch=master)](https://travis-ci.com/brentthorne/posterdown)
 <!-- badges: end -->
 
-<img src="images/betterhexlogo.png" alt="posterdown logo" align="right" width = "25%" height="25%"/>
+|   TOC    |
+|--------|
+| [Current Template Styles]() |
+| [Getting Started]() |
+| [Support]() |
 
 ## Why posterdown
 
