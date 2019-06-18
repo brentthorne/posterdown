@@ -1,11 +1,11 @@
+<img src="images/betterhexlogo.png" alt="posterdown logo" align="right" width = "25%" height="25%"/>
+
 # posterdown
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Build Status](https://travis-ci.com/brentthorne/posterdown.svg?branch=master)](https://travis-ci.com/brentthorne/posterdown)
 <!-- badges: end -->
-
-<img src="images/betterhexlogo.png" alt="posterdown logo" align="right" width = "25%" height="25%"/>
 
 ## Why posterdown
 
