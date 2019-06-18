@@ -16,8 +16,12 @@ Font-awesome icons ie github or twitter
 <!--
 Google fonts api stuff
 -->
+$if(font_family)$
 <link href='https://fonts.googleapis.com/css?family=$font_family$' rel='stylesheet'>
+$endif$
+$if(titletext_fontfamily)$
 <link href='https://fonts.googleapis.com/css?family=$titletext_fontfamily$' rel='stylesheet'>
+$endif$
 
 $for(author-meta)$<meta name="author" content="$author-meta$" />$endfor$
 $if(date-meta)$<meta name="date" content="$date-meta$" />$endif$
@@ -41,46 +45,46 @@ $endfor$
 
 <style>
 @page {
-size: $poster_width$ $poster_height$;
+size: $if(poster_width)$$poster_width$$else$45in$endif$ $if(poster_height)$$poster_height$$else$38in$endif$;
 margin: 0;
 padding: 0;
 }
 body {
 margin: 0;
-font-size: $body_textsize$;
-width: $poster_width$;
-height: $poster_height$;
+font-size: $if(body_textsize)$$body_textsize$$else$45px$endif$;
+width: $if(poster_width)$$poster_width$$else$45in$endif$;
+height: $if(poster_height)$$poster_height$$else$38in$endif$;
 padding: 0;
 text-align: justify;
-font-family: $font_family$;
-background-color: $body_bgcol$;
+font-family: $if(font_family)$$font_family$$else$Palatino$endif$;
+background-color: $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$;
 }
 .poster_wrap {
-width: $poster_width$;
-height: $poster_height$;
+width: $if(poster_width)$$poster_width$$else$45in$endif$;
+height: $if(poster_height)$$poster_height$$else$38in$endif$;
 padding: 0cm;
 }
 .title_container {
-width: $poster_width$;
-height: calc($poster_height$ * 0.15);
+width: $if(poster_width)$$poster_width$$else$45in$endif$;
+height: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.15);
 overflow: hidden;
-background-color: $titlebox_bgcol$;
-border: $titlebox_borderwidth$ solid $titlebox_bordercol$;
+background-color: $if(primary_colour)$$primary_colour$$else$#008080$endif$;
+border: $if(titlebox_borderwidth)$$titlebox_borderwidth$$else$0$endif$ solid $if(secondary_colour)$$secondary_colour$$else$#0b4545$endif$;
 }
 .logo_left {
 float: left;
 width: 10%;
 height: 100%;
-background-color: $titlebox_bgcol$;
+background-color: $if(primary_colour)$$primary_colour$$else$#008080$endif$;
 display: flex;
 align-items: center;
-justify-content: center;
+justify-content: center;x
 }
 .logo_right {
 float: right;
 width: 10%;
 height: 100%;
-background-color: $titlebox_bgcol$;
+background-color: $if(primary_colour)$$primary_colour$$else$#008080$endif$;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -91,75 +95,75 @@ position: relative;
 float: left;
 width: 80%;
 height: 100%;
-color: $title_textcol$;
+color: $if(title_textcol)$$title_textcol$$else$#FFFFFF$endif$;
 top: 50%;
 transform: translateY(-50%);
 -webkit-transform: translateY(-50%);
 }
 #title {
-font-family: $titletext_fontfamily$;
+font-family: $if(titletext_fontfamily)$$titletext_fontfamily$$else$$if(font_family)$$font_family$$else$Palatino$endif$$endif$;
 }
 /* unvisited link */
 a:link {
-color: $link_col$;
+color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#cc0000$endif$$endif$;
 }
 
 /* visited link */
 a:visited {
-color: $link_col$;
+color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#cc0000$endif$$endif$;
 }
 
 /* mouse over link */
 a:hover {
-color: $link_col$;
+color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#cc0000$endif$$endif$;
 }
 
 /* selected link */
 a:active {
-color: $link_col$;
+color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#cc0000$endif$$endif$;
 }
 .poster_body {
--webkit-column-count: $column_numbers$; /* Chrome, Safari, Opera */
--moz-column-count: $column_numbers$; /* Firefox */
-column-count: $column_numbers$;
+-webkit-column-count: $if(column_numbers)$$column_numbers$$else$3$endif$; /* Chrome, Safari, Opera */
+-moz-column-count: $if(column_numbers)$$column_numbers$$else$3$endif$; /* Firefox */
+column-count: $if(column_numbers)$$column_numbers$$else$3$endif$;
 -webkit-column-fill: auto;
 -moz-column-fill: auto;
 column-fill: auto;
--webkit-column-rule-width: $columnline_width$;
--moz-column-rule-width: $columnline_width$;
-column-rule-width: $columnline_width$;
--webkit-column-rule-style: $columnline_style$;
--moz-column-rule-style: $columnline_style$;
-column-rule-style: $columnline_style$;
--webkit-column-rule-color: $columnline_col$;
--moz-column-rule-color: $columnline_col$;
-column-rule-color: $columnline_col$;
+-webkit-column-rule-width: $if(columnline_width)$$columnline_width$$else$1mm$endif$;
+-moz-column-rule-width: $if(columnline_width)$$columnline_width$$else$1mm$endif$;
+column-rule-width: $if(columnline_width)$$columnline_width$$else$1mm$endif$;
+-webkit-column-rule-style: $if(columnline_style)$$columnline_style$$else$dashed$endif$;
+-moz-column-rule-style: $if(columnline_style)$$columnline_style$$else$dashed$endif$;
+column-rule-style: $if(columnline_style)$$columnline_style$$else$dashed$endif$;
+-webkit-column-rule-color: $if(columnline_col)$$columnline_col$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
+-moz-column-rule-color: $if(columnline_col)$$columnline_col$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
+column-rule-color: $if(columnline_col)$$columnline_col$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
 width: 100%;
 height: 100%;
-color: $body_textcol$;
+color: $if(body_textcol)$$body_textcol$$else$#000000$endif$
 }
 .poster_title h1 {
-font-size: $title_textsize$;
+font-size: $if(title_textsize)$$title_textsize$$else$75pt$endif$;
 margin: 0;
 border: 0;
 font-weight: normal;
 }
 .poster_body_wrap{
-width: $poster_width$;
-height: calc($poster_height$ * 0.83);
-padding-top: calc($poster_height$ * 0.01);
-padding-bottom: calc($poster_height$ * 0.01);
+width: $if(poster_width)$$poster_width$$else$45in$endif$;
+height: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.83);
+padding-top: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.01);
+padding-bottom: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.01);
 }
 .poster_title h3 {
-color: $author_textcol$;
-font-size: $author_textsize$;
+color: $if(author_textcol)$$author_textcol$$else$$if(secondary_colour)$$secondary_colour$$else$#008080$endif$$endif$;
+font-size: $if(author_textsize)$$author_textsize$$else$50pt$endif$;
 margin: 0;
 border: 0;
 font-weight: normal;
 }
 .poster_title h5 {
-color: $affiliation_textcol$;
-font-size: $affiliation_texsize$;
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#FFFFFF$endif$;
+font-size: $if(affiliation_textsize)$$affiliation_texsize$$else$40pt$endif$;
 margin: 0;
 border: 0;
 font-weight: normal;
@@ -173,18 +177,18 @@ margin-bottom: 0;
 }
 .poster_body h1 {
 text-align: center;
-color: $sectitle_textcol$;
-font-size: $sectitle_textsize$;
-border: $sectitle_borderwidth$ solid $sectitle_bordercol$;
-background-color: $sectitle_bgcol$;
-border-radius: $sectitle_boxshape$;
+color: $if(sectitle_textcol)$$sectitle_textcol$$else$#FFFFFF$endif$;
+font-size: $if(sectitle_textsize)$$sectitle_textsize$$else$65pt$endif$;
+border: $if(sectitle_borderwidth)$$sectitle_borderwidth$$else$2mm$endif$ solid $if(sectitle_bordercol)$$sectitle_bordercol$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
+background-color: $if(sectitle_bgcol)$$sectitle_bgcol$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
+border-radius: $if(sectitle_boxshape)$$sectitle_boxshape$$else$4mm 0mm$endif$;
 margin-top: 2mm;
 margin-bottom: 2mm;
 font-weight: normal;
 }
 .poster_body h2 {
-color: $sectitle2_textcol$;
-font-size: 40pt;
+color: $if(sectitle2_textcol)$$sectitle2_textcol$$else$#000000$endif$;
+font-size: $if(sectitle2_textsize)$$sectitle2_textsize$$else$40pt$endif$;
 padding-left: 4mm;
 font-weight: normal;
 }
@@ -243,8 +247,8 @@ padding-bottom: 3mm;
 code {
 font-size: 1em;
 font-family: monospace;
-background-color: #00808024;
-color: #0b4545;
+background-color: $if(secondary_colour)$$secondary_colour$24$else$#00808024$endif$;
+color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
 padding: 1.2mm;
 border-radius: 2mm;
 }
@@ -301,18 +305,21 @@ $endfor$
 <div class="title_container">
 <!-- Left Logo  -->
 <div class="logo_left">
+$if(logoleft_name)$
 <img src= '$logoleft_name$' style="width: 80%">
+$endif$
 </div>
 <!-- Poster Title -->
 <div class= "poster_title">
-<h1 id="title">$title$</h1>
-<h3 id="author">$for(author)$$author.name$<sup>$author.affil$</sup>$sep$, $endfor$</h3>
-<h5 id="affiliation">$for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$, $endfor$</h5>
-
+$if(title)$<h1 id="title">$title$</h1>$endif$
+$if(author)$<h3 id="author">$for(author)$$author.name$<sup>$author.affil$</sup>$sep$, $endfor$</h3><br>$endif$
+$if(affiliation)$<h5 id="affiliation">$for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$, $endfor$</h5>$endif$
 </div>
 <!-- Right Logo  -->
 <div class="logo_right">
+$if(logoright_name)$
 <img src="$logoright_name$" style="width: 80%">
+$endif$
 </div>
 </div>
 
