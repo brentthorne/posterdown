@@ -1,4 +1,3 @@
-<img src="images/betterhexlogo.png" alt="posterdown logo" align="right" width = "25%" height="25%"/>
 
 # posterdown
 
@@ -6,6 +5,8 @@
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Build Status](https://travis-ci.com/brentthorne/posterdown.svg?branch=master)](https://travis-ci.com/brentthorne/posterdown)
 <!-- badges: end -->
+
+<img src="images/betterhexlogo.png" alt="posterdown logo" align="right" width = "25%" height="25%"/>
 
 ## Why posterdown
 
@@ -17,8 +18,24 @@ As a graduate student, I found that it is almost a rite of passage to take early
 |:---------------:|:---------------------:|:---------------------:|
 |[![](images/example_poster1.png)](https://brentthorne.github.io/posterdown_html_showcase/) | ![](images/betterposterland.jpg) | ![](images/betterposterport.png) |
 
+## Getting Started
 
-### Support
+> Until the first release of posterdown occurs on CRAN please fork this repo and use your version to ensure stability while building your poster. Changes made here can be sporadic but also tend to be drastic. Otherwise, use this repo at your own discression! :trollface:
+
+To install from github use `remotes::install_github("brentthorne/posterdown)`. 
+
+Now add this to the YAML options of your rmarkdown (.Rmd) file:
+
+```markdown
+---
+output: 
+  posterdown::posterdown_html
+---
+```
+
+For further customization options please see the (currently in progress :hammer:) [wiki](https://github.com/brentthorne/posterdown/wiki)
+
+## Support
 
 _Please consider supporting posterdown to ensure continued support and development for this package, as **grad school + open source developer != :dollar:.**_
 
