@@ -27,7 +27,7 @@ As a graduate student, I found that it is almost a rite of passage to take early
 
 > Until the first release of posterdown occurs on CRAN please fork this repo and use your version to ensure stability while building your poster. Changes made here can be sporadic but also tend to be drastic. Otherwise, use this repo at your own discression! :trollface:
 
-To install from github use `remotes::install_github("brentthorne/posterdown)`. 
+To install from github use `remotes::install_github("brentthorne/posterdown")`. 
 
 Now add this to the YAML options of your rmarkdown (.Rmd) file:
 
