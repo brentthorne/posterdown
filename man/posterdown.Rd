@@ -23,11 +23,6 @@ Creates an R Markdown template for a PDF poster document via HTML
 Creates an R Markdown template for a PDF poster document via HTML
 }
 
-\section{posterdown_latex}{
-
-Creates an R Markdown template for a PDF poster document via LaTeX
-}
-
 \author{
 Brent Thorne
 }

@@ -1,7 +1,17 @@
 ---
-primary_colour: "#170878"
-secondary_colour: "#f9ee02"
-column_numbers: 4
+title: Generate Reproducible & Live HTML and PDF Conference Posters Using RMarkdown
+author:
+  - name: Brent Thorne
+    affil: 1
+affiliation:
+  - num: 1
+    address: Department of Earth Science, Brock University
+primary_colour: "#0b4545"
+secondary_colour: "#008080"
+accent_colour: "#0043ff"
+column_numbers: 3
+logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
+logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
 output: 
   posterdown::posterdown_html:
     self_contained: false
@@ -31,10 +41,6 @@ Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow f
 # Methods
 
 This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF. You can even use the bibliography the same way [@R-posterdown].
-
-## Random text
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est. Praesent odio orci, mattis vel mauris nec, consectetur fermentum mauris. Etiam eu hendrerit tortor. Donec mi tellus, efficitur et porttitor eu, auctor eu tellus. Quisque faucibus vestibulum sapien vel lacinia. Ut auctor lorem non interdum blandit.
 
 # Results
 

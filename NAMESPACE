@@ -3,5 +3,3 @@
 export(posterdown_betterland)
 export(posterdown_betterport)
 export(posterdown_html)
-export(posterdown_latex)
-export(posterdown_pdf)
