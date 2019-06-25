@@ -1,6 +1,10 @@
 ---
+primary_colour: "#170878"
+secondary_colour: "#f9ee02"
+column_numbers: 4
 output: 
   posterdown::posterdown_html:
+    self_contained: false
 bibliography: packages.bib
 ---
 
@@ -16,7 +20,7 @@ knitr::opts_chunk$set(
 
 # Introduction
 
-Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow for those who wish to take their R Markdown skills to the conference world. Most features from R Markdown are available in this package such as Markdown section notation, figure captioning, and even citations like this one [@rmarkdown]. The rest of this example poster will show how you can insert typical conference poster features into your own document. 
+Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow for those who wish to take their R Markdown skills to the conference world. Most features from R Markdown are available in this package such as Markdown section notation, figure captioning, and even citations like this one [@R-rmarkdown]. The rest of this example poster will show how you can insert typical conference poster features into your own document. 
 
 ## Objectives
 
@@ -44,7 +48,7 @@ knitr::kable(iris[1:10, 1:4], caption = 'Table caption.',align = 'c',"html")
 
 Or with figures: Figure \@ref(fig:standard-plot), or Figure \@ref(fig:morefigs).
 
-```{r standard-plot, out.width='80%', fig.align='center', fig.cap='Great figure!', fig.height=10}
+```{r standard-plot, out.width='80%', fig.align='center', fig.cap='Great figure!', fig.height=5}
 plot(mtcars[1:2])
 ```
 
@@ -55,7 +59,7 @@ plot(x = data$Sepal.Length, y = data$Sepal.Width, col = data$Species, pch = 19, 
 
 ```
 
-# Next Steps: More random text
+# Next Steps
 
 Aliquam sed faucibus risus, quis efficitur erat. Vestibulum semper mauris quis tempus eleifend. Aliquam sagittis dictum ipsum, quis viverra ligula eleifend ut. Curabitur sagittis vitae arcu eget faucibus. In non elementum felis. Duis et aliquam nunc. Nunc pulvinar sapien nunc, vel pretium nisi efficitur in. Fusce fringilla maximus leo et maximus. Fusce at ligula laoreet, iaculis mi at, auctor odio. Praesent sed elementum justo. Aenean consectetur risus rhoncus tincidunt efficitur. Praesent dictum mauris at diam maximus maximus [@R-posterdown].
 
@@ -64,7 +68,7 @@ Aliquam sed faucibus risus, quis efficitur erat. Vestibulum semper mauris quis t
 Try `posterdown` out! Hopefully you like it!
 
 ```{r, include=FALSE}
-knitr::write_bib(c('knitr','posterdown','pagedown', 'rmarkdown', 'xaringan'), 'packages.bib')
+knitr::write_bib(c('knitr','rmarkdown','posterdown','pagedown'), 'packages.bib')
 ```
 
 # References
