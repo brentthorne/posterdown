@@ -2,6 +2,7 @@
 *.Rhistory
 *.RData
 *.Ruserdata
+*.bib
 .Rproj.user
 *skeleton.html
 skeleton_files/
