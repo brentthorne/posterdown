@@ -1,53 +1,19 @@
 ---
-# PLEASE SEE THE README for in depth description github.com/brentthorne/posterdown
-poster_height: "32in"
-poster_width: "46in"
-font_family: 'Rasa'
-#ESSENTIALS
-title: A Better Reproducible Poster Title
+title: A Better Poster Title
 author:
-  - name: W. Brent Thorne
-    affil: 1,*
+  - name: Brent Thorne
+    affil: 1
+    twitter: brentthorne18
+    email: brentthorne18@gmail.com
     main: true
-    orcid: '0000-0002-1099-3857'
-    twitter: brentthorne18 
-    email: bthorne2@brocku.ca
-  - name: Another G. Contributor
-    affil: 2
-    email: ag.con@posterdown.net
-  - name: Person Three
-    affil: 3
 affiliation:
   - num: 1
-    address: Department of Earth Science, Brock University
-  - num: 2
-    address: Department of Graphics and Layouts, University of Posters; Canada
-  - num: 3
-    address: Another Institute of a place where work gets done, Earth, Milky Way
-#STYLE & FORMATTING
-title_textsize: "125pt"
-author_textsize: "1.17em"
-authorextra_textsize: "35px"
-affiliation_textsize: "25px"
-affiliation_textcol: '#00000060'
-caption_fontsize: "20pt"
-#Findings Section "Middle" of the poster
-middle_fontfamily: "Special Elite"
-middle_textcol: "#FFFFFF90"
-middle_fontsize: "170px"
+    address: Department of Earth Sceicnes, Brock University
 main_findings:
-  - "Make **better posters** with <br> RMarkdown + **posterdown**."
-  - "Transition from **poster** to **manuscript** with ease!"
-logoleft_name: "Figures/qr-code-black.png"
-logoright_name: "Figures/posterdownlogo.png"
-#---POSTER BODY OPTIONS---#
-primary_colour: '#0b4545'
-secondary_colour: '#008080' 
-accent_colour: "#cc0000"
-body_bgcol: "#FFFFFF"
-body_textsize: "45px"
-body_textcol: "#000000"
-#--Standard Options--#
+  - "Make **better posters** with RMarkdown + **posterdown**."
+  - "![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.middle_pic}"
+logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png
+logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
 output: 
   posterdown::posterdown_betterland:
     self_contained: false
@@ -55,7 +21,7 @@ output:
     highlight: espresso
     number_sections: false
 link-citations: true
-bibliography: MyBib.bib
+bibliography: packages.bib
 ---
 
 ```{r, include=FALSE}
@@ -64,10 +30,69 @@ knitr::opts_chunk$set(results = 'asis',
                       warning = FALSE,
                       tidy = FALSE,
                       message = FALSE,
-                      fig.align = 'center')
+                      fig.align = 'center',
+                      out.width = "100%")
 options(knitr.table.format = "html") 
 ```
 
 # Introduction
 
-This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@thorneposterdown2019]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
+This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
+
+```{r, include=FALSE}
+knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
+```
+
+## Objectives
+
+1. Pick a template layout.
+2. Write/ create your poster content distraction free.
+3. Let posterdown do its thing!
+
+# Methods
+
+I will show here how to include poster elements that may be useful, such as an equation using mathjax:
+
+$$
+E = mc^2
+$$
+
+To reference a citation you can add your `.bib` file to the working directory and name it in the YAML metadata or generate an automated one as done here, then you only need to reference the label value in the `.bib` file. For example this package is built on top of the wonderful {pagedown} package and I will cite it at the end of this sentance using this in the rmd `[@R-pagedown]` [@R-pagedown].
+
+
+
+# Results
+
+Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
+
+```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).'}
+
+plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
+     col = iris$Species, pch = 19, xlab = "Sepal Length",
+     ylab = "Sepal Width")
+```
+
+Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options!
+
+```{r myprettycode, echo=TRUE}
+boxplot(iris$Sepal.Width~iris$Species,
+        col = c("#008080","#0b4545","#0b454580"), 
+        ylab = "Sepal Width",
+        xlab = "Species")
+```
+
+Now lets say you have a table of data that you wish to show off as well, have no fear, RMarkodwn is here, Table \@ref(tab:iristable):
+
+```{r, iristable}
+knitr::kable(
+  iris[1:5,1:5], format = "html",
+  caption = "A table made with the **knitr::kable** function.",
+  align = "c", col.names = c("Sepal <br> Length",
+                             "Sepal <br> Width",
+                             "Petal <br> Length",
+                             "Petal <br> Width",
+                             "Species"),
+  escape = FALSE)
+```
+
+# References
