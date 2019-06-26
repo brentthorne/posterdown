@@ -15,7 +15,7 @@ As a graduate student, I found that it is almost a rite of passage to take early
 | [**Getting Started**](https://github.com/brentthorne/posterdown#getting-started) |
 | [**Support**](https://github.com/brentthorne/posterdown#support) |
 | [**Wiki**](https://github.com/brentthorne/posterdown/wiki) |
-| [**Showcase (_comming soon_)**]() |
+| [**Showcase**](https://github.com/brentthorne/posterdown/wiki/Showcase) |
 
 ## Current Template Styles
 
