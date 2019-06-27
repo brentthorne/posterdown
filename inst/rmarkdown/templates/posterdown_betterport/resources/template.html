@@ -35,25 +35,25 @@ Font-awesome icons ie github or twitter
 <!--
 Google fonts api stuff
 -->
-<link href='https://fonts.googleapis.com/css?family=$middle_fontfamily$' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=$font_family$' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=$if(main_fontfamily)$$main_fontfamily$$else$Special Elite$endif$' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=$if(main_fontfamily)$$main_fontfamily$$else$Rasa$endif$' rel='stylesheet'>
 
 <!--
 Here are the required style attributes for css to make this poster work :)
 -->
 <style>
 @page {
-size: $poster_width$ $poster_height$;
+size: $if(poster_width)$$poster_width$$else$36in$endif$ $if(poster_height)$$poster_height$$else$48in$endif$;
 margin: 0;
 padding: 0;
 }
 body {
 margin: 0px;
 padding: 0px;
-width: $poster_width$;
-height: $poster_height$;
+width: $if(poster_width)$$poster_width$$else$36in$endif$;
+height: $if(poster_height)$$poster_height$$else$48in$endif$;
 text-align: justify;
-font-size: $body_textsize$;
+font-size: $if(body_textsize)$$body_textsize$$else$45px$endif$;
 line-height: 1.05;
 }
 /* RMarkdown Class Styles */
@@ -78,7 +78,6 @@ margin: auto;
 margin-top: 1em;
 margin-bottom: 1em;
 /* align-items: center; */
-padding-left: 2cm;
 }
 code.sourceCode.r{
 background-color: transparent;
@@ -88,22 +87,45 @@ border-radius: 2mm;
 code {
 font-size: 25pt;
 font-family: monospace;
-background-color: $secondary_colour$24;
-color: $primary_colour$;
+background-color: $if(secondary_colour)$$secondary_colour$24$else$#00808024$endif$;
+color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
 padding: 1.2mm;
+line-height: 1;
 border-radius: 2mm;
 }
 caption {
 margin-bottom: 10px;
-font-size: $caption_fontsize$;
+font-size: $if(caption_textsize)$$caption_textsize$$else$20pt$endif$;
 font-style: italic;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: $if(secondary_colour)$$secondary_colour$$else$#008080$endif$20;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  font-size: 40%;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
+  line-height: 1em;
+}
+table {
+  margin: auto;
+}
+th {
+  padding-left: 5mm;
+  padding-right: 5mm;
 }
 .caption {
-font-size: $caption_fontsize$;
+font-size: $if(caption_textzie)$$caption_textsize$$else$20pt$endif$;
 font-style: italic;
+padding-top: 0;
 }
 .references {
-font-size: $reference_textsize$;
+font-size: $if(reference_textsize)$$reference_textsize$$else$20px$endif$;
 line-height: 90%;
 }
 /* Create three unequal columns that floats next to each other */
@@ -112,11 +134,11 @@ float: left;
 padding: 0px;
 }
 .outer {
-width: $poster_width$;
-height: calc($poster_height$ * $if(emph_size)$ (1 - $emph_size$ - $emphb_size$ - 0.01) $else$ 0.6325 $endif$);
--webkit-column-count: $column_numbers$; /* Chrome, Safari, Opera */
--moz-column-count: $column_numbers$; /* Firefox */
-column-count: $column_numbers$;
+width: $if(poster_width)$$poster_width$$else$36in$endif$;
+height: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_topsize)$ (1 - $main_topsize$ - $main_bottomsize$ - 0.01) $else$ 0.6325 $endif$);
+-webkit-column-count: $if(column_numbers)$$column_numbers$$else$3$endif$; /* Chrome, Safari, Opera */
+-moz-column-count: $if(column_numbers)$$column_numbers$$else$3$endif$; /* Firefox */
+column-count: $if(column_numbers)$$column_numbers$$else$3$endif$;
 -webkit-column-fill: auto;
 -moz-column-fill: auto;
 column-fill: auto;
@@ -132,22 +154,22 @@ column-rule-style: none;
 -webkit-column-rule-color: black;
 -moz-column-rule-color: black;
 column-rule-color: black;
-background-color: $body_bgcol$;
-font-family: $font_family$;
-margin-top: calc($poster_height$ * $if(emph_size)$ $emph_size$ $else$ 0.25 $endif$);
+background-color: $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$;
+font-family: $if(main_fontfamily)$$main_fontfamily$$else$Rasa$endif$;
+margin-top: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_topsize)$ $main_topsize$ $else$ 0.25 $endif$);
 padding-top: 1em;
 padding-bottom: 1em;
 }
 span.citation {
-  color: $secondary_colour$;
+  color: $if(secondary_colour)$$secondary_colour$$else$#008080$endif$;
   font-weight: bold;
 }
 a {
 text-decoration: none;
-color: $secondary_colour$;
+color: $if(secondary_colour)$$secondary_colour$$else$#008080$endif$;
 }
 #title {
-font-size: $title_textsize$;
+font-size: $if(title_textsize)$$title_textsize$$else$125pt$endif$;
 text-align: left;
 margin: 0;
 line-height: 98%;
@@ -155,27 +177,23 @@ border-bottom: 0;
 font-weight: normal;
 }
 #author {
-color: $primary_colour$;
+color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
 margin: 0;
 line-height: 85%;
-font-size: $author_textsize$;
+font-size: $if(author_textsize)$$author_textsize$$else$1.17em$endif$;
 }
 #affiliation {
 padding-top: 0.1em;
 color: $affiliation_textcol$;
 font-style: italic;
-font-size: $affiliation_textsize$;
+font-size: $if(affiliation_textsize)$$affiliation_textsize$$else$25px$endif$;
 margin: 0;
 }
 sup {
-color: $accent_colour$;
+color: $if(accent_colour)$$accent_colour$$else$#cc0000$endif$;
 }
 .affiliation sup {
 font-size: 20px;
-}
-table {
-  padding-left: 5%;
-  padding-right:; 5%;
 }
 .author {
 text-align: left;
@@ -184,10 +202,10 @@ text-align: left;
 font-size: 30px;
 }
 .author_extra {
-color: $secondary_colour$;
+color: $if(secondary_colour)$$secondary_colour$$else$#008080$endif$;
 margin: 0;
 line-height: 85%;
-font-size: $authorextra_textsize$;
+font-size: $if(authorextra_textsize)$$authorextra_textsize$$else$35px$endif$;
 text-align: left;
 }
 .outer h1, h2, h3, h4, h5, h6 {
@@ -201,17 +219,17 @@ font-weight: bold;
   background:
     linear-gradient(
       to left,
-      $body_bgcol$ 1%,
-      $body_bgcol$ 20%,
-      $primary_colour$75 33%,
-      $primary_colour$ 50%,
-      $primary_colour$75 66%,
-      $body_bgcol$ 80%,
-      $body_bgcol$ 99%
+      $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$ 1%,
+      $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$ 20%,
+      $if(primary_colour)$$primary_colour$$else$#0b4545$endif$75 33%,
+      $if(primary_colour)$$primary_colour$$else$#0b4545$endif$ 50%,
+      $if(primary_colour)$$primary_colour$$else$#0b4545$endif$75 66%,
+      $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$ 80%,
+      $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$ 99%
     )
     left
     bottom
-    $body_bgcol$
+    $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$
     no-repeat;
   background-size:100% 5px ;
   margin-top: 0.5em;
@@ -221,58 +239,61 @@ font-weight: bold;
 text-align: center;
 }
 .outer p, .level2 {
-color: #000000;
+color: $if(body_textcol)$$body_textcol$$else$#000000$endif$;
 }
 .outer ol {
 padding-left: 8%;
 padding-right: 8%;
 text-align: left;
 }
-.middle {
-width: $poster_width$;
-height: calc($poster_height$ * $if(emph_size)$ $emph_size$ $else$ 0.25 $endif$);
+.main {
+width: $if(poster_width)$$poster_width$$else$36in$endif$;
+height: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_topsize)$$main_topsize$$else$0.25$endif$);
 position: absolute;
-background-color: $primary_colour$;
-color: $middle_textcol$$middle_textalpha$;
-font-family: $middle_fontfamily$;
-background-image: linear-gradient($primary_colour$ 50%, $secondary_colour$);
+background-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
+color: $if(main_textcol)$$main_textcol$$else$#ffffff$endif$$if(main_textalpha)$$main_textalpha$$else$90$endif$;
+font-family: $if(main_fontfamily)$$main_fontfamily$$else$Special Elite$endif$;
+background-image: linear-gradient($if(primary_colour)$$primary_colour$$else$#0b4545$endif$ 50%,$if(secondary_colour)$$secondary_colour$$else$#008080$endif$);
 }
-.middle strong {
-color: $middle_textcol$;
+.main strong {
+color: $if(main_textcol)$$main_textcol$$else$#ffffff$endif$;
 }
-.middle strong > sup {
-color: $middle_textcol$;
+.main strong > sup {
+color: $if(main_textcol)$$main_textcol$$else$#ffffff$endif$;
 }
-.middle sup {
-color: $middle_textcol$$middle_textalpha$;
+.main sup {
+color: $if(main_textcol)$$main_textcol$$else$#ffffff$endif$$if(main_textalpha)$$main_textalpha$$else$90$endif$;
 }
-#middle-img-left {
+#main-img-left {
 width: 10%;
 left: 0.5in;
 bottom: 0.2in;
 position: absolute;
 opacity: 0.5
 }
-#middle-img-center {
+#main-img-center {
 width: 10%;
-left: calc($poster_width$ * 0.45);
+left: calc($if(poster_width)$$poster_width$$else$36in$endif$ * 0.45);
 bottom: 0.5in;
 position: absolute;
 opacity: 0.5
 }
-#middle-img-right {
+#main-img-right {
 width: 10%;
 right: 0.5in;
 bottom: 0.2in;
 position: absolute;
 opacity: 0.6
 }
-.middle p {
-font-size: $middle_fontsize$;
+.main p {
+font-size: $if(main_textsize)$$main_textsize$$else$150px$endif$;
 text-align: left;
 margin: 0;
-margin-left: 0.2em;
-margin-top: 0.75em;
+position: absolute;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+margin-left: 1em;
 }
 .fab {
 color: #00000030;
@@ -294,24 +315,22 @@ font-size: 5px;
 text-decoration: none;
 }
 .poster_wrap {
-width: $poster_width$;
-height: $poster_height$;
+width: $if(poster_width)$$poster_width$$else$36in$endif$;
+height: $if(poster_height)$$poster_height$$else$48in$endif$;
 padding: 0cm;
 }
-.emphasis_bottom {
-width: $poster_width$;
-height: calc($poster_height$ * $if(emphb_size)$ $emphb_size$ $else$ 0.1 $endif$);
-margin-top: calc($poster_height$ * $if(emphb_size)$ (1 - $emphb_size$) $else$ 0.9 $endif$);
+.main_bottom {
+width: $if(poster_width)$$poster_width$$else$36in$endif$;
+height: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_bottomsize)$$main_bottomsize$$else$0.1$endif$);
+margin-top: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_bottomsize)$(1 - $main_bottomsize$)$else$0.9$endif$);
 position: absolute;
-background-color: $primary_colour$;
-background-image: linear-gradient($secondary_colour$ 10%, $primary_colour$);
+background-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
+background-image: linear-gradient($if(seconday_colour)$$secondary_colour$$else$#008080$endif$ 10%, $if(primary_colour)$$primary_colour$$else$#0b4545$endif$);
 }
-
-.section, #author, #author_extra, #affiliation, #title {
-  padding-left: 7mm;
-  padding-right: 7mm;
+.section {
+  padding-left: $if(column_padding)$$column_padding$$else$10mm$endif$;
+  padding-right: $if(column_padding)$$column_padding$$else$10mm$endif$;
 }
-
 span > #tab:mytable {
   font-weight: bold;
 }
@@ -326,8 +345,9 @@ $endfor$
 <div class="poster_wrap">
 
 <div class="column outer">
-<h1 id="title">$title$</h1><br>
-<h3 id="author" class="author">
+<div class="section">
+$if(title)$<h1 id="title">$title$</h1><br>$else$$endif$
+$if(author)$<h3 id="author" class="author">
 
 $for(author)$
 $if(author.main)$
@@ -349,21 +369,25 @@ $author.name$<sup>$author.affil$</sup>
 $endif$
 $sep$ $endfor$
 </h5>
+$else$$endif$
 
+$if(affiliation)$
 <p id="affiliation" class="affiliation">
 $for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$<br> $endfor$
 </p>
+$else$$endif$
+</div>
 
 $body$
 
 </div>
-<div class="column middle">
+<div class="main">
 <p>$for(main_findings)$$main_findings$$sep$<br><br> $endfor$</p>
 </div>
-<div class="emphasis_bottom">
-<img id="middle-img-left" src=$logoleft_name$>
-<img id="middle-img-center" src=$logocenter_name$>
-<img id="middle-img-right" src=$logoright_name$>
+<div class="main_bottom">
+<img id="main-img-left" src=$if(logoleft_name)$$logoleft_name$$else$$endif$>
+<img id="main-img-center" src=$if(logocenter_name)$$logocenter_name$$else$$endif$>
+<img id="main-img-right" src=$if(logoright_name)$$logoright_name$$else$$endif$>
 </div>
 </div>
 

@@ -127,7 +127,7 @@ font-style: italic;
 padding-top: 0;
 }
 .references {
-font-size: 20px;
+font-size: $if(reference_textsize)$$reference_textsize$$else$20px$endif$;
 line-height: 90%;
 }
 /* Create three unequal columns that floats next to each other */
@@ -244,7 +244,7 @@ opacity: 0.6
 }
 .main p {
 padding-top: 20%;
-font-size: $if(main_fonsize)$$main_fontsize$$else$170px$endif$;
+font-size: $if(main_fonsize)$$main_textsize$$else$170px$endif$;
 text-align: left;
 }
 .fab {

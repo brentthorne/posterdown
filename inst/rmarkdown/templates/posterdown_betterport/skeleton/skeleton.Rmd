@@ -1,10 +1,6 @@
 ---
-# PLEASE SEE THE README for in depth description github.com/brentthorne/posterdown
-poster_height: "48in"
-poster_width: "36in"
-emph_size: 0.2 #percent coverage of the poster
-emphb_size: 0.1
-font_family: 'Rasa'
+main_topsize: 0.2 #percent coverage of the poster
+main_bottomsize: 0.1
 #ESSENTIALS
 title: '**A Better Reproducible Poster Title**'
 author:
@@ -35,96 +31,93 @@ affiliation:
     address: Department of Graphics and Layouts, University of Posters; Canada
   - num: 3
     address: Another Institute of a place where work gets done, Earth, Milky Way
-#STYLE & FORMATTING
-title_textsize: "125pt"
-author_textsize: "1.17em"
-authorextra_textsize: "35px"
-affiliation_textsize: "25px"
-affiliation_textcol: '#00000080'
-caption_fontsize: "20pt"
-#Middle of the poster
-middle_fontfamily: "Special Elite"
-middle_textcol: "#FFFFFF"
-middle:textalpha: 90
-middle_fontsize: "150px"
 main_findings:
   - "Make **better posters** with RMarkdown + **posterdown**."
-  - "Transition from **poster** to **manuscript** with ease!"
-logoleft_name: "Figures/posterdownlogo.png"
-logocenter_name: "Figures/qr-code-black.png"
-logoright_name: "Figures/posterdownlogo.png"
-#---POSTER BODY OPTIONS---#
-primary_colour: '#0b4545'
-secondary_colour: '#008080'
-accent_colour: "#cc0000"
-body_bgcol: "#ffffff"
-body_textsize: "45px"
-body_textcol: "#000000"
-reference_textsize: "23px"
-#--Standard Options--#
+logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
+logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
+logocenter_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png
 output: 
   posterdown::posterdown_betterport:
     self_contained: false
     pandoc_args: --mathjax
     highlight: espresso
-    number_sections: true
-bibliography: MyBib.bib
+    number_sections: false
+bibliography: packages.bib
+link-citations: true
 ---
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-  results = 'asis',
-  echo = FALSE,
-  warning = FALSE,
-  message = FALSE,
-  fig.align = 'center'
-)
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(results = 'asis',
+                      echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
 ```
 
 # Introduction
 
-Welcome to `posterdown` ! This is my attempt to provide a semi-smooth workflow for those who wish to take their R Markdown skills to the conference world. Most features from R Markdown are available in this package such as Markdown section notation, figure captioning, and even citations like this one [@rmarkdown]. The rest of this example poster will show how you can insert typical conference poster features into your own document. 
+This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
+
+```{r, include=FALSE}
+knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
+```
 
 ## Objectives
 
-1. Easy to use reproducible poster design. 
-2. Integration with R Markdown.
-3. Easy transition from `posterdown` to `thesisdown` or `rticles` [@rticles; @thesisdown].
+1. Pick a template layout.
+2. Write/ create your poster content distraction free.
+3. Let posterdown do its thing!
 
 # Methods
 
-This package uses the same workflow approach as the R Markdown you know and love. Basically it goes from RMarkdown > Knitr > Markdown > Pandoc > HTML/CSS > PDF. You can even use the bibliography the same way [@turnerControlsWaterBalance2014].
+I will show here how to include poster elements that may be useful, such as an equation using mathjax:
+
+$$
+E = mc^2
+$$
+
+To reference a citation you can add your `.bib` file to the working directory and name it in the YAML metadata or generate an automated one as done here, then you only need to reference the label value in the `.bib` file. For example this package is built on top of the wonderful {pagedown} package and I will cite it at the end of this sentance using this in the rmd `[@R-pagedown]` [@R-pagedown].
+
 
 # Results
 
-Usually you want to have a nice table displaying some important results that you have calculated. In `posterdown` this is as easy as using the `kable` table formatting you are probably use to as per typical R Markdown formatting.
+Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
 
-I suggesting checking out the `kableExtra` package and its in depth documentation on customizing these tables found [here](https://haozhu233.github.io/kableExtra/awesome_table_in_pdf.pdf) [@kableExtra2019]. You can reference tables like so: Table \@ref(tab:mytable). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat augue at velit tincidunt semper. Donec elementum porta posuere. Nullam interdum, odio at tincidunt feugiat, turpis nisi blandit eros, eu posuere risus felis non quam. Nam eget lorem odio. Duis et aliquet orci. Phasellus nec viverra est.
+```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).'}
 
-```{r mytable, out.width='80%', fig.align='center'}
-knitr::kable(iris[1:10, 1:4], caption = 'Table caption.', align = 'c')
+plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
+     col = iris$Species, pch = 19, xlab = "Sepal Length",
+     ylab = "Sepal Width")
 ```
 
-Or with figures: Figure \@ref(fig:standard-plot), or Figure \@ref(fig:morefigs).
+Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
 
-```{r standard-plot, out.width='80%', fig.align='center', fig.cap='Great figure!', fig.height=10}
-plot(mtcars[1:2])
+```{r myprettycode, echo=TRUE,collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=9.5, out.width="100%"}
+#trim whitespace
+par(mar=c(2,2,0,0))
+#plot boxplots
+boxplot(iris$Sepal.Width~iris$Species,
+        col = "#008080", 
+        border = "#0b4545",
+        ylab = "Sepal Width (cm)",
+        xlab = "Species")
 ```
 
-```{r morefigs, out.width='80%', fig.cap='Amazing, right?!', fig.height=5}
-data <- iris
+How about a neat table of data? See, Table \@ref(tab:iristable):
 
-plot(x = data$Sepal.Length, y = data$Sepal.Width, col = data$Species, pch = 19, xlab = "Sepal Length (cm)", ylab = "Sepal Width (cm)")
-
+```{r, iristable}
+knitr::kable(
+  iris[1:10,1:5], format = "html",
+  caption = "A table made with the **knitr::kable** function.",
+  align = "c", col.names = c("Sepal <br> Length",
+                             "Sepal <br> Width",
+                             "Petal <br> Length",
+                             "Petal <br> Width",
+                             "Species"),
+  escape = FALSE)
 ```
-
-
-
-# Next Steps: More random text
-
-Aliquam sed faucibus risus, quis efficitur erat. Vestibulum semper mauris quis tempus eleifend. Aliquam sagittis dictum ipsum, quis viverra ligula eleifend ut. Curabitur sagittis vitae arcu eget faucibus. In non elementum felis. Duis et aliquam nunc. Nunc pulvinar sapien nunc, vel pretium nisi efficitur in. Fusce fringilla maximus leo et maximus. Fusce at ligula laoreet, iaculis mi at, auctor odio. Praesent sed elementum justo. Aenean consectetur risus rhoncus tincidunt efficitur. Praesent dictum mauris at diam maximus maximus [@thorneposterdown2019].
-
-# Conclusion
-
-Try `posterdown` out! Hopefully you like it!
 
 # References
