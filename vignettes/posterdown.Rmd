@@ -1,0 +1,31 @@
+---
+title: "Generating reproducible conference posters using posterdown and rmarkdown"
+author: "Brent Thorne"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{posterdown}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This document is intended to be an introduction to using the {posterdown} package in order to generate a reproducible conference poster. The intent of this package is to allow for simple, clean, and production ready templates that can be customized as needed.
+
+## Getting Started
+
+To generate a blank poster document add the following to your `.Rmd` file:
+
+```markdown
+---
+output:
+  posterdown::posterdown_html
+---
+
+```
