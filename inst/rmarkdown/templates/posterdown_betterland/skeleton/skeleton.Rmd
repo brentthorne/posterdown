@@ -1,17 +1,16 @@
 ---
-title: A Better Poster Title
+title: A Better Reproducible Poster Title
 author:
   - name: Brent Thorne
     affil: 1
     twitter: brentthorne18
-    email: brentthorne18@gmail.com
     main: true
 affiliation:
   - num: 1
     address: Department of Earth Sceicnes, Brock University
 main_findings:
   - "Make **better posters** with RMarkdown + **posterdown**."
-  - "![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.middle_pic}"
+  - "![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main_pic}"
 logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png
 logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
 output: 

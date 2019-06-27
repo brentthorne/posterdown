@@ -35,7 +35,7 @@ Font-awesome icons ie github or twitter
 <!--
 Google fonts api stuff
 -->
-<link href='https://fonts.googleapis.com/css?family=$if(middle_fontfamily)$$middle_fontfamily$$else$Special Elite$endif$' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=$if(main_fontfamily)$$main_fontfamily$$else$Special Elite$endif$' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=$if(font_family)$$font_family$$else$Rasa$endif$' rel='stylesheet'>
 
 <!--
@@ -97,7 +97,7 @@ border-radius: 2mm;
 }
 caption {
 margin-bottom: 10px;
-font-size: $if(caption_fontsize)$$caption_fontsize$$else$20pt$endif$;
+font-size: $if(caption_textsize)$$caption_textsize$$else$20pt$endif$;
 font-style: italic;
 }
 
@@ -122,7 +122,7 @@ th {
   padding-right: 5mm;
 }
 .caption {
-font-size: $if(caption_fontzie)$$caption_fontsize$$else$20pt$endif$;
+font-size: $if(caption_textzie)$$caption_textsize$$else$20pt$endif$;
 font-style: italic;
 padding-top: 0;
 }
@@ -215,36 +215,36 @@ color: $if(body_textcol)$$body_textcol$$else$#000000$endif$;
 .outer ol {
 text-align: left;
 }
-.middle {
+.main {
 width: calc($if(poster_width)$$poster_width$$else$46in$endif$ / 2);
 height: $if(poster_height)$$poster_height$$else$32in$endif$;
 position: absolute;
 margin-left: calc($if(poster_width)$$poster_width$$else$46in$endif$ / 4);
 background-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
-color: $if(middle_textcol)$$middle_textcol$$else$#FFFFFF90$endif$;
-font-family: $if(middle_fontfamily)$$middle_fontfamily$$else$Special Elite$endif$;
+color: $if(main_textcol)$$main_textcol$$else$#FFFFFF90$endif$;
+font-family: $if(main_fontfamily)$$main_fontfamily$$else$Special Elite$endif$;
 background-image: linear-gradient($if(primary_colour)$$primary_colour$$else$#0b4545$endif$ 50%, $if(secondary_colour)$$secondary_colour$$else$#008080$endif$);
 }
-.middle strong {
-color: $if(middlestrong_fontcol)$$middlestrong_fontcol$$else$#FFFFFF$endif$;
+.main strong {
+color: $if(mainstrong_fontcol)$$mainstrong_fontcol$$else$#FFFFFF$endif$;
 }
-#middle-img-left {
-width: $if(middleimage_leftsize)$$middleimage_leftsize$$else$20%$endif$;
+#main-img-left {
+width: $if(mainimage_leftsize)$$mainimage_leftsize$$else$20%$endif$;
 left: 0.5in;
 bottom: 0.2in;
 position: absolute;
 opacity: 0.5
 }
-#middle-img-right {
-width: $if(middleimage_rightsize)$$middleimage_rightsize$$else$18%$endif$;
+#main-img-right {
+width: $if(mainimage_rightsize)$$mainimage_rightsize$$else$18%$endif$;
 right: 0.5in;
 bottom: 0.2in;
 position: absolute;
 opacity: 0.6
 }
-.middle p {
+.main p {
 padding-top: 20%;
-font-size: $if(middle_fonsize)$$middle_fontsize$$else$170px$endif$;
+font-size: $if(main_fonsize)$$main_fontsize$$else$170px$endif$;
 text-align: left;
 }
 .fab {
@@ -279,12 +279,12 @@ span > #tab:mytable {
   padding-left: $if(column_padding)$$column_padding$$else$10mm$endif$;
   padding-right: $if(column_padding)$$column_padding$$else$10mm$endif$;
 }
-.middle p {
-  padding-left: $if(middle_padding)$$column_padding$$else$30mm$endif$;
-  padding-right: $if(middle_padding)$$column_padding$$else$30mm$endif$;
+.main p {
+  padding-left: $if(main_padding)$$column_padding$$else$30mm$endif$;
+  padding-right: $if(main_padding)$$column_padding$$else$30mm$endif$;
 }
-.middle_pic {
-  width: $if(middle_picwidth)$$middle_picwidth$$else$50%$endif$;
+.main_pic {
+  width: $if(main_picwidth)$$main_picwidth$$else$50%$endif$;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -340,10 +340,10 @@ $for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$<br> $e
 $body$
 
 </div>
-<div class="column middle">
+<div class="column main">
 <p>$for(main_findings)$$main_findings$$sep$<br><br> $endfor$</p>
-<img id="middle-img-left" src='$if(logoleft_name)$$logoleft_name$$else$$endif$'>
-<img id="middle-img-right" src='$if(logoright_name)$$logoright_name$$else$$endif$'>
+<img id="main-img-left" src='$if(logoleft_name)$$logoleft_name$$else$$endif$'>
+<img id="main-img-right" src='$if(logoright_name)$$logoright_name$$else$$endif$'>
 </div>
 </div>
 
