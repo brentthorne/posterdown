@@ -5,3 +5,5 @@
 ^\.Rproj\.user$
 ^images$
 ^\.travis\.yml$
+^doc$
+^Meta$

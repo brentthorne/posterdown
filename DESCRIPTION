@@ -16,7 +16,7 @@ Authors@R:
       person(given = "Luke",
              family = "Johnston",
              role = "ctb"))
-Description: This package expands on rmarkdown and  pagedown to generate
+Description: Use rmarkdown and pagedown to generate
     HTML and PDF conference posters.
 License: MIT + file LICENSE
 URL: https://github.com/brentthorne/posterdown
