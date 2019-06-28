@@ -1,6 +1,6 @@
 Package: posterdown
 Title: Generate PDF Conference Posters Using R Markdown
-Version: 0.1.3
+Version: 1.0
 Authors@R: 
     c(person(given = "Brent",
              family = "Thorne",
