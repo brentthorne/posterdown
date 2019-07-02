@@ -310,7 +310,7 @@ $if(author)$
 
 $for(author)$
 $if(author.main)$
-$author.name$<sup> $author.affil$</sup><br>
+$author.name$<sup> $author.affil$$if(author.orcid)$, $author.orcid$</sup><br>
 $if(author.twitter)$<a class="twitter" href="https://mobile.twitter.com/$author.twitter$"><i class="fab fa-twitter"></i>&nbsp;&nbsp;@$author.twitter$</a><br>
 $else$$endif$
 $if(author.email)$
@@ -340,7 +340,7 @@ $for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$<br> $e
 $body$
 
 </div>
-<div class="column main">
+<div class="main">
 <p>$for(main_findings)$$main_findings$$sep$<br><br> $endfor$</p>
 <img id="main-img-left" src='$if(logoleft_name)$$logoleft_name$$else$$endif$'>
 <img id="main-img-right" src='$if(logoright_name)$$logoright_name$$else$$endif$'>

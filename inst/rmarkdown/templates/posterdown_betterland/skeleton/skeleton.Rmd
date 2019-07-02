@@ -4,6 +4,8 @@ author:
   - name: Brent Thorne
     affil: 1
     twitter: brentthorne18
+    email: brentthorne18@gmail.com
+    orcid: 008584-433
     main: true
 affiliation:
   - num: 1
@@ -58,7 +60,6 @@ $$
 
 To reference a citation you can add your `.bib` file to the working directory and name it in the YAML metadata or generate an automated one as done here, then you only need to reference the label value in the `.bib` file. For example this package is built on top of the wonderful {pagedown} package and I will cite it at the end of this sentance using this in the rmd `[@R-pagedown]` [@R-pagedown].
 
-
 # Results
 
 Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
@@ -72,7 +73,7 @@ plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
 
 Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
 
-```{r myprettycode, echo=TRUE,collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="100%"}
+```{r myprettycode, echo=FALSE,collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
 #trim whitespace
 par(mar=c(2,2,0,0))
 #plot boxplots
@@ -87,7 +88,7 @@ How about a neat table of data? See, Table \@ref(tab:iristable):
 
 ```{r, iristable}
 knitr::kable(
-  iris[1:3,1:5], format = "html",
+  iris[1:8,1:5], format = "html",
   caption = "A table made with the **knitr::kable** function.",
   align = "c", col.names = c("Sepal <br> Length",
                              "Sepal <br> Width",
