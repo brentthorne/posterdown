@@ -334,6 +334,9 @@ background-image: linear-gradient($if(seconday_colour)$$secondary_colour$$else$#
 span > #tab:mytable {
   font-weight: bold;
 }
+.orcid img {
+  width: 3%;
+}
 </style>
 </head>
 <body>
@@ -351,7 +354,7 @@ $if(author)$<h3 id="author" class="author">
 
 $for(author)$
 $if(author.main)$
-$author.name$<sup> $author.affil$</sup><br>
+$author.name$<sup> $author.affil$$if(author.orcid)$, <a class="orcid" src="https://orcid.org/$author.orcid$"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a>$else$$endif$</sup><br>
 $if(author.twitter)$<a class="twitter" href="https://mobile.twitter.com/$author.twitter$"><i class="fab fa-twitter"></i>&nbsp;&nbsp;@$author.twitter$</a><br>
 $else$$endif$
 $if(author.email)$
@@ -365,7 +368,7 @@ $sep$ $endfor$
 $for(author)$
 $if(author.main)$
 $else$
-$author.name$<sup>$author.affil$</sup>
+$author.name$<sup>$author.affil$$if(author.orcid)$, <a class="orcid" src="https://orcid.org/$author.orcid$"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a>$else$$endif$</sup>
 $endif$
 $sep$ $endfor$
 </h5>

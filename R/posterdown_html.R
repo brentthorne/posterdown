@@ -6,12 +6,6 @@
 #' @return R Markdown output format to pass to
 #'   [rmarkdown::render()]
 #'
-#' @examples
-#'
-#' \dontrun{
-#' library(rmarkdown)
-#' draft("MyArticle.Rmd", template = "posterdown_html", package = "posterdown")
-#' }
 #' @export
 posterdown_html <- function(...,
 	template = find_resource("posterdown_html", "template.html"),

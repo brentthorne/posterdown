@@ -35,10 +35,3 @@ BetterPoster movement from twitter.
 The output format \code{poster_betterport()} mimics the style of the
 BetterPoster movement from twitter.
 }
-\examples{
-
-\dontrun{
-library(rmarkdown)
-draft("MyArticle.Rmd", template = "posterdown_html", package = "posterdown")
-}
-}

@@ -40,7 +40,6 @@ output:
   posterdown::posterdown_betterport:
     self_contained: false
     pandoc_args: --mathjax
-    highlight: espresso
     number_sections: false
 bibliography: packages.bib
 link-citations: true
@@ -81,13 +80,16 @@ $$
 
 To reference a citation you can add your `.bib` file to the working directory and name it in the YAML metadata or generate an automated one as done here, then you only need to reference the label value in the `.bib` file. For example this package is built on top of the wonderful {pagedown} package and I will cite it at the end of this sentance using this in the rmd `[@R-pagedown]` [@R-pagedown].
 
+To get a better understanding of how to include features like these please refer to the {posterdown} [wiki](https://github.com/posterdown/wiki).
+
+**_Now on to the results!_**
 
 # Results
 
 Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
 
-```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).'}
-
+```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).', out.width="80%"}
+par(mar=c(2,2,0,1))
 plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
      col = iris$Species, pch = 19, xlab = "Sepal Length",
      ylab = "Sepal Width")
@@ -95,7 +97,7 @@ plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
 
 Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
 
-```{r myprettycode, echo=TRUE,collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=9.5, out.width="100%"}
+```{r myprettycode, echo=FALSE, collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
 #trim whitespace
 par(mar=c(2,2,0,0))
 #plot boxplots
@@ -110,7 +112,7 @@ How about a neat table of data? See, Table \@ref(tab:iristable):
 
 ```{r, iristable}
 knitr::kable(
-  iris[1:10,1:5], format = "html",
+  iris[1:8,1:5], format = "html",
   caption = "A table made with the **knitr::kable** function.",
   align = "c", col.names = c("Sepal <br> Length",
                              "Sepal <br> Width",
