@@ -21,7 +21,7 @@ As a graduate student, I found that it is almost a rite of passage to take early
 
 | `posterdown_html` | `posterdown_betterland` | `posterdown_betterport` |
 |:---------------:|:---------------------:|:---------------------:|
-|[![](images/example_poster1.png)](https://brentthorne.github.io/posterdown_html_showcase/) | ![](images/betterposterland.jpg) | ![](images/betterposterport.png) |
+|[![](images/example_poster1.png)](https://brentthorne.github.io/posterdown_html_showcase/) | ![](images/betterland_july2019-1.png) | ![](images/betterposterport.png) |
 
 ## Getting Started
 
