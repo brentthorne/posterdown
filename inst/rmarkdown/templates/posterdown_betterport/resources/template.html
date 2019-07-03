@@ -325,7 +325,7 @@ height: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_bott
 margin-top: calc($if(poster_height)$$poster_height$$else$48in$endif$ * $if(main_bottomsize)$(1 - $main_bottomsize$)$else$0.9$endif$);
 position: absolute;
 background-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
-background-image: linear-gradient($if(seconday_colour)$$secondary_colour$$else$#008080$endif$ 10%, $if(primary_colour)$$primary_colour$$else$#0b4545$endif$);
+background-image: linear-gradient($if(secondary_colour)$$secondary_colour$$else$#008080$endif$ 10%, $if(primary_colour)$$primary_colour$$else$#0b4545$endif$);
 }
 .section {
   padding-left: $if(column_padding)$$column_padding$$else$10mm$endif$;
