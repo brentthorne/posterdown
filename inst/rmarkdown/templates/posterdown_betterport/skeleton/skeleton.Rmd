@@ -96,7 +96,7 @@ plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
 
 Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
 
-```{r myprettycode, echo=FALSE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
+```{r myprettycode, echo=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
 #trim whitespace
 par(mar=c(2,2,0,0))
 #plot boxplots
