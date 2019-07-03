@@ -5,7 +5,7 @@ main_bottomsize: 0.1
 title: '**A Better Reproducible Poster Title**'
 author:
   - name: '**W. Brent Thorne**'
-    affil: 1,*
+    affil: 1
     main: true
     orcid: '0000-0002-1099-3857'
     twitter: brentthorne18 
@@ -46,8 +46,7 @@ link-citations: true
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(results = 'asis',
-                      echo = FALSE,
+knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE,
                       tidy = FALSE,
                       message = FALSE,
@@ -97,7 +96,7 @@ plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
 
 Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
 
-```{r myprettycode, echo=FALSE, collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
+```{r myprettycode, echo=FALSE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
 #trim whitespace
 par(mar=c(2,2,0,0))
 #plot boxplots
@@ -112,7 +111,7 @@ How about a neat table of data? See, Table \@ref(tab:iristable):
 
 ```{r, iristable}
 knitr::kable(
-  iris[1:8,1:5], format = "html",
+  iris[1:2,1:5], format = "html",
   caption = "A table made with the **knitr::kable** function.",
   align = "c", col.names = c("Sepal <br> Length",
                              "Sepal <br> Width",
