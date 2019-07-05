@@ -269,21 +269,18 @@ width: 10%;
 left: 0.5in;
 bottom: 0.2in;
 position: absolute;
-opacity: 0.5
 }
 #main-img-center {
 width: 10%;
 left: calc($if(poster_width)$$poster_width$$else$36in$endif$ * 0.45);
 bottom: 0.5in;
 position: absolute;
-opacity: 0.5
 }
 #main-img-right {
 width: 10%;
 right: 0.5in;
 bottom: 0.2in;
 position: absolute;
-opacity: 0.6
 }
 .main p {
 font-size: $if(main_textsize)$$main_textsize$$else$150px$endif$;
@@ -354,7 +351,7 @@ $if(author)$<h3 id="author" class="author">
 
 $for(author)$
 $if(author.main)$
-$author.name$<sup> $author.affil$$if(author.orcid)$, <a class="orcid" src="https://orcid.org/$author.orcid$"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a>$else$$endif$</sup><br>
+$author.name$<sup> $author.affil$$if(author.orcid)$, <a class="orcid" href="https://orcid.org/$author.orcid$"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a>$else$$endif$</sup><br>
 $if(author.twitter)$<a class="twitter" href="https://mobile.twitter.com/$author.twitter$"><i class="fab fa-twitter"></i>&nbsp;&nbsp;@$author.twitter$</a><br>
 $else$$endif$
 $if(author.email)$

@@ -68,14 +68,14 @@ padding: 0cm;
 width: $if(poster_width)$$poster_width$$else$45in$endif$;
 height: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.15);
 overflow: hidden;
-background-color: $if(primary_colour)$$primary_colour$$else$#008080$endif$;
+background-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
 border: $if(titlebox_borderwidth)$$titlebox_borderwidth$$else$0$endif$ solid $if(secondary_colour)$$secondary_colour$$else$#0b4545$endif$;
 }
 .logo_left {
 float: left;
 width: 10%;
 height: 100%;
-background-color: $if(primary_colour)$$primary_colour$$else$#008080$endif$;
+background-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -84,7 +84,7 @@ justify-content: center;
 float: right;
 width: 10%;
 height: 100%;
-background-color: $if(primary_colour)$$primary_colour$$else$#008080$endif$;
+background-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -155,15 +155,19 @@ padding-top: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.01);
 padding-bottom: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.01);
 }
 .poster_title h3 {
-color: $if(author_textcol)$$author_textcol$$else$$if(secondary_colour)$$secondary_colour$$else$#008080$endif$$endif$;
+color: $if(author_textcol)$$author_textcol$$else$$if(secondary_colour)$$secondary_colour$$else$#ffffff$endif$$endif$;
 font-size: $if(author_textsize)$$author_textsize$$else$50pt$endif$;
 margin: 0;
 border: 0;
 font-weight: normal;
 }
+.poster_title h3 > sup {
+  font-size: 35pt;
+  margin-left: 0.02em;
+}
 .poster_title h5 {
 color: $if(affiliation_textcol)$$affiliation_textcol$$else$#FFFFFF$endif$;
-font-size: $if(affiliation_textsize)$$affiliation_texsize$$else$40pt$endif$;
+font-size: $if(affiliation_textsize)$$affiliation_texsize$$else$35pt$endif$;
 margin: 0;
 border: 0;
 font-weight: normal;
@@ -291,6 +295,9 @@ margin-left: 4mm;
 .references p {
 font-size: 20pt;
 }
+.orcid img {
+  width: 1em;
+}
 </style>
 
 </head>
@@ -312,7 +319,7 @@ $endif$
 <!-- Poster Title -->
 <div class= "poster_title">
 $if(title)$<h1 id="title">$title$</h1>$endif$
-$if(author)$<h3 id="author">$for(author)$$author.name$<sup>$author.affil$</sup>$sep$, $endfor$</h3><br>$endif$
+$if(author)$<h3 id="author">$for(author)$$author.name$<sup>$author.affil$$if(author.orcid)$, <a class="orcid" href="https://orcid.org/$author.orcid$"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a>$else$$endif$</sup>$sep$, $endfor$</h3><br>$endif$
 $if(affiliation)$<h5 id="affiliation">$for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$, $endfor$</h5>$endif$
 </div>
 <!-- Right Logo  -->

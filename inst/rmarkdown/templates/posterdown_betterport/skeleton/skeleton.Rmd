@@ -57,7 +57,7 @@ options(knitr.table.format = "html")
 
 # Introduction
 
-This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
+This is the `posterdown_betterport` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
 
 ```{r, include=FALSE}
 knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
@@ -96,7 +96,7 @@ plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
 
 Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
 
-```{r myprettycode, echo=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
+```{r myprettycode, echo=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=6, out.width="80%"}
 #trim whitespace
 par(mar=c(2,2,0,0))
 #plot boxplots
@@ -111,7 +111,7 @@ How about a neat table of data? See, Table \@ref(tab:iristable):
 
 ```{r, iristable}
 knitr::kable(
-  iris[1:2,1:5], format = "html",
+  iris[1:15,1:5], format = "html",
   caption = "A table made with the **knitr::kable** function.",
   align = "c", col.names = c("Sepal <br> Length",
                              "Sepal <br> Width",

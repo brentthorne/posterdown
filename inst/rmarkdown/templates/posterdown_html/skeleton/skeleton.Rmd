@@ -3,12 +3,14 @@ title: Generate Reproducible & Live HTML and PDF Conference Posters Using RMarkd
 author:
   - name: Brent Thorne
     affil: 1
+    orcid: '0000-0002-1099-3857'
+  - name: Another G. Author
+    affil: 2
 affiliation:
   - num: 1
     address: Department of Earth Science, Brock University
-primary_colour: "#0b4545"
-secondary_colour: "#008080"
-accent_colour: "#0043ff"
+  - num: 2
+    address: Department of Graphics and Layouts, University of Posters; Canada
 column_numbers: 3
 logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
 logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
@@ -19,13 +21,7 @@ bibliography: packages.bib
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-  results = 'asis',
-  echo = FALSE,
-  warning = FALSE,
-  message = FALSE,
-  fig.align = 'center'
-)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 # Introduction
@@ -58,10 +54,15 @@ Or with figures: Figure \@ref(fig:standard-plot), or Figure \@ref(fig:morefigs).
 plot(mtcars[1:2])
 ```
 
-```{r morefigs, out.width='80%', fig.cap='Amazing, right?!', fig.height=5}
+```{r morefigs, out.width='80%', echo=TRUE, fig.cap='Amazing, right?!', fig.height=5}
 data <- iris
 
-plot(x = data$Sepal.Length, y = data$Sepal.Width, col = data$Species, pch = 19, xlab = "Sepal Length (cm)", ylab = "Sepal Width (cm)")
+plot(x = data$Sepal.Length, 
+     y = data$Sepal.Width, 
+     col = data$Species,
+     pch = 19, 
+     xlab = "Sepal Length (cm)",
+     ylab = "Sepal Width (cm)")
 
 ```
 
