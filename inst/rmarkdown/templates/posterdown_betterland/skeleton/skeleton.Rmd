@@ -12,9 +12,9 @@ affiliation:
     address: Department of Earth Sceicnes, Brock University
 main_findings:
   - "Make **better posters** with RMarkdown + **posterdown**."
-  - "![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main_pic}"
-logoleft_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png
-logoright_name: https&#58;//raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png
+  - '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main_pic}'
+logoleft_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png){.main-img-left}'
+logoright_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/betterhexlogo.png){.main-img-right}'
 output: 
   posterdown::posterdown_betterland:
     self_contained: false
@@ -34,6 +34,12 @@ knitr::opts_chunk$set(results = 'asis',
                       fig.align = 'center',
                       out.width = "100%")
 options(knitr.table.format = "html") 
+```
+
+```{r myplot, include=FALSE}
+svg('myplot.svg')
+plot(iris$Sepal.Length, iris$Sepal.Width)
+dev.off()
 ```
 
 # Introduction

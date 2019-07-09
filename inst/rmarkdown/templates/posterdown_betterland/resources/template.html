@@ -223,24 +223,29 @@ margin-left: calc($if(poster_width)$$poster_width$$else$46in$endif$ / 4);
 background-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
 color: $if(main_textcol)$$main_textcol$$else$#FFFFFF90$endif$;
 font-family: $if(main_fontfamily)$$main_fontfamily$$else$Special Elite$endif$;
+$if(main_image)$
+background-image: url($main_image$);
+background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; /* Resize the background image to cover the entire container */
+$else$
 background-image: linear-gradient($if(primary_colour)$$primary_colour$$else$#0b4545$endif$ 50%, $if(secondary_colour)$$secondary_colour$$else$#008080$endif$);
 }
+$endif$
 .main strong {
 color: $if(mainstrong_fontcol)$$mainstrong_fontcol$$else$#FFFFFF$endif$;
 }
-#main-img-left {
+img.main-img-left {
 width: $if(mainimage_leftsize)$$mainimage_leftsize$$else$20%$endif$;
 left: 0.5in;
 bottom: 0.2in;
 position: absolute;
-opacity: 0.5
 }
-#main-img-right {
+img.main-img-right {
 width: $if(mainimage_rightsize)$$mainimage_rightsize$$else$18%$endif$;
 right: 0.5in;
 bottom: 0.2in;
 position: absolute;
-opacity: 0.6
 }
 .main p {
 padding-top: 20%;
@@ -345,8 +350,8 @@ $body$
 </div>
 <div class="main">
 <p>$for(main_findings)$$main_findings$$sep$<br><br> $endfor$</p>
-<img id="main-img-left" src='$if(logoleft_name)$$logoleft_name$$else$$endif$'>
-<img id="main-img-right" src='$if(logoright_name)$$logoright_name$$else$$endif$'>
+$if(logoleft_name)$$logoleft_name$$else$$endif$
+$if(logoright_name)$$logoright_name$$else$$endif$
 </div>
 </div>
 
