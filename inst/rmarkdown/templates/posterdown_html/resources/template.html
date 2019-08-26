@@ -138,7 +138,15 @@ column-rule-style: $if(columnline_style)$$columnline_style$$else$dashed$endif$;
 -webkit-column-rule-color: $if(columnline_col)$$columnline_col$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
 -moz-column-rule-color: $if(columnline_col)$$columnline_col$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
 column-rule-color: $if(columnline_col)$$columnline_col$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
-width: 100%;
+$if(titlebox_borderwidth)$
+column-gap: $titlebox_borderwidth$;
+padding-left: calc($titlebox_borderwidth$ / 2);
+padding-right: calc($titlebox_borderwidth$ / 2);
+$else$
+column-gap: 1em;
+padding-left: 0.5em;
+padding-right: 0.5em;
+$endif$
 height: 100%;
 color: $if(body_textcol)$$body_textcol$$else$#000000$endif$
 background-color: $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$;
@@ -150,12 +158,10 @@ border: 0;
 font-weight: normal;
 }
 .poster_body_wrap{
-width: $if(poster_width)$$poster_width$$else$45in$endif$;
+width: calc($if(poster_width)$$poster_width$$else$45in$endif$ + $if(titlebox_borderwidth)$$titlebox_borderwidth$$else$0$endif$ + $if(titlebox_borderwidth)$$titlebox_borderwidth$$else$0$endif$);
 height: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.83);
-padding-top: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.01);
+padding-top: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.005);
 padding-bottom: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.01);
-padding-left: $if(titlebox_borderwidth)$$titlebox_borderwidth$$else$0$endif$;
-padding-right: $if(titlebox_borderwidth)$$titlebox_borderwidth$$else$0$endif$;
 background-color: $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$;
 }
 .poster_title h3 {
