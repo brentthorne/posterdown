@@ -51,6 +51,6 @@ _Please consider supporting posterdown to ensure continued support and developme
 **Ethereum**: `0x71a18c5E3300a33F1139a9eA0abc0D029E3C30F7`<br>
  **Litecoin**: `LR4usZRgjJGLAg3Tu5PSBjgUaVtdts9Wnw`
 
-_You can also follow me (Brent Thorne) on [twitter](https://twitter.com/brentthorne18) for upcoming features which may not be released on github._
+_You can also follow me (Brent Thorne) on [twitter](https://twitter.com/wbrentthorne) for upcoming features which may not be released on github._
 
 Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my Master's degree so I will have limited time to work on updating this package in the next few months but, nevertheless, I will do what I can! :smile: 
