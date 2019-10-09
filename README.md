@@ -3,7 +3,7 @@
 # posterdown
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Build Status](https://travis-ci.com/brentthorne/posterdown.svg?branch=master)](https://travis-ci.com/brentthorne/posterdown)
 [![CRAN\_Release\_Badge](http://www.r-pkg.org/badges/version-ago/posterdown)](https://CRAN.R-project.org/package=posterdown) [![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/posterdown)](https://CRAN.R-project.org/package=posterdown)
 <!-- badges: end -->
