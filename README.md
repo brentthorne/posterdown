@@ -28,7 +28,7 @@ As a graduate student, I found that it is almost a rite of passage to take early
 
 > ~~Until the first release of posterdown occurs on CRAN please fork this repo and use your version to ensure stability while building your poster. Changes made here can be sporadic but also tend to be drastic. Otherwise, use this repo at your own discression! :trollface:~~
 
-> posterdown v1.0 is now on CRAN !! :smile:
+> posterdown v1.0 is now on [CRAN](https://cran.r-project.org/web/packages/posterdown/index.html) !! :smile:
 
 To install from CRAN use `install.packages("posterdown")`.
 
