@@ -144,16 +144,20 @@ column-count: 2;
 -webkit-column-fill: auto;
 -moz-column-fill: auto;
 column-fill: auto;
--webkit-column-rule-width: 50%;
--moz-column-rule-width: 50%;
-column-rule-width: 50%;
+-webkit-column-rule-width: $if(main_width)$$main_width$$else$0.5$endif$;
+-moz-column-rule-width: $if(main_width)$$main_width$$else$0.5$endif$;
+column-rule-width: $if(main_width)$$main_width$$else$0.5$endif$;
 -webkit-column-rule-style: solid;
 -moz-column-rule-style: solid;
 column-rule-style: solid;
 -webkit-column-rule-color: black;
 -moz-column-rule-color: black;
 column-rule-color: black;
+$if(main_width)$
+-webkit-column-gap: calc($main_width$ * 100%);
+$else$
 -webkit-column-gap: 50%;
+$endif$
 background-color: $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$;
 font-family: $if(font_family)$$font_family$$else$Rasa$endif$;
 color: $if(body_textcol)$$body_textcol$$else$#000000$endif$;
@@ -216,10 +220,14 @@ color: $if(body_textcol)$$body_textcol$$else$#000000$endif$;
 text-align: left;
 }
 .main {
-width: calc($if(poster_width)$$poster_width$$else$46in$endif$ / 2);
+width: calc($if(poster_width)$$poster_width$$else$46in$endif$ * $if(main_width)$$main_width$$else$0.5$endif$);
 height: $if(poster_height)$$poster_height$$else$32in$endif$;
 position: absolute;
-margin-left: calc($if(poster_width)$$poster_width$$else$46in$endif$ / 4);
+$if(main_width)$
+margin-left: calc($if(poster_width)$$poster_width$$else$46in$endif$ * ((1 - $main_width$) / 2));
+$else$
+margin-left: calc($if(poster_width)$$poster_width$$else$46in$endif$ * 0.25);
+$endif$
 background-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
 color: $if(main_textcol)$$main_textcol$$else$#FFFFFF90$endif$;
 font-family: $if(main_fontfamily)$$main_fontfamily$$else$Special Elite$endif$;
