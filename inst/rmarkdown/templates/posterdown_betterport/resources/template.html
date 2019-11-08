@@ -178,7 +178,7 @@ font-weight: normal;
 background: 0;
 }
 #author {
-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
+color:$if(author_textcol)$$author_textcol$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
 margin: 0;
 line-height: 85%;
 font-size: $if(author_textsize)$$author_textsize$$else$1.17em$endif$;
