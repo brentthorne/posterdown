@@ -389,7 +389,7 @@ $if(author.main)$
 $author.name$<sup> $author.affil$$if(author.orcid)$, <a class="orcid" href="https://orcid.org/$author.orcid$"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a>$else$$endif$</sup><br>
 $if(author.twitter)$<a class="twitter" href="https://mobile.twitter.com/$author.twitter$"><i class="fab fa-twitter"></i>&nbsp;&nbsp;@$author.twitter$</a><br>
 $else$$endif$
-    $if(author.website)$<a class="envelope"><i class="fas fa-globe"></i></a> $author.website$ <br>
+    $if(author.website)$<a class="envelope"><i class="fas fa-globe"></i></a> <h5> $author.website$ </h5><br>
 $else$$endif$
     
 $if(author.email)$
