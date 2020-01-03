@@ -390,7 +390,7 @@ $author.name$<sup> $author.affil$$if(author.orcid)$, <a class="orcid" href="http
 $if(author.twitter)$<a class="twitter" href="https://mobile.twitter.com/$author.twitter$"><i class="fab fa-twitter"></i>&nbsp;&nbsp;@$author.twitter$</a><br>
 $else$$endif$
 $if(author.website)$
-<a class='envelope'><i class="fas fa-globe"></i></a> $author.website$ <br>
+    <a class='envelope'><i class="fas fa-globe"></i></a> <a class="email"> $author.website$ </a> <br>
 $else$$endif$
     
 $if(author.email)$
