@@ -81,7 +81,7 @@ margin-bottom: 1em;
 }
 code.sourceCode.r{
 background-color: transparent;
-font-size: 20pt;
+font-size: $if(codechunk_fontsize)$$codechunk_fontsize$$else$20pt$endif$;
 border-radius: 2mm;
 }
 code {
@@ -295,22 +295,32 @@ transform: translateY(-50%);
 margin-left: 1em;
 }
 .fab {
-color: #00000030;
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
 font-size: 25px;
 }
 .twitter, i {
-color: #00000030;
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
 font-size: 35px;
 text-decoration: none;
 }
 a.email {
 text-decoration: none;
-color: #00000030;
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
 font-size: 35px;
 }
 .envelope {
-color: #00000030;
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
 font-size: 5px;
+text-decoration: none;
+}
+.globe {
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
+font-size: 5px;
+text-decoration: none;
+}
+.globetext {
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
+font-size: 35px;
 text-decoration: none;
 }
 .poster_wrap {
@@ -391,6 +401,9 @@ $if(author.twitter)$<a class="twitter" href="https://mobile.twitter.com/$author.
 $else$$endif$
 $if(author.email)$
 <a class='envelope'><i class="fas fa-envelope"></i></a> $author.email$ <br>
+$else$$endif$
+$if(author.website)$
+<a class='globe'><i class="fas fa-globe"></i></a> <a class='globetext' href="$author.website$">$author.website$</a> <br>
 $else$$endif$
 $else$$endif$
 $sep$ $endfor$
