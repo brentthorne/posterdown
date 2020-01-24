@@ -64,7 +64,7 @@ padding: 0cm;
 }
 .title_container {
 width: $if(titlebox_borderwidth)$calc(100% - $titlebox_borderwidth$ - $titlebox_borderwidth$)$else$100%$endif$;
-height: $if(titlebox_borderwidth)$calc(15% - $titlebox_borderwidth$ - $titlebox_borderwidth$)$else$15%$endif$;
+height: $if(titlebox_borderwidth)$calc($if(titlebox_height)$$titlebox_height$$else$15%$endif$ - $titlebox_borderwidth$ - $titlebox_borderwidth$)$else$$if(titlebox_height)$$titlebox_height$$else$15%$endif$$endif$;
 overflow: hidden;
 background-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
 border: $if(titlebox_borderwidth)$$titlebox_borderwidth$$else$0$endif$ solid $if(titlebox_bordercol)$$titlebox_bordercol$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$
@@ -158,7 +158,7 @@ font-weight: normal;
 }
 .poster_body_wrap{
 width: $if(poster_width)$$poster_width$$else$45in$endif$;
-height: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.83);
+height: calc(100% - $if(titlebox_height)$$titlebox_height$$else$17%$endif$);
 padding-top: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.01);
 padding-bottom: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.01);
 background-color: $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$;
