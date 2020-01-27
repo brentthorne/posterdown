@@ -71,7 +71,7 @@ margin-bottom: 2cm;
 position: sticky;
 width: 100%;
 }
-pre.sourceCode.r {
+pre.sourceCode.r, pre.sourceCode.python {
 background-color: #ffffff20;
 border: solid $if(secondary_colour)$$secondary_colour$$else$#008080$endif$ 1mm;
 border-radius: 0.5em;
@@ -83,13 +83,13 @@ margin-bottom: 1em;
 }
 div.sourceCode {
 background-color: transparent;
-width: 85%;
+width: $if(codechunk_width)$$codechunk_width$$else$85%$endif$;
 margin-left: auto;
 margin-right: auto;
 }
-code.sourceCode.r{
+code.sourceCode.r, code.sourceCode.python {
 background-color: transparent;
-font-size: $if(codechunk_fontsize)$$codechunk_fontsize$$else$20pt$endif$;
+font-size: $if(codechunk_textsize)$$codechunk_textsize$$else$20pt$endif$;
 border-radius: 2mm;
 }
 code {

@@ -222,7 +222,7 @@ width: 100%;
 }
 div.sourceCode {
 font-size: 20pt;
-width: 85%;
+width: $if(codechunk_width)$$codechunk_width$$else$85%$endif$;
 margin-left: auto;
 margin-right: auto;
 padding: 1em;
@@ -230,14 +230,14 @@ border: 1mm solid;
 border-color: #008080;
 border-radius: 1em;
 }
-pre.sourceCode.r {
+pre.sourceCode.r, pre.sourceCode.python {
 width: 100%;
 /* align-items: center; */
 margin: auto;
 }
-code.sourceCode.r{
+code.sourceCode.r, code.sourceCode.python {
 background-color: transparent;
-font-size: $if(codechunk_fontsize)$$codechunk_fontsize$$else$20pt$endif$;
+font-size: $if(codechunk_textsize)$$codechunk_textsize$$else$20pt$endif$;
 color: $if(body_textcol)$$body_textcol$$else$#000000$endif$
 }
 .caption {
