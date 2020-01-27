@@ -220,25 +220,35 @@ margin-bottom: 2cm;
 position: sticky;
 width: 100%;
 }
+pre.sourceCode.r, pre.sourceCode.python {
+background-color: #ffffff20;
+border: solid $if(secondary_colour)$$secondary_colour$$else$#008080$endif$ 1mm;
+border-radius: 0.5em;
+padding: 4mm;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
 div.sourceCode {
-font-size: 20pt;
+background-color: transparent;
 width: $if(codechunk_width)$$codechunk_width$$else$85%$endif$;
 margin-left: auto;
 margin-right: auto;
-padding: 1em;
-border: 1mm solid;
-border-color: #008080;
-border-radius: 1em;
-}
-pre.sourceCode.r, pre.sourceCode.python {
-width: 100%;
-/* align-items: center; */
-margin: auto;
 }
 code.sourceCode.r, code.sourceCode.python {
 background-color: transparent;
 font-size: $if(codechunk_textsize)$$codechunk_textsize$$else$20pt$endif$;
-color: $if(body_textcol)$$body_textcol$$else$#000000$endif$
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: $if(secondary_colour)$$secondary_colour$24$else$#00808024$endif$;
+color: $if(secondary_colour)$$secondary_colour$$else$#008080$endif$;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
 }
 .caption {
 font-size: 20pt;
