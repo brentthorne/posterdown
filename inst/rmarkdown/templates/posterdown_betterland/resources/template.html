@@ -161,8 +161,12 @@ column-rule-style: solid;
 column-rule-color: black;
 $if(main_width)$
 -webkit-column-gap: calc($main_width$ * 100%);
+-moz-column-gap: calc($main_width$ * 100%);
+column-gap: calc($main_width$ * 100%);
 $else$
 -webkit-column-gap: 50%;
+-moz-column-gap: 50%;
+column-gap: 50%;
 $endif$
 background-color: $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$;
 font-family: $if(font_family)$$font_family$$else$Rasa$endif$;
