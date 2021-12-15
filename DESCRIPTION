@@ -22,10 +22,10 @@ License: MIT + file LICENSE
 URL: https://github.com/brentthorne/posterdown
 BugReports: https://github.com/brentthorne/posterdown/issues
 Imports: 
-    knitr,
     pagedown,
     rmarkdown,
     yaml
+Suggests: knitr
 Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr

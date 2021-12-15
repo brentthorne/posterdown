@@ -3,9 +3,12 @@
 # posterdown
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Build Status](https://travis-ci.com/brentthorne/posterdown.svg?branch=master)](https://travis-ci.com/brentthorne/posterdown)
-[![CRAN\_Release\_Badge](http://www.r-pkg.org/badges/version-ago/posterdown)](https://CRAN.R-project.org/package=posterdown) [![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/posterdown)](https://CRAN.R-project.org/package=posterdown)
+[![CRAN\_Release\_Badge](http://www.r-pkg.org/badges/version-ago/posterdown)](https://CRAN.R-project.org/package=posterdown) 
+[![CRAN\_Download\_Badge](https://cranlogs.r-pkg.org/badges/grand-total/posterdown)](https://cranlogs.r-pkg.org/badges/grand-total/posterdown)
+[![CRAN\_Download\_Badge](https://cranlogs.r-pkg.org/badges/last-day/posterdown)](https://cranlogs.r-pkg.org/badges/last-day/posterdown)
+[![CRAN\_Download\_Badge](http://cranlogs.r-pkg.org/badges/posterdown)](https://CRAN.R-project.org/package=posterdown)
 <!-- badges: end -->
 
 As a graduate student, I found that it is almost a rite of passage to take early research and analysis and generate a conference poster allowing for critical feedback. This is also important for facilitating meeting the people in your field at poster sessions at academic meetings. I have also noticed that while many of my fellow graduate students use R and are getting their feet wet with RMarkdown :blush:, we always had to go back to using MS Powerpoint or Keynote or Adobe Illustrator for generating conference posters :unamused:. Posterdown was created as a proof-of-concept (to myself) that it is possible to make a beautiful poster using open source reproducible code.
@@ -26,7 +29,11 @@ As a graduate student, I found that it is almost a rite of passage to take early
 
 ## Getting Started
 
-> Until the first release of posterdown occurs on CRAN please fork this repo and use your version to ensure stability while building your poster. Changes made here can be sporadic but also tend to be drastic. Otherwise, use this repo at your own discression! :trollface:
+> ~~Until the first release of posterdown occurs on CRAN please fork this repo and use your version to ensure stability while building your poster. Changes made here can be sporadic but also tend to be drastic. Otherwise, use this repo at your own discression! :trollface:~~
+
+> posterdown v1.0 is now on [CRAN](https://cran.r-project.org/web/packages/posterdown/index.html) !! :smile:
+
+To install from CRAN use `install.packages("posterdown")`.
 
 To install from github use `remotes::install_github("brentthorne/posterdown")`. 
 
@@ -51,6 +58,6 @@ _Please consider supporting posterdown to ensure continued support and developme
 **Ethereum**: `0x71a18c5E3300a33F1139a9eA0abc0D029E3C30F7`<br>
  **Litecoin**: `LR4usZRgjJGLAg3Tu5PSBjgUaVtdts9Wnw`
 
-_You can also follow me (Brent Thorne) on [twitter](https://twitter.com/brentthorne18) for upcoming features which may not be released on github._
+_You can also follow me (Brent Thorne) on [twitter](https://twitter.com/wbrentthorne) for upcoming features which may not be released on github._
 
 Please feel free to give me feedback or requests for changes in the [issues](https://github.com/brentthorne/posterdown/issues) page. I am currently finishing up my Master's degree so I will have limited time to work on updating this package in the next few months but, nevertheless, I will do what I can! :smile: 

@@ -63,11 +63,12 @@ height: $if(poster_height)$$poster_height$$else$38in$endif$;
 padding: 0cm;
 }
 .title_container {
-width: $if(poster_width)$$poster_width$$else$45in$endif$;
-height: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.15);
+width: $if(titlebox_borderwidth)$calc(100% - $titlebox_borderwidth$ - $titlebox_borderwidth$)$else$100%$endif$;
+height: $if(titlebox_borderwidth)$calc($if(titlebox_height)$$titlebox_height$$else$15%$endif$ - $titlebox_borderwidth$ - $titlebox_borderwidth$)$else$$if(titlebox_height)$$titlebox_height$$else$15%$endif$$endif$;
 overflow: hidden;
 background-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
-border: $if(titlebox_borderwidth)$$titlebox_borderwidth$$else$0$endif$ solid $if(secondary_colour)$$secondary_colour$$else$#0b4545$endif$;
+border: $if(titlebox_borderwidth)$$titlebox_borderwidth$$else$0$endif$ solid $if(titlebox_bordercol)$$titlebox_bordercol$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$
+$endif$;
 }
 .logo_left {
 float: left;
@@ -103,24 +104,28 @@ font-family: $if(titletext_fontfamily)$$titletext_fontfamily$$else$$if(font_fami
 }
 /* unvisited link */
 a:link {
-color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#cc0000$endif$$endif$;
+color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#008080$endif$$endif$;
+text-decoration: none;
 }
 .mybreak {
   break-before: column;
 }
 /* visited link */
 a:visited {
-color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#cc0000$endif$$endif$;
+color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#008080$endif$$endif$;
+text-decoration: none;
 }
 
 /* mouse over link */
 a:hover {
-color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#cc0000$endif$$endif$;
+color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#008080$endif$$endif$;
+text-decoration: none;
 }
 
 /* selected link */
 a:active {
-color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#cc0000$endif$$endif$;
+color: $if(link_col)$$link_col$$else$$if(accent_colour)$$accent_colour$$else$#008080$endif$$endif$;
+text-decoration: none;
 }
 .poster_body {
 -webkit-column-count: $if(column_numbers)$$column_numbers$$else$3$endif$; /* Chrome, Safari, Opera */
@@ -138,7 +143,9 @@ column-rule-style: $if(columnline_style)$$columnline_style$$else$dashed$endif$;
 -webkit-column-rule-color: $if(columnline_col)$$columnline_col$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
 -moz-column-rule-color: $if(columnline_col)$$columnline_col$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
 column-rule-color: $if(columnline_col)$$columnline_col$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
-width: 100%;
+column-gap: 1em;
+padding-left: 0.5em;
+padding-right: 0.5em;
 height: 100%;
 color: $if(body_textcol)$$body_textcol$$else$#000000$endif$
 background-color: $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$;
@@ -151,11 +158,9 @@ font-weight: normal;
 }
 .poster_body_wrap{
 width: $if(poster_width)$$poster_width$$else$45in$endif$;
-height: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.83);
+height: calc(100% - $if(titlebox_height)$$titlebox_height$$else$17%$endif$);
 padding-top: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.01);
 padding-bottom: calc($if(poster_height)$$poster_height$$else$38in$endif$ * 0.01);
-padding-left: $if(titlebox_borderwidth)$$titlebox_borderwidth$$else$0$endif$;
-padding-right: $if(titlebox_borderwidth)$$titlebox_borderwidth$$else$0$endif$;
 background-color: $if(body_bgcol)$$body_bgcol$$else$#ffffff$endif$;
 }
 .poster_title h3 {
@@ -177,7 +182,7 @@ border: 0;
 font-weight: normal;
 }
 img {
-margin-top: 2cm;
+margin-top: 0;
 margin-bottom: 0;
 }
 .section {
@@ -215,25 +220,41 @@ margin-bottom: 2cm;
 position: sticky;
 width: 100%;
 }
-pre.sourceCode.r {
-background-color: #dddddd40;
-border-radius: 4mm;
+pre.sourceCode.r, pre.sourceCode.python {
+background-color: #ffffff20;
+border: solid $if(secondary_colour)$$secondary_colour$$else$#008080$endif$ 1mm;
+border-radius: 0.5em;
 padding: 4mm;
-width: 75%;
-/* align-items: center; */
 margin: auto;
-padding-left: 2cm;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
 }
-code.sourceCode.r{
+div.sourceCode {
 background-color: transparent;
-font-size: 20pt;
+width: $if(codechunk_width)$$codechunk_width$$else$85%$endif$;
+margin-left: auto;
+margin-right: auto;
+}
+code.sourceCode.r, code.sourceCode.python {
+background-color: transparent;
+font-size: $if(codechunk_textsize)$$codechunk_textsize$$else$20pt$endif$;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: $if(secondary_colour)$$secondary_colour$24$else$#00808024$endif$;
+color: $if(secondary_colour)$$secondary_colour$$else$#008080$endif$;
+padding: 1.2mm;
+line-height: 1;
 border-radius: 2mm;
 }
 .caption {
-font-size: 25pt;
+font-size: 20pt;
 }
 .table caption {
-font-size: 25pt;
+font-size: 20pt;
 padding-bottom: 3mm;
 
 }
@@ -271,6 +292,7 @@ margin-right: 4mm;
 margin-left: 4mm;
 margin-top: 6mm;
 margin-bottom: 10mm;
+color: $if(body_textcol)$$body_textcol$$else$#000000$endif$
 }
 .poster_body ol {
 margin-right: 4mm;
@@ -287,6 +309,9 @@ font-size: 20pt;
   width: 1em;
 }
 </style>
+$if(custom_css)$
+<link rel="stylesheet" href=$custom_css$>
+$else$$endif$
 </head>
 <body>
 
@@ -299,14 +324,14 @@ $endfor$
 <!-- Left Logo  -->
 <div class="logo_left">
 $if(logoleft_name)$
-<img src= '$logoleft_name$' style="width: 80%">
+<img src=$logoleft_name$ style="width: 80%">
 $endif$
 </div>
 <!-- Poster Title -->
 <div class= "poster_title">
 $if(title)$<h1 id="title">$title$</h1>$endif$
-$if(author)$<h3 id="author">$for(author)$$author.name$<sup>$author.affil$$if(author.orcid)$, <a class="orcid" href="https://orcid.org/$author.orcid$"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a>$else$$endif$</sup>$sep$, $endfor$</h3><br>$endif$
-$if(affiliation)$<h5 id="affiliation">$for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$<br> $endfor$</h5>$endif$
+$if(author)$<h3 id="author">$for(author)$$author.name$<sup>$author.affil$$if(author.orcid)$, <a class="orcid" href="https://orcid.org/$author.orcid$"><img src="https://raw.githubusercontent.com/brentthorne/posterdown/master/images/orcid.jpg"></a>$else$$endif$</sup>$sep$, $endfor$</h3>$endif$
+$if(affiliation)$<h5 id="affiliation">$for(affiliation)$<sup>$affiliation.num$</sup> $affiliation.address$$sep$; $endfor$</h5>$endif$
 </div>
 <!-- Right Logo  -->
 <div class="logo_right">

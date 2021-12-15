@@ -69,26 +69,32 @@ margin-bottom: 2cm;
 position: sticky;
 width: 100%;
 }
-pre.sourceCode.r {
-background-color: #dddddd40;
-border-radius: 4mm;
+pre.sourceCode.r, pre.sourceCode.python {
+background-color: #ffffff20;
+border: solid $if(secondary_colour)$$secondary_colour$$else$#008080$endif$ 1mm;
+border-radius: 0.5em;
 padding: 4mm;
-width: 75%;
 margin: auto;
 margin-top: 1em;
 margin-bottom: 1em;
 /* align-items: center; */
 }
-code.sourceCode.r{
+div.sourceCode {
 background-color: transparent;
-font-size: 20pt;
+width: $if(codechunk_width)$$codechunk_width$$else$85%$endif$;
+margin-left: auto;
+margin-right: auto;
+}
+code.sourceCode.r, code.sourceCode.python {
+background-color: transparent;
+font-size: $if(codechunk_textsize)$$codechunk_textsize$$else$20pt$endif$;
 border-radius: 2mm;
 }
 code {
 font-size: 25pt;
 font-family: monospace;
 background-color: $if(secondary_colour)$$secondary_colour$24$else$#00808024$endif$;
-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
+color: $if(secondary_colour)$$secondary_colour$$else$#008080$endif$;
 padding: 1.2mm;
 line-height: 1;
 border-radius: 2mm;
@@ -178,7 +184,7 @@ font-weight: normal;
 background: 0;
 }
 #author {
-color: $if(primary_colour)$$primary_colour$$else$#0b4545$endif$;
+color:$if(author_textcol)$$author_textcol$$else$$if(primary_colour)$$primary_colour$$else$#0b4545$endif$$endif$;
 margin: 0;
 line-height: 85%;
 font-size: $if(author_textsize)$$author_textsize$$else$1.17em$endif$;
@@ -295,22 +301,32 @@ transform: translateY(-50%);
 margin-left: 1em;
 }
 .fab {
-color: #00000030;
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
 font-size: 25px;
 }
 .twitter, i {
-color: #00000030;
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
 font-size: 35px;
 text-decoration: none;
 }
 a.email {
 text-decoration: none;
-color: #00000030;
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
 font-size: 35px;
 }
 .envelope {
-color: #00000030;
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
 font-size: 5px;
+text-decoration: none;
+}
+.globe {
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
+font-size: 5px;
+text-decoration: none;
+}
+.globetext {
+color: $if(affiliation_textcol)$$affiliation_textcol$$else$#00000060$endif$;
+font-size: 35px;
 text-decoration: none;
 }
 .poster_wrap {
@@ -367,6 +383,9 @@ span > #tab:mytable {
   color: #ffffff;
 }
 </style>
+$if(custom_css)$
+<link rel="stylesheet" href=$custom_css$>
+$else$$endif$
 </head>
 <body>
 
@@ -388,6 +407,9 @@ $if(author.twitter)$<a class="twitter" href="https://mobile.twitter.com/$author.
 $else$$endif$
 $if(author.email)$
 <a class='envelope'><i class="fas fa-envelope"></i></a> $author.email$ <br>
+$else$$endif$
+$if(author.website)$
+<a class='globe'><i class="fas fa-globe"></i></a> <a class='globetext' href="$author.website$">$author.website$</a> <br>
 $else$$endif$
 $else$$endif$
 $sep$ $endfor$

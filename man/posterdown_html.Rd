@@ -35,3 +35,10 @@ BetterPoster movement from twitter.
 The output format \code{poster_betterport()} mimics the style of the
 BetterPoster movement from twitter.
 }
+\examples{
+\donttest{
+file <- file.path(tempdir(),"foo.rmd")
+rmarkdown::draft(file, template="posterdown_html", package="posterdown")
+}
+
+}
